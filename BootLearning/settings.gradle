@@ -1,1 +1,3 @@
 rootProject.name = 'BootLearning'
+
+includeFlat 'JPALearning'
