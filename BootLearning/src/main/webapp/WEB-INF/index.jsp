@@ -10,6 +10,8 @@
 </head>
 <body>
 
-<h1> Welcome to Coding Counsel</h1>
+<h1> Welcome to Coding Coverage</h1>
+
+${TEST}
 </body>
 </html>
