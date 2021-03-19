@@ -6,12 +6,11 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Coding Counsel</title>
+<title>Login/Create Account</title>
 </head>
 <body>
 
 <h1> Welcome to Coding Coverage</h1>
 
-${TEST}
 </body>
 </html>
