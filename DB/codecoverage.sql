@@ -433,7 +433,7 @@ COMMIT;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `codingcoveragedb`;
-INSERT INTO `code_concept` (`id`, `name`, `roadmap_id`, `description`) VALUES (1, 'Java Setup ', 1, 'Set up Java');
+INSERT INTO `code_concept` (`id`, `name`, `roadmap_id`, `description`) VALUES (1, 'Java Setup', 1, 'Set up Java');
 
 COMMIT;
 
