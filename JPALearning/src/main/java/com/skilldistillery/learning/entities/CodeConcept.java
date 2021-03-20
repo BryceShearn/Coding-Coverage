@@ -4,6 +4,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -18,6 +20,11 @@ public class CodeConcept {
 
 	private String description;
 
+	@ManyToOne
+	@JoinColumn(name = "roadmap_id")
+	private Roadmap roadmap;
+	
+	
 	public CodeConcept() {
 		super();
 	}
@@ -44,6 +51,14 @@ public class CodeConcept {
 
 	public void setDescription(String description) {
 		this.description = description;
+	}
+
+	public Roadmap getRoadmap() {
+		return roadmap;
+	}
+
+	public void setRoadmap(Roadmap roadmap) {
+		this.roadmap = roadmap;
 	}
 
 	@Override

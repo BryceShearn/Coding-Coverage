@@ -9,6 +9,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
 @Entity
@@ -30,6 +32,8 @@ public class Roadmap {
 		@ManyToMany(mappedBy = "roadmaps")
 		private List<User> users;
 		
+		@OneToMany(mappedBy = "roadmap")
+		private List<CodeConcept> codeConcepts;
 		
 		public Roadmap() {
 			super();
@@ -107,6 +111,16 @@ public Roadmap(int id, String name, String description, Language language, List<
 
 		public void setLanguage(Language language) {
 			this.language = language;
+		}
+
+
+		public List<CodeConcept> getCodeConcepts() {
+			return codeConcepts;
+		}
+
+
+		public void setCodeConcepts(List<CodeConcept> codeConcepts) {
+			this.codeConcepts = codeConcepts;
 		}
 
 
