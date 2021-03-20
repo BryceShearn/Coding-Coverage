@@ -48,4 +48,12 @@ public class ResourceTest {
 			assertNotNull(resource);
 			assertEquals("https://www.tutorialspoint.com/java/java_environment_setup.htm", resource.getLink());
 		}
+		
+		@Test
+		@DisplayName("Test resource to language relationship")
+		void test2() {
+			assertNotNull(resource);
+			assertEquals("Java", resource.getLanguages().get(0).getName());
+			assertEquals("HTML", resource.getLanguages().get(1).getName());
+		}
 }

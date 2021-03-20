@@ -1,12 +1,17 @@
 package com.skilldistillery.learning.entities;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 
 @Entity
 public class Resource {
@@ -19,15 +24,40 @@ public class Resource {
 	
 	private String description;
 	
+	private String difficulty;
+	
 	@Column(name="date_added")
 	private LocalDateTime dateAdded;
-	
-	private String difficulty;
 
+	@ManyToMany
+	@JoinTable(name = "resource_has_language", joinColumns =
+	@JoinColumn(name = "resource_id"), inverseJoinColumns =
+	@JoinColumn(name = "language_id"))
+	private List<Language> languages;
+	
+// Methods
+	
 	public Resource() {
 		super();
 	}
-
+	
+// Add / Remove Language
+	public void addLanguage (Language language) {
+		if(languages == null) { 
+			languages = new ArrayList<>();
+		}
+		if(!languages.contains(language)) {
+			languages.add(language);
+		}
+	}
+	
+	public void removeLanguage(Language language) {
+		if(languages != null && languages.contains(language)) {
+			languages.remove(language);
+		}
+	}
+	
+// Get / Set
 	public int getId() {
 		return id;
 	}
@@ -66,6 +96,14 @@ public class Resource {
 
 	public void setDifficulty(String difficulty) {
 		this.difficulty = difficulty;
+	}
+
+	public List<Language> getLanguages() {
+		return languages;
+	}
+
+	public void setLanguages(List<Language> languages) {
+		this.languages = languages;
 	}
 
 	@Override
