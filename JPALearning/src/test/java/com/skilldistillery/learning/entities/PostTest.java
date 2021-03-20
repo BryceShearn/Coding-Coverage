@@ -61,6 +61,22 @@ class PostTest {
 		assertEquals("That is a ridiculous statement!", post.getComments().get(0).getContent());
 		
 	}
+	
+	@Test
+	@DisplayName("Test Post ManyToOne language_id Relationship")
+	void test3() {
+		assertNotNull(post);
+		assertEquals(1, post.getLanguage().getId());
+		
+	}
+	
+	@Test
+	@DisplayName("Test Post OneToMany post_vote Relationship")
+	void test4() {
+		assertNotNull(post);
+		assertTrue(post.getPostVote().get(0).getVote());
+		
+	}
 
 
 }

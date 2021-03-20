@@ -1,6 +1,7 @@
 package com.skilldistillery.learning.entities;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.Column;
@@ -8,6 +9,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
 @Entity
@@ -40,27 +43,76 @@ public class Post {
 	@Column(name="is_expert")
 	private Boolean isExpert;
 	
+	@ManyToOne
+	@JoinColumn(name="language_id")
+	private Language language;
+	
+	@OneToMany(mappedBy="post")
+	private List<PostVote> postVote;
+	
 	// Methods
 	
 	public Post() {
 		super();
 	}
-
+	
 	public Post(int id, String subject, String content, LocalDateTime dateCreated, LocalDateTime lastUpdate,
-			Boolean isBlog, Boolean isForumVisable, Boolean isExpert) {
+			List<Comment> comments, Boolean isBlog, Boolean isForumVisable, Boolean isExpert, Language language,
+			List<PostVote> postVote) {
 		super();
 		this.id = id;
 		this.subject = subject;
 		this.content = content;
 		this.dateCreated = dateCreated;
 		this.lastUpdate = lastUpdate;
+		this.comments = comments;
 		this.isBlog = isBlog;
 		this.isForumVisable = isForumVisable;
 		this.isExpert = isExpert;
+		this.language = language;
+		this.postVote = postVote;
 	}
 
 	public int getId() {
 		return id;
+	}
+	
+	public void addComment(Comment comment) {
+		if(comments == null) comments = new ArrayList<>();
+		
+		if (!comments.contains(comment)) {
+			comments.add(comment);
+			if (comment.getPost() != null) {
+				comment.getPost().getComments().remove(comment);
+			}
+			comment.setPost(this);
+		}
+	}
+	
+	public void removeComment(Comment comment) {
+		comment.setPost(null);
+		if (comments != null) {
+			comments.remove(comment);
+		}
+	}
+	
+	public void addPostVote(PostVote vote) {
+		if(postVote == null) postVote = new ArrayList<>();
+		
+		if (!postVote.contains(vote)) {
+			postVote.add(vote);
+			if (vote.getPost() != null) {
+				vote.getPost().getPostVote().remove(vote);
+			}
+			vote.setPost(this);
+		}
+	}
+	
+	public void removePostVote(PostVote vote) {
+		vote.setPost(null);
+		if (postVote != null) {
+			postVote.remove(vote);
+		}
 	}
 
 	public void setId(int id) {
@@ -131,14 +183,27 @@ public class Post {
 		this.comments = comments;
 	}
 
+	public Language getLanguage() {
+		return language;
+	}
+
+	public void setLanguage(Language language) {
+		this.language = language;
+	}
+
+	public List<PostVote> getPostVote() {
+		return postVote;
+	}
+
+	public void setPostVote(List<PostVote> postVote) {
+		this.postVote = postVote;
+	}
+
 	@Override
 	public String toString() {
-		StringBuilder builder = new StringBuilder();
-		builder.append("Post [id=").append(id).append(", subject=").append(subject).append(", content=").append(content)
-				.append(", dateCreated=").append(dateCreated).append(", lastUpdate=").append(lastUpdate)
-				.append(", isBlog=").append(isBlog).append(", isForumVisable=").append(isForumVisable)
-				.append(", isExpert=").append(isExpert).append("]");
-		return builder.toString();
+		return "Post [id=" + id + ", subject=" + subject + ", content=" + content + ", dateCreated=" + dateCreated
+				+ ", lastUpdate=" + lastUpdate + ", comments=" + comments + ", isBlog=" + isBlog + ", isForumVisable="
+				+ isForumVisable + ", isExpert=" + isExpert + ", language=" + language + ", postVote=" + postVote + "]";
 	}
 	
 }

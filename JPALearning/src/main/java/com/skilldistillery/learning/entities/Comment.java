@@ -39,12 +39,14 @@ public class Comment {
 		super();
 	}
 
-	public Comment(int id, String content, LocalDateTime dateCreated, LocalDateTime dateUpdated) {
+	public Comment(int id, String content, LocalDateTime dateCreated, LocalDateTime dateUpdated, User user, Post post) {
 		super();
 		this.id = id;
 		this.content = content;
 		this.dateCreated = dateCreated;
 		this.dateUpdated = dateUpdated;
+		this.user = user;
+		this.post = post;
 	}
 
 	public int getId() {

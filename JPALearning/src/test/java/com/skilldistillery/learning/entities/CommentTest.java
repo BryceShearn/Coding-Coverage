@@ -49,6 +49,7 @@ class CommentTest {
 		assertEquals("That is a ridiculous statement!", comment.getContent());
 		
 	}
+	
 	@Test
 	@DisplayName("Test Comment to user relationship")
 	void test2() {
@@ -56,6 +57,13 @@ class CommentTest {
 		assertEquals("thwebel", comment.getUser().getUsername());
 		assertEquals("Webel", comment.getUser().getLastName());
 		assertTrue(comment.getUser().getEnabled());
+	}
+	
+	@Test
+	@DisplayName("Test Comment ManyToOne post_id Relationship")
+	void test3() {
+		assertNotNull(comment);
+		assertEquals(1, comment.getPost().getId());
 	}
 
 }
