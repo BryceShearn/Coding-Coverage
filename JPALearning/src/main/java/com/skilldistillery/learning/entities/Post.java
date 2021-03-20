@@ -1,12 +1,14 @@
 package com.skilldistillery.learning.entities;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Post {
@@ -26,7 +28,9 @@ public class Post {
 	private LocalDateTime lastUpdate;
 	
 	// TODO user_id add user obj relation
-	
+	@OneToMany(mappedBy="post")
+	private List<Comment> comments;
+
 	@Column(name="is_blog")
 	private Boolean isBlog;
 	
@@ -117,6 +121,14 @@ public class Post {
 
 	public void setIsExpert(Boolean isExpert) {
 		this.isExpert = isExpert;
+	}
+
+	public List<Comment> getComments() {
+		return comments;
+	}
+
+	public void setComments(List<Comment> comments) {
+		this.comments = comments;
 	}
 
 	@Override
