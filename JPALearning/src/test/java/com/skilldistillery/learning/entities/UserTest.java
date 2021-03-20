@@ -44,7 +44,7 @@ class UserTest {
 	}
 
 	@Test
-	@DisplayName("Test user entity mapping")
+	@DisplayName("Test User entity mapping")
 	void test1() {
 		assertNotNull(user);
 		assertEquals("thwebel", user.getUsername());

@@ -43,7 +43,7 @@ class CommentTest {
 	}
 
 	@Test
-	@DisplayName("Test user entity mapping")
+	@DisplayName("Test Comment entity mapping")
 	void test1() {
 		assertNotNull(comment);
 		assertEquals("That is a ridiculous statement!", comment.getContent());

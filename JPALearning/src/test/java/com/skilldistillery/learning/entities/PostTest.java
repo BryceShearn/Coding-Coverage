@@ -42,7 +42,7 @@ class PostTest {
 	}
 
 	@Test
-	@DisplayName("Test user entity mapping")
+	@DisplayName("Test Post entity mapping")
 	void test1() {
 		assertNotNull(post);
 		assertEquals("DB design", post.getSubject());

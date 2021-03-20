@@ -1,6 +1,7 @@
 package com.skilldistillery.learning.entities;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -13,10 +14,11 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-class TaskTest {
+class PostVoteTest {
+
 	private static EntityManagerFactory emf;
 	private EntityManager em;
-	private Task task;
+	private PostVote postVote;
 	
 	@BeforeAll
 	static void setUpBeforeClass() throws Exception {
@@ -31,22 +33,21 @@ class TaskTest {
 	@BeforeEach
 	void setUp() throws Exception {
 		em = emf.createEntityManager();
-		task = em.find(Task.class, 1);
+		postVote = em.find(PostVote.class, 1);
 		
 	}
 
 	@AfterEach
 	void tearDown() throws Exception {
 		em.close();
-		task = null;
+		postVote = null;
 	}
 
 	@Test
-	@DisplayName("Test Task entity mapping")
+	@DisplayName("Test PostVote entity mapping")
 	void test1() {
-		assertNotNull(task);
-		assertEquals("Complete Set Up", task.getName());
-		assertEquals("Go read a java book", task.getDescription());
+		assertNotNull(postVote);
+		assertTrue(postVote.getVote());
 	}
 
 }

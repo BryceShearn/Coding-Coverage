@@ -1,6 +1,7 @@
 package com.skilldistillery.learning.entities;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -13,11 +14,12 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-class TaskTest {
+public class CodeConceptTest {
+
 	private static EntityManagerFactory emf;
 	private EntityManager em;
-	private Task task;
-	
+	private CodeConcept codeConcept;
+
 	@BeforeAll
 	static void setUpBeforeClass() throws Exception {
 		emf = Persistence.createEntityManagerFactory("LearningPU");
@@ -31,22 +33,19 @@ class TaskTest {
 	@BeforeEach
 	void setUp() throws Exception {
 		em = emf.createEntityManager();
-		task = em.find(Task.class, 1);
-		
+		codeConcept = em.find(CodeConcept.class, 1);
 	}
 
 	@AfterEach
 	void tearDown() throws Exception {
 		em.close();
-		task = null;
+		codeConcept = null;
 	}
 
 	@Test
-	@DisplayName("Test Task entity mapping")
+	@DisplayName("Testing Codeconcept Mappings")
 	void test1() {
-		assertNotNull(task);
-		assertEquals("Complete Set Up", task.getName());
-		assertEquals("Go read a java book", task.getDescription());
+		assertNotNull(codeConcept);
+		assertEquals("Java Setup", codeConcept.getName());
 	}
-
 }
