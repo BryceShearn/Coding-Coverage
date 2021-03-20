@@ -7,6 +7,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -20,9 +22,6 @@ public class UserRoadmapTask {
 	
 	private boolean completed;
 	
-	@Column(name = "user_id")
-	private int userId;
-	
 	@Column(name = "task_id")
 	private int taskId;
 	
@@ -31,6 +30,10 @@ public class UserRoadmapTask {
 
 	@Column(name = "end_date")
 	private LocalDateTime endDate ;
+	
+	@ManyToOne
+	@JoinColumn(name="user_id")
+	private User user;
 
 	
 	public UserRoadmapTask() {
@@ -43,7 +46,6 @@ public class UserRoadmapTask {
 		super();
 		this.id = id;
 		this.completed = completed;
-		this.userId = userId;
 		this.taskId = taskId;
 		this.startDate = startDate;
 		this.endDate = endDate;
@@ -64,14 +66,6 @@ public class UserRoadmapTask {
 
 	public void setCompleted(boolean completed) {
 		this.completed = completed;
-	}
-
-	public int getUserId() {
-		return userId;
-	}
-
-	public void setUserId(int userId) {
-		this.userId = userId;
 	}
 
 	public int getTaskId() {
@@ -99,6 +93,16 @@ public class UserRoadmapTask {
 	}
 
 	
+	public User getUser() {
+		return user;
+	}
+
+
+	public void setUser(User user) {
+		this.user = user;
+	}
+
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -107,7 +111,6 @@ public class UserRoadmapTask {
 		result = prime * result + id;
 		result = prime * result + ((startDate == null) ? 0 : startDate.hashCode());
 		result = prime * result + taskId;
-		result = prime * result + userId;
 		return result;
 	}
 
@@ -136,8 +139,6 @@ public class UserRoadmapTask {
 			return false;
 		if (taskId != other.taskId)
 			return false;
-		if (userId != other.userId)
-			return false;
 		return true;
 	}
 
@@ -145,9 +146,9 @@ public class UserRoadmapTask {
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
-		builder.append("Userroadmaptask [id=").append(id).append(", completed=").append(completed).append(", userId=")
-				.append(userId).append(", taskId=").append(taskId).append(", startDate=").append(startDate)
-				.append(", endDate=").append(endDate).append("]");
+		builder.append("UserRoadmapTask [id=").append(id).append(", completed=").append(completed).append(", taskId=")
+				.append(taskId).append(", startDate=").append(startDate).append(", endDate=").append(endDate)
+				.append("]");
 		return builder.toString();
 	}
 }

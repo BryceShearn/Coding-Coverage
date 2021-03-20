@@ -46,6 +46,10 @@ public class User {
     joinColumns=@JoinColumn(name="user_id"),
     inverseJoinColumns=@JoinColumn(name="roadmap_id"))
 	private List<Roadmap> roadmaps;
+	
+	@OneToMany(mappedBy = "user")
+	private List<UserRoadmapTask> userRoadmapTasks;
+	
 //Methods
 // Constructor
 	public User() {
@@ -90,6 +94,26 @@ public class User {
 			comments.remove(comment);
 		}
 	}
+// Add / Remove UserRoadmapTask
+	
+	public void addUserRoadmapTask(UserRoadmapTask userRoadmapTask) {
+		if(userRoadmapTasks == null) userRoadmapTasks = new ArrayList<>();
+		
+		if (!userRoadmapTasks.contains(userRoadmapTask)) {
+			userRoadmapTasks.add(userRoadmapTask);
+			if (userRoadmapTask.getUser() != null) {
+				userRoadmapTask.getUser().getUserRoadmapTasks().remove(userRoadmapTask);
+			}
+			userRoadmapTask.setUser(this);
+		}
+	}
+	public void removeUserRoadmapTask(UserRoadmapTask userRoadmapTask) {
+		userRoadmapTask.setUser(null);
+		if (userRoadmapTasks != null) {
+			userRoadmapTasks.remove(userRoadmapTask);
+		}
+	}
+	
 // Get / Set 
 	public int getId() {
 		return id;
@@ -177,6 +201,14 @@ public class User {
 
 	public void setRoadmaps(List<Roadmap> roadmaps) {
 		this.roadmaps = roadmaps;
+	}
+
+	public List<UserRoadmapTask> getUserRoadmapTasks() {
+		return userRoadmapTasks;
+	}
+
+	public void setUserRoadmapTasks(List<UserRoadmapTask> userRoadmapTasks) {
+		this.userRoadmapTasks = userRoadmapTasks;
 	}
 
 	@Override

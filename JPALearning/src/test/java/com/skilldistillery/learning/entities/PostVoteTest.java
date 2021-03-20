@@ -1,5 +1,6 @@
 package com.skilldistillery.learning.entities;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
@@ -48,6 +49,13 @@ class PostVoteTest {
 	void test1() {
 		assertNotNull(postVote);
 		assertTrue(postVote.getVote());
+	}
+	
+	@Test
+	@DisplayName("Test PostVote ManyToOne post_id Relationship")
+	void test2() {
+		assertNotNull(postVote);
+		assertEquals(1, postVote.getPost().getId());
 	}
 
 }

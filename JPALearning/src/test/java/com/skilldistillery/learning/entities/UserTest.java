@@ -68,5 +68,11 @@ class UserTest {
 		assertEquals("Java Fundementals", user.getRoadmaps().get(0).getName());
 		assertEquals("Fundementals of Java", user.getRoadmaps().get(0).getDescription());
 	}
+	@Test
+	@DisplayName("Test User to UserRoadmapTask Relationship")
+	void test4() {
+		assertNotNull(user);
+		assertTrue(user.getUserRoadmapTasks().get(0).getCompleted());
+	}
 
 }
