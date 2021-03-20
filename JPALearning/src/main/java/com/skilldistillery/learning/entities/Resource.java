@@ -1,12 +1,16 @@
 package com.skilldistillery.learning.entities;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 
 @Entity
 public class Resource {
@@ -18,6 +22,12 @@ public class Resource {
 	private String link;
 	
 	private String description;
+	
+	@ManyToMany
+	@JoinTable(name = "resource_has_language", joinColumns =
+	@JoinColumn(name = "resource_id"), inverseJoinColumns =
+	@JoinColumn(name = "language_id"))
+	private List<Language> languages;
 	
 	@Column(name="date_added")
 	private LocalDateTime dateAdded;
@@ -66,6 +76,14 @@ public class Resource {
 
 	public void setDifficulty(String difficulty) {
 		this.difficulty = difficulty;
+	}
+
+	public List<Language> getLanguages() {
+		return languages;
+	}
+
+	public void setLanguages(List<Language> languages) {
+		this.languages = languages;
 	}
 
 	@Override
