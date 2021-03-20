@@ -50,6 +50,9 @@ public class User {
 	@OneToMany(mappedBy = "user")
 	private List<UserRoadmapTask> userRoadmapTasks;
 	
+	@OneToMany(mappedBy = "user")
+	private List<Post> posts;
+	
 //Methods
 // Constructor
 	public User() {
@@ -111,6 +114,26 @@ public class User {
 		userRoadmapTask.setUser(null);
 		if (userRoadmapTasks != null) {
 			userRoadmapTasks.remove(userRoadmapTask);
+		}
+	}
+	
+// Add / Remove Post
+	
+	public void addPost(Post post) {
+		if(posts == null) posts = new ArrayList<>();
+		
+		if (!posts.contains(post)) {
+			posts.add(post);
+			if (post.getUser() != null) {
+				post.getUser().getPosts().remove(post);
+			}
+			post.setUser(this);
+		}
+	}
+	public void removeUserPost(Post post) {
+		post.setUser(null);
+		if (posts != null) {
+			posts.remove(post);
 		}
 	}
 	
@@ -209,6 +232,14 @@ public class User {
 
 	public void setUserRoadmapTasks(List<UserRoadmapTask> userRoadmapTasks) {
 		this.userRoadmapTasks = userRoadmapTasks;
+	}
+
+	public List<Post> getPosts() {
+		return posts;
+	}
+
+	public void setPosts(List<Post> posts) {
+		this.posts = posts;
 	}
 
 	@Override
