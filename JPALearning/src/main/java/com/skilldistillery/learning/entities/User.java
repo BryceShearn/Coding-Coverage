@@ -53,6 +53,9 @@ public class User {
 	@OneToMany(mappedBy = "user")
 	private List<Post> posts;
 	
+	@OneToMany(mappedBy = "user")
+	private List<PostVote> postVotes;
+	
 //Methods
 // Constructor
 	public User() {
@@ -117,6 +120,25 @@ public class User {
 		}
 	}
 	
+// Add / Remove PostVote
+	
+	public void addPostVote(PostVote postVote) {
+		if(postVotes == null) postVotes = new ArrayList<>();
+		
+		if (!postVotes.contains(postVote)) {
+			postVotes.add(postVote);
+			if (postVote.getUser() != null) {
+				postVote.getUser().getPostVotes().remove(postVote);
+			}
+			postVote.setUser(this);
+		}
+	}
+	public void removeUserPostVote(PostVote postVote) {
+		postVote.setUser(null);
+		if (postVotes != null) {
+			postVotes.remove(postVote);
+		}
+	}
 // Add / Remove Post
 	
 	public void addPost(Post post) {
@@ -240,6 +262,14 @@ public class User {
 
 	public void setPosts(List<Post> posts) {
 		this.posts = posts;
+	}
+
+	public List<PostVote> getPostVotes() {
+		return postVotes;
+	}
+
+	public void setPostVotes(List<PostVote> postVotes) {
+		this.postVotes = postVotes;
 	}
 
 	@Override

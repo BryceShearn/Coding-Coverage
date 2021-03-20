@@ -9,6 +9,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class Task {
@@ -20,6 +21,10 @@ public class Task {
 	private String name;
 	
 	private String description;
+	
+	@ManyToOne
+	@JoinColumn(name="code_concept_id")
+	private CodeConcept codeConcept;
 
 	@ManyToMany
 	@JoinTable(name = "task_has_resource",
@@ -63,8 +68,6 @@ public class Task {
 		this.description = description;
 	}
 
-	
-	
 	public List<Resource> getResources() {
 		return resources;
 	}
@@ -73,13 +76,20 @@ public class Task {
 		this.resources = resources;
 	}
 
+	public CodeConcept getCodeConcept() {
+		return codeConcept;
+	}
+
+	public void setCodeConcept(CodeConcept codeConcept) {
+		this.codeConcept = codeConcept;
+
+	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((description == null) ? 0 : description.hashCode());
 		result = prime * result + id;
-		result = prime * result + ((name == null) ? 0 : name.hashCode());
 		return result;
 	}
 
@@ -92,29 +102,15 @@ public class Task {
 		if (getClass() != obj.getClass())
 			return false;
 		Task other = (Task) obj;
-		if (description == null) {
-			if (other.description != null)
-				return false;
-		} else if (!description.equals(other.description))
-			return false;
 		if (id != other.id)
-			return false;
-		if (name == null) {
-			if (other.name != null)
-				return false;
-		} else if (!name.equals(other.name))
 			return false;
 		return true;
 	}
 
 	@Override
 	public String toString() {
-		StringBuilder builder = new StringBuilder();
-		builder.append("Task [id=").append(id).append(", name=").append(name).append(", description=")
-				.append(description).append("]");
-		return builder.toString();
+		return "Task [id=" + id + ", name=" + name + ", description=" + description + ", codeConcept=" + codeConcept
+				+ "]";
 	}
-	
-	
-	
+
 }

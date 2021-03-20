@@ -81,5 +81,12 @@ class UserTest {
 		assertEquals("DB design is an essential aspect of full stack applications",user.getPosts().get(0).getContent());
 		assertEquals("DB design",user.getPosts().get(0).getSubject());
 	}
+	@Test
+	@DisplayName("Test User to PostVote Relationship")
+	void test6() {
+		assertNotNull(user);
+		assertTrue(user.getPostVotes().get(0).getVote());
+		assertEquals("DB design is an essential aspect of full stack applications",user.getPostVotes().get(0).getPost().getContent());
+	}
 
 }

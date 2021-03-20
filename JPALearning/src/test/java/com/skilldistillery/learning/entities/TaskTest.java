@@ -48,6 +48,7 @@ class TaskTest {
 		assertEquals("Complete Set Up", task.getName());
 		assertEquals("Go read a java book", task.getDescription());
 	}
+
 	@Test
 	@DisplayName("Test Task to Resource relationship")
 	void test2() {
@@ -55,4 +56,12 @@ class TaskTest {
 		assertEquals("basic tutorial", task.getResources().get(0).getDescription());
 		assertEquals("easy", task.getResources().get(0).getDifficulty());
 	}
+	
+	@Test
+	@DisplayName("Test Task ManyToOne codeConcept Relationship")
+	void test3() {
+		assertNotNull(task);
+		assertEquals(1, task.getCodeConcept().getId());
+	}
+
 }
