@@ -10,6 +10,7 @@
     <class>com.skilldistillery.learning.entities.Comment</class>
     <class>com.skilldistillery.learning.entities.Post</class>
     <class>com.skilldistillery.learning.entities.User</class>
+    <class>com.skilldistillery.learning.entities.Language</class>
     <class>com.skilldistillery.learning.entities.Resource</class>
    
     <!-- entities -->
