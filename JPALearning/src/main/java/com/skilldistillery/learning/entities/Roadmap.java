@@ -1,10 +1,16 @@
 package com.skilldistillery.learning.entities;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 
 @Entity
 public class Roadmap {
@@ -13,11 +19,16 @@ public class Roadmap {
 		@Id
 		@GeneratedValue(strategy = GenerationType.IDENTITY)
 		private int id;
+		
 		private String name;
+		
 		private String description;
 		
 		@Column(name = "language_id")
 		private int languageId;
+		
+		@ManyToMany(mappedBy = "roadmaps")
+		private List<User> users;
 
 		
 		public Roadmap() {
@@ -32,8 +43,26 @@ public class Roadmap {
 			this.description = description;
 			this.languageId = languageId;
 		}
+		
+// Add / Remove User
+		public void addUser (User user) {
+			if(users == null) { 
+				users = new ArrayList<>();
+			}
+			if(!users.contains(user)) {
+				users.add(user);
+				user.addRoadmap(this);
+			}
+		}
+		
+		public void removeUser(User user) {
+			if(users != null && users.contains(user)) {
+				users.remove(user);
+				user.removeRoadmap(this);
+			}
+		}
 
-
+// Get / Set 
 		public int getId() {
 			return id;
 		}
@@ -64,6 +93,16 @@ public class Roadmap {
 
 		public void setLanguageId(int languageId) {
 			this.languageId = languageId;
+		}
+
+
+		public List<User> getUsers() {
+			return users;
+		}
+
+
+		public void setUsers(List<User> users) {
+			this.users = users;
 		}
 
 

@@ -43,11 +43,18 @@ class RoadmapTest {
 	}
 	
 	@Test
-	@DisplayName("Testing RoadMap Class Mappings")
+	@DisplayName("Testing Roadmap Class Mappings")
 	void test1() {
 		assertNotNull(roadmap);
 		assertEquals("Java Fundementals", roadmap.getName());
 		assertEquals(1, roadmap.getLanguageId());
 		assertEquals("Fundementals of Java", roadmap.getDescription());
+	}
+	@Test
+	@DisplayName("Testing Roadmap to User relationship")
+	void test2() {
+		assertNotNull(roadmap);
+		assertEquals("Thomas", roadmap.getUsers().get(0).getFirstName());
+		assertEquals("thwebel", roadmap.getUsers().get(0).getUsername());
 	}
 }

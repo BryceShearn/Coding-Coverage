@@ -8,6 +8,9 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 
 @Entity
@@ -37,11 +40,38 @@ public class User {
 	
 	@OneToMany(mappedBy = "user")
 	private List<Comment> comments;
-	//Methods
 	
+	@ManyToMany
+	@JoinTable(name="user_has_roadmap",
+    joinColumns=@JoinColumn(name="user_id"),
+    inverseJoinColumns=@JoinColumn(name="roadmap_id"))
+	private List<Roadmap> roadmaps;
+//Methods
+// Constructor
 	public User() {
 		super();
 	}
+	
+// Add / Remove roadmap
+	
+	public void addRoadmap (Roadmap roadmap) {
+		if(roadmaps == null) { 
+			roadmaps = new ArrayList<>();
+		}
+		if(!roadmaps.contains(roadmap)) {
+			roadmaps.add(roadmap);
+			roadmap.addUser(this);
+		}
+	}
+	
+	public void removeRoadmap(Roadmap roadmap) {
+		if(roadmaps != null && roadmaps.contains(roadmap)) {
+			roadmaps.remove(roadmap);
+			roadmap.removeUser(this);
+		}
+	}
+	
+// Add / Remove Comment
 	
 	public void addComment(Comment comment) {
 		if(comments == null) comments = new ArrayList<>();
@@ -60,7 +90,7 @@ public class User {
 			comments.remove(comment);
 		}
 	}
-
+// Get / Set 
 	public int getId() {
 		return id;
 	}
@@ -139,6 +169,14 @@ public class User {
 
 	public void setComments(List<Comment> comments) {
 		this.comments = comments;
+	}
+
+	public List<Roadmap> getRoadmaps() {
+		return roadmaps;
+	}
+
+	public void setRoadmaps(List<Roadmap> roadmaps) {
+		this.roadmaps = roadmaps;
 	}
 
 	@Override

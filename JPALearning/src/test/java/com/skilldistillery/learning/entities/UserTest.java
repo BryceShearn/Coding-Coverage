@@ -61,5 +61,12 @@ class UserTest {
 		assertNotNull(user);
 		assertEquals("That is a ridiculous statement!", user.getComments().get(0).getContent());
 	}
+	@Test
+	@DisplayName("Test User to Roadmap Relationship")
+	void test3() {
+		assertNotNull(user);
+		assertEquals("Java Fundementals", user.getRoadmaps().get(0).getName());
+		assertEquals("Fundementals of Java", user.getRoadmaps().get(0).getDescription());
+	}
 
 }
