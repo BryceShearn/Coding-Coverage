@@ -50,6 +50,7 @@ class UserRoadmapTaskTest {
 		assertTrue(userroadmaptask.getCompleted());
 
 	}
+	
 	@Test
 	@DisplayName("Testing UserRoadmapTask to user relationship")
 	void test2() {
@@ -57,5 +58,13 @@ class UserRoadmapTaskTest {
 		assertEquals("Thomas",userroadmaptask.getUser().getFirstName());
 		assertEquals("thwebel",userroadmaptask.getUser().getUsername());
 		
+	}
+	
+	@Test
+	@DisplayName("Testing UserRoadmapTask to Test relationship")
+	void test3() {
+		assertNotNull(userroadmaptask);
+		assertEquals("Complete Set Up", userroadmaptask.getTask().getName());
+		assertEquals("Go read a java book",userroadmaptask.getTask().getDescription());
 	}
 }
