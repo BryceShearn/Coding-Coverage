@@ -35,6 +35,20 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
+-- Table `language`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `language` ;
+
+CREATE TABLE IF NOT EXISTS `language` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `name` VARCHAR(45) NULL,
+  `image_url` VARCHAR(3000) NULL,
+  `description` TEXT NULL,
+  PRIMARY KEY (`id`))
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
 -- Table `post`
 -- -----------------------------------------------------
 DROP TABLE IF EXISTS `post` ;
@@ -49,11 +63,18 @@ CREATE TABLE IF NOT EXISTS `post` (
   `is_blog` TINYINT(1) NULL,
   `is_forum_visable` TINYINT NULL,
   `is_expert` TINYINT NULL,
+  `language_id` INT NOT NULL,
   PRIMARY KEY (`id`),
   INDEX `fk_post_user1_idx` (`user_id` ASC),
+  INDEX `fk_post_language1_idx` (`language_id` ASC),
   CONSTRAINT `fk_post_user1`
     FOREIGN KEY (`user_id`)
     REFERENCES `user` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_post_language1`
+    FOREIGN KEY (`language_id`)
+    REFERENCES `language` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
@@ -70,21 +91,14 @@ CREATE TABLE IF NOT EXISTS `resource` (
   `description` TEXT NOT NULL,
   `date_added` DATETIME NULL,
   `difficulty` VARCHAR(45) NULL,
-  PRIMARY KEY (`id`))
-ENGINE = InnoDB;
-
-
--- -----------------------------------------------------
--- Table `language`
--- -----------------------------------------------------
-DROP TABLE IF EXISTS `language` ;
-
-CREATE TABLE IF NOT EXISTS `language` (
-  `id` INT NOT NULL AUTO_INCREMENT,
-  `name` VARCHAR(45) NULL,
-  `image_url` VARCHAR(3000) NULL,
-  `description` TEXT NULL,
-  PRIMARY KEY (`id`))
+  `language_id` INT NOT NULL,
+  PRIMARY KEY (`id`),
+  INDEX `fk_resource_language1_idx` (`language_id` ASC),
+  CONSTRAINT `fk_resource_language1`
+    FOREIGN KEY (`language_id`)
+    REFERENCES `language` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 
@@ -305,54 +319,6 @@ CREATE TABLE IF NOT EXISTS `task_has_resource` (
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
-
--- -----------------------------------------------------
--- Table `post_has_language`
--- -----------------------------------------------------
-DROP TABLE IF EXISTS `post_has_language` ;
-
-CREATE TABLE IF NOT EXISTS `post_has_language` (
-  `post_id` INT NOT NULL,
-  `language_id` INT NOT NULL,
-  PRIMARY KEY (`post_id`, `language_id`),
-  INDEX `fk_post_has_language_language1_idx` (`language_id` ASC),
-  INDEX `fk_post_has_language_post1_idx` (`post_id` ASC),
-  CONSTRAINT `fk_post_has_language_post1`
-    FOREIGN KEY (`post_id`)
-    REFERENCES `post` (`id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_post_has_language_language1`
-    FOREIGN KEY (`language_id`)
-    REFERENCES `language` (`id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB;
-
-
--- -----------------------------------------------------
--- Table `resource_has_language`
--- -----------------------------------------------------
-DROP TABLE IF EXISTS `resource_has_language` ;
-
-CREATE TABLE IF NOT EXISTS `resource_has_language` (
-  `resource_id` INT NOT NULL,
-  `language_id` INT NOT NULL,
-  PRIMARY KEY (`resource_id`, `language_id`),
-  INDEX `fk_resource_has_language_language1_idx` (`language_id` ASC),
-  INDEX `fk_resource_has_language_resource1_idx` (`resource_id` ASC),
-  CONSTRAINT `fk_resource_has_language_resource1`
-    FOREIGN KEY (`resource_id`)
-    REFERENCES `resource` (`id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_resource_has_language_language1`
-    FOREIGN KEY (`language_id`)
-    REFERENCES `language` (`id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB;
-
 SET SQL_MODE = '';
 DROP USER IF EXISTS codeuser@localhost;
 SET SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION';
@@ -376,11 +342,24 @@ COMMIT;
 
 
 -- -----------------------------------------------------
+-- Data for table `language`
+-- -----------------------------------------------------
+START TRANSACTION;
+USE `codingcoveragedb`;
+INSERT INTO `language` (`id`, `name`, `image_url`, `description`) VALUES (1, 'Java', NULL, 'Best lang ever');
+INSERT INTO `language` (`id`, `name`, `image_url`, `description`) VALUES (2, 'HTML', NULL, 'layouts ');
+INSERT INTO `language` (`id`, `name`, `image_url`, `description`) VALUES (3, 'CSS', NULL, 'makes layouts pretty');
+INSERT INTO `language` (`id`, `name`, `image_url`, `description`) VALUES (4, 'SQL', NULL, 'Hey DB give me ');
+
+COMMIT;
+
+
+-- -----------------------------------------------------
 -- Data for table `post`
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `codingcoveragedb`;
-INSERT INTO `post` (`id`, `subject`, `content`, `date_created`, `last_update`, `user_id`, `is_blog`, `is_forum_visable`, `is_expert`) VALUES (1, 'DB design', 'DB design is an essential aspect of full stack applications', NULL, NULL, 2, 1, 0, 0);
+INSERT INTO `post` (`id`, `subject`, `content`, `date_created`, `last_update`, `user_id`, `is_blog`, `is_forum_visable`, `is_expert`, `language_id`) VALUES (1, 'DB design', 'DB design is an essential aspect of full stack applications', NULL, NULL, 2, 1, 0, 0, 1);
 
 COMMIT;
 
@@ -390,20 +369,7 @@ COMMIT;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `codingcoveragedb`;
-INSERT INTO `resource` (`id`, `link`, `description`, `date_added`, `difficulty`) VALUES (1, 'https://www.tutorialspoint.com/java/java_environment_setup.htm', 'basic tutorial', NULL, 'easy');
-
-COMMIT;
-
-
--- -----------------------------------------------------
--- Data for table `language`
--- -----------------------------------------------------
-START TRANSACTION;
-USE `codingcoveragedb`;
-INSERT INTO `language` (`id`, `name`, `image_url`, `description`) VALUES (1, 'Java', NULL, 'Best lang ever');
-INSERT INTO `language` (`id`, `name`, `image_url`, `description`) VALUES (2, 'HTML', NULL, 'layouts ');
-INSERT INTO `language` (`id`, `name`, `image_url`, `description`) VALUES (3, 'CSS', NULL, 'makes layouts pretty');
-INSERT INTO `language` (`id`, `name`, `image_url`, `description`) VALUES (4, 'SQL', NULL, 'Hey DB give me ');
+INSERT INTO `resource` (`id`, `link`, `description`, `date_added`, `difficulty`, `language_id`) VALUES (1, 'https://www.tutorialspoint.com/java/java_environment_setup.htm', 'basic tutorial', NULL, 'easy', 1);
 
 COMMIT;
 
@@ -494,26 +460,6 @@ COMMIT;
 START TRANSACTION;
 USE `codingcoveragedb`;
 INSERT INTO `task_has_resource` (`task_id`, `resource_id`) VALUES (1, 1);
-
-COMMIT;
-
-
--- -----------------------------------------------------
--- Data for table `post_has_language`
--- -----------------------------------------------------
-START TRANSACTION;
-USE `codingcoveragedb`;
-INSERT INTO `post_has_language` (`post_id`, `language_id`) VALUES (1, 1);
-
-COMMIT;
-
-
--- -----------------------------------------------------
--- Data for table `resource_has_language`
--- -----------------------------------------------------
-START TRANSACTION;
-USE `codingcoveragedb`;
-INSERT INTO `resource_has_language` (`resource_id`, `language_id`) VALUES (1, 1);
 
 COMMIT;
 
