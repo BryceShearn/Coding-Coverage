@@ -47,14 +47,18 @@ public class Post {
 	@JoinColumn(name="language_id")
 	private Language language;
 	
+	@OneToMany(mappedBy="post")
+	private List<PostVote> postVote;
+	
 	// Methods
 	
 	public Post() {
 		super();
 	}
-
+	
 	public Post(int id, String subject, String content, LocalDateTime dateCreated, LocalDateTime lastUpdate,
-			List<Comment> comments, Boolean isBlog, Boolean isForumVisable, Boolean isExpert, Language language) {
+			List<Comment> comments, Boolean isBlog, Boolean isForumVisable, Boolean isExpert, Language language,
+			List<PostVote> postVote) {
 		super();
 		this.id = id;
 		this.subject = subject;
@@ -66,8 +70,9 @@ public class Post {
 		this.isForumVisable = isForumVisable;
 		this.isExpert = isExpert;
 		this.language = language;
+		this.postVote = postVote;
 	}
-	
+
 	public int getId() {
 		return id;
 	}
@@ -83,10 +88,30 @@ public class Post {
 			comment.setPost(this);
 		}
 	}
+	
 	public void removeComment(Comment comment) {
 		comment.setPost(null);
 		if (comments != null) {
 			comments.remove(comment);
+		}
+	}
+	
+	public void addPostVote(PostVote vote) {
+		if(postVote == null) postVote = new ArrayList<>();
+		
+		if (!postVote.contains(vote)) {
+			postVote.add(vote);
+			if (vote.getPost() != null) {
+				vote.getPost().getPostVote().remove(vote);
+			}
+			vote.setPost(this);
+		}
+	}
+	
+	public void removePostVote(PostVote vote) {
+		vote.setPost(null);
+		if (postVote != null) {
+			postVote.remove(vote);
 		}
 	}
 
@@ -166,11 +191,19 @@ public class Post {
 		this.language = language;
 	}
 
+	public List<PostVote> getPostVote() {
+		return postVote;
+	}
+
+	public void setPostVote(List<PostVote> postVote) {
+		this.postVote = postVote;
+	}
+
 	@Override
 	public String toString() {
 		return "Post [id=" + id + ", subject=" + subject + ", content=" + content + ", dateCreated=" + dateCreated
 				+ ", lastUpdate=" + lastUpdate + ", comments=" + comments + ", isBlog=" + isBlog + ", isForumVisable="
-				+ isForumVisable + ", isExpert=" + isExpert + ", language=" + language + "]";
+				+ isForumVisable + ", isExpert=" + isExpert + ", language=" + language + ", postVote=" + postVote + "]";
 	}
 	
 }

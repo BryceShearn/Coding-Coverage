@@ -69,6 +69,14 @@ class PostTest {
 		assertEquals(1, post.getLanguage().getId());
 		
 	}
+	
+	@Test
+	@DisplayName("Test Post OneToMany post_vote Relationship")
+	void test4() {
+		assertNotNull(post);
+		assertTrue(post.getPostVote().get(0).getVote());
+		
+	}
 
 
 }

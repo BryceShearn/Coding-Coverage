@@ -7,6 +7,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -22,6 +24,10 @@ public class PostVote {
 	
 	private Boolean vote;
 	
+	@ManyToOne
+	@JoinColumn(name="post_id")
+	private Post post;
+	
 	// Post id connection 
 	
 	// user_id connection
@@ -30,11 +36,12 @@ public class PostVote {
 		super();
 	}
 
-	public PostVote(int id, LocalDateTime dateVoted, Boolean vote) {
+	public PostVote(int id, LocalDateTime dateVoted, Boolean vote, Post post) {
 		super();
 		this.id = id;
 		this.dateVoted = dateVoted;
 		this.vote = vote;
+		this.post = post;
 	}
 
 	public int getId() {
@@ -59,6 +66,14 @@ public class PostVote {
 
 	public void setVote(Boolean vote) {
 		this.vote = vote;
+	}
+
+	public Post getPost() {
+		return post;
+	}
+
+	public void setPost(Post post) {
+		this.post = post;
 	}
 
 	@Override
@@ -97,9 +112,6 @@ public class PostVote {
 
 	@Override
 	public String toString() {
-		StringBuilder builder = new StringBuilder();
-		builder.append("PostVote [id=").append(id).append(", dateVoted=").append(dateVoted).append(", vote=")
-				.append(vote).append("]");
-		return builder.toString();
+		return "PostVote [id=" + id + ", dateVoted=" + dateVoted + ", vote=" + vote + ", post=" + post + "]";
 	}
 }
