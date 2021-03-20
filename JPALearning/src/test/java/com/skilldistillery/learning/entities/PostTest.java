@@ -77,6 +77,11 @@ class PostTest {
 		assertTrue(post.getPostVote().get(0).getVote());
 		
 	}
-
-
+	@Test
+	@DisplayName("Test Post to User Relationship")
+	void test5() {
+		assertNotNull(post);
+		assertTrue(post.getUser().getEnabled());
+		assertEquals("thwebel", post.getUser().getUsername());
+	}
 }

@@ -74,5 +74,12 @@ class UserTest {
 		assertNotNull(user);
 		assertTrue(user.getUserRoadmapTasks().get(0).getCompleted());
 	}
+	@Test
+	@DisplayName("Test User to Post Relationship")
+	void test5() {
+		assertNotNull(user);
+		assertEquals("DB design is an essential aspect of full stack applications",user.getPosts().get(0).getContent());
+		assertEquals("DB design",user.getPosts().get(0).getSubject());
+	}
 
 }
