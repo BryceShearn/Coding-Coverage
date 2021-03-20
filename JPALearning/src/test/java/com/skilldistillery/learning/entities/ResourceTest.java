@@ -18,7 +18,7 @@ public class ResourceTest {
 	
 	private static EntityManagerFactory emf;
 	private EntityManager em;
-	private Resource Resource;
+	private Resource resource;
 
 		@BeforeAll
 		static void setUpBeforeClass() throws Exception {
@@ -33,19 +33,19 @@ public class ResourceTest {
 		@BeforeEach
 		void setUp() throws Exception {
 			em = emf.createEntityManager();
-			Resource = em.find(Resource.class, 1);
+			resource = em.find(Resource.class, 1);
 		}
 
 		@AfterEach
 		void tearDown() throws Exception {
 			em.close();
-			Resource = null;
+			resource = null;
 		}
 
 		@Test
 		@DisplayName("Testing Resource Mappings")
 		void test1() {
-			assertNotNull(Resource);
-			assertEquals("https://www.tutorialspoint.com/java/java_environment_setup.htm", Resource.getLink());
+			assertNotNull(resource);
+			assertEquals("https://www.tutorialspoint.com/java/java_environment_setup.htm", resource.getLink());
 		}
 }
