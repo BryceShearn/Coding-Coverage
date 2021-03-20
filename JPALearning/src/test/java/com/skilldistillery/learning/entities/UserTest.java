@@ -55,5 +55,11 @@ class UserTest {
 		
 		
 	}
+	@Test
+	@DisplayName("Test User to Comment Relationship")
+	void test2() {
+		assertNotNull(user);
+		assertEquals("That is a ridiculous statement!", user.getComments().get(0).getContent());
+	}
 
 }
