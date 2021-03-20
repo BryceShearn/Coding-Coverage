@@ -57,5 +57,12 @@ class PostVoteTest {
 		assertNotNull(postVote);
 		assertEquals(1, postVote.getPost().getId());
 	}
+	@Test
+	@DisplayName("Test PostVote To User Relationship")
+	void test3() {
+		assertNotNull(postVote);
+		assertEquals("thwebel", postVote.getUser().getUsername());
+		assertEquals("Webel", postVote.getUser().getLastName());
+	}
 
 }
