@@ -36,6 +36,8 @@ public class Post {
 	@Column(name="is_expert")
 	private Boolean isExpert;
 	
+	// Methods
+	
 	public Post() {
 		super();
 	}
@@ -126,7 +128,5 @@ public class Post {
 				.append(", isExpert=").append(isExpert).append("]");
 		return builder.toString();
 	}
-	
-	
 	
 }

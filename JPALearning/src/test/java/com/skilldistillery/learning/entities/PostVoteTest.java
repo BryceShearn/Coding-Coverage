@@ -1,6 +1,7 @@
 package com.skilldistillery.learning.entities;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -13,10 +14,11 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-class PostTest {
+class PostVoteTest {
+
 	private static EntityManagerFactory emf;
 	private EntityManager em;
-	private Post post;
+	private PostVote postVote;
 	
 	@BeforeAll
 	static void setUpBeforeClass() throws Exception {
@@ -31,28 +33,21 @@ class PostTest {
 	@BeforeEach
 	void setUp() throws Exception {
 		em = emf.createEntityManager();
-		post = em.find(Post.class, 1);
+		postVote = em.find(PostVote.class, 1);
 		
 	}
 
 	@AfterEach
 	void tearDown() throws Exception {
 		em.close();
-		post = null;
+		postVote = null;
 	}
 
 	@Test
-	@DisplayName("Test Post entity mapping")
+	@DisplayName("Test PostVote entity mapping")
 	void test1() {
-		assertNotNull(post);
-		assertEquals("DB design", post.getSubject());
-		assertEquals("DB design is an essential aspect of full stack applications", post.getContent());
-		assertEquals("DB design is an essential aspect of full stack applications", post.getContent());
-		assertTrue(post.getIsBlog());
-		assertFalse(post.getIsForumVisable());
-		assertFalse(post.getIsExpert());
-		
+		assertNotNull(postVote);
+		assertTrue(postVote.getVote());
 	}
-
 
 }

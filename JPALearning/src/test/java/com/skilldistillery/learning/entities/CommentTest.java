@@ -13,10 +13,11 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-class PostTest {
+class CommentTest {
+
 	private static EntityManagerFactory emf;
 	private EntityManager em;
-	private Post post;
+	private Comment comment;
 	
 	@BeforeAll
 	static void setUpBeforeClass() throws Exception {
@@ -31,28 +32,22 @@ class PostTest {
 	@BeforeEach
 	void setUp() throws Exception {
 		em = emf.createEntityManager();
-		post = em.find(Post.class, 1);
+		comment = em.find(Comment.class, 1);
 		
 	}
 
 	@AfterEach
 	void tearDown() throws Exception {
 		em.close();
-		post = null;
+		comment = null;
 	}
 
 	@Test
-	@DisplayName("Test Post entity mapping")
+	@DisplayName("Test Comment entity mapping")
 	void test1() {
-		assertNotNull(post);
-		assertEquals("DB design", post.getSubject());
-		assertEquals("DB design is an essential aspect of full stack applications", post.getContent());
-		assertEquals("DB design is an essential aspect of full stack applications", post.getContent());
-		assertTrue(post.getIsBlog());
-		assertFalse(post.getIsForumVisable());
-		assertFalse(post.getIsExpert());
+		assertNotNull(comment);
+		assertEquals("That is a ridiculous statement!", comment.getContent());
 		
 	}
-
 
 }

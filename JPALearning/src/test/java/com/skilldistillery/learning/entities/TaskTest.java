@@ -13,10 +13,10 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-class PostTest {
+class TaskTest {
 	private static EntityManagerFactory emf;
 	private EntityManager em;
-	private Post post;
+	private Task task;
 	
 	@BeforeAll
 	static void setUpBeforeClass() throws Exception {
@@ -31,28 +31,22 @@ class PostTest {
 	@BeforeEach
 	void setUp() throws Exception {
 		em = emf.createEntityManager();
-		post = em.find(Post.class, 1);
+		task = em.find(Task.class, 1);
 		
 	}
 
 	@AfterEach
 	void tearDown() throws Exception {
 		em.close();
-		post = null;
+		task = null;
 	}
 
 	@Test
-	@DisplayName("Test Post entity mapping")
+	@DisplayName("Test Task entity mapping")
 	void test1() {
-		assertNotNull(post);
-		assertEquals("DB design", post.getSubject());
-		assertEquals("DB design is an essential aspect of full stack applications", post.getContent());
-		assertEquals("DB design is an essential aspect of full stack applications", post.getContent());
-		assertTrue(post.getIsBlog());
-		assertFalse(post.getIsForumVisable());
-		assertFalse(post.getIsExpert());
-		
+		assertNotNull(task);
+		assertEquals("Complete Set Up", task.getName());
+		assertEquals("Go read a java book", task.getDescription());
 	}
-
 
 }

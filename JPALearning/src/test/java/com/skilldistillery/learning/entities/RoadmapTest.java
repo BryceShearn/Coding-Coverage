@@ -1,6 +1,7 @@
 package com.skilldistillery.learning.entities;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -13,46 +14,40 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-class PostTest {
+class RoadmapTest {
+
 	private static EntityManagerFactory emf;
 	private EntityManager em;
-	private Post post;
+	private Roadmap roadmap;
 	
 	@BeforeAll
 	static void setUpBeforeClass() throws Exception {
 		emf = Persistence.createEntityManagerFactory("LearningPU");
 	}
-
+	
 	@AfterAll
 	static void tearDownAfterClass() throws Exception {
 		emf.close();
 	}
-
+	
 	@BeforeEach
 	void setUp() throws Exception {
 		em = emf.createEntityManager();
-		post = em.find(Post.class, 1);
-		
+		roadmap = em.find(Roadmap.class, 1);
 	}
-
+	
 	@AfterEach
 	void tearDown() throws Exception {
 		em.close();
-		post = null;
+		roadmap = null;
 	}
-
+	
 	@Test
-	@DisplayName("Test Post entity mapping")
+	@DisplayName("Testing RoadMap Class Mappings")
 	void test1() {
-		assertNotNull(post);
-		assertEquals("DB design", post.getSubject());
-		assertEquals("DB design is an essential aspect of full stack applications", post.getContent());
-		assertEquals("DB design is an essential aspect of full stack applications", post.getContent());
-		assertTrue(post.getIsBlog());
-		assertFalse(post.getIsForumVisable());
-		assertFalse(post.getIsExpert());
-		
+		assertNotNull(roadmap);
+		assertEquals("Java Fundementals", roadmap.getName());
+		assertEquals(1, roadmap.getLanguageId());
+		assertEquals("Fundementals of Java", roadmap.getDescription());
 	}
-
-
 }

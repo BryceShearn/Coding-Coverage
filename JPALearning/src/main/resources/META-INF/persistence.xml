@@ -7,9 +7,14 @@
     <provider>org.hibernate.jpa.HibernatePersistenceProvider
     </provider>
     <!-- entities -->
+
     <class>com.skilldistillery.learning.entities.CodeConcept</class>
+    <class>com.skilldistillery.learning.entities.Comment</class>
     <class>com.skilldistillery.learning.entities.Post</class>
+    <class>com.skilldistillery.learning.entities.PostVote</class>
     <class>com.skilldistillery.learning.entities.User</class>
+    <class>com.skilldistillery.learning.entities.Roadmap</class>
+    <class>com.skilldistillery.learning.entities.Task</class>
     <class>com.skilldistillery.learning.entities.Language</class>
     <class>com.skilldistillery.learning.entities.Resource</class>
    
