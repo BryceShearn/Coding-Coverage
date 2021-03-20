@@ -8,6 +8,7 @@
     </provider>
     <!-- entities -->
     <class>com.skilldistillery.learning.entities.User</class>
+    <class>com.skilldistillery.learning.entities.Roadmap</class>
    
     <!-- entities -->
     <properties>
