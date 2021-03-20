@@ -7,8 +7,8 @@ desc language;
 desc post;
 desc post_has_language;
 desc post_vote;
-desc post_vote;
 desc roadmap;
+desc task;
 desc resource;
 desc resource_has_language;
 desc user;
@@ -17,6 +17,11 @@ desc user_roadmap_task;
 
 SELECT * FROM user;
 SELECT * FROM post;
+SELECT * FROM post_vote;
+SELECT * FROM comment_vote;
+SELECT * FROM comment;
+SELECT * FROM task;
+
 
 
 

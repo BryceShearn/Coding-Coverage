@@ -3,17 +3,23 @@ package com.skilldistillery.learning.entities;
 import java.time.LocalDateTime;
 
 import javax.persistence.Column;
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
-public class Commentvote {
+@Entity
+@Table(name="comment_vote")
+public class CommentVote {
 
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
-	private Integer vote;
+	
+	
+	private Boolean vote;
 	
 	@Column(name = "date_voted")
 	private LocalDateTime dateVoted;
@@ -25,12 +31,12 @@ public class Commentvote {
 	private int userId;
 
 	
-	public Commentvote() {
+	public CommentVote() {
 		super();
 	}
 
 	
-	public Commentvote(int id, Integer vote, LocalDateTime dateVoted, int commentId, int userId) {
+	public CommentVote(int id, Boolean vote, LocalDateTime dateVoted, int commentId, int userId) {
 		super();
 		this.id = id;
 		this.vote = vote;
@@ -48,11 +54,11 @@ public class Commentvote {
 		this.id = id;
 	}
 
-	public Integer getVote() {
+	public Boolean getVote() {
 		return vote;
 	}
 
-	public void setVote(Integer vote) {
+	public void setVote(Boolean vote) {
 		this.vote = vote;
 	}
 
@@ -101,7 +107,7 @@ public class Commentvote {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Commentvote other = (Commentvote) obj;
+		CommentVote other = (CommentVote) obj;
 		if (commentId != other.commentId)
 			return false;
 		if (dateVoted == null) {
