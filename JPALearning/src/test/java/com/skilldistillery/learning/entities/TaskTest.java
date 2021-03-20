@@ -48,5 +48,12 @@ class TaskTest {
 		assertEquals("Complete Set Up", task.getName());
 		assertEquals("Go read a java book", task.getDescription());
 	}
+	
+	@Test
+	@DisplayName("Test Task ManyToOne codeConcept Relationship")
+	void test2() {
+		assertNotNull(task);
+		assertEquals(1, task.getCodeConcept().getId());
+	}
 
 }

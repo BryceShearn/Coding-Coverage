@@ -2,6 +2,7 @@ package com.skilldistillery.learning.entities;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -47,5 +48,13 @@ public class CodeConceptTest {
 	void test1() {
 		assertNotNull(codeConcept);
 		assertEquals("Java Setup", codeConcept.getName());
+	}
+	
+	@Test
+	@DisplayName("Test CodeConcept OneToMany task Relationship")
+	void test4() {
+		assertNotNull(codeConcept);
+		assertEquals("Complete Set Up", codeConcept.getTask().get(0).getName());
+		
 	}
 }
