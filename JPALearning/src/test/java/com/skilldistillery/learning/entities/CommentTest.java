@@ -65,5 +65,13 @@ class CommentTest {
 		assertNotNull(comment);
 		assertEquals(1, comment.getPost().getId());
 	}
+	
+	@Test
+	@DisplayName("Test Comment OneToMany comment_vote Relationship")
+	void test4() {
+		assertNotNull(comment);
+		assertTrue(comment.getCommentVote().get(0).getVote());
+		
+	}
 
 }

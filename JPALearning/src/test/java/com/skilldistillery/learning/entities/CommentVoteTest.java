@@ -19,7 +19,7 @@ class CommentVoteTest {
 
 	private static EntityManagerFactory emf;
 	private EntityManager em;
-	private CommentVote commentvote;
+	private CommentVote commentVote;
 	
 	@BeforeAll
 	static void setUpBeforeClass() throws Exception {
@@ -34,22 +34,28 @@ class CommentVoteTest {
 	@BeforeEach
 	void setUp() throws Exception {
 		em = emf.createEntityManager();
-		commentvote = em.find(CommentVote.class, 1);
+		commentVote = em.find(CommentVote.class, 1);
 	}
 	
 	@AfterEach
 	void tearDown() throws Exception {
 		em.close();
-		commentvote = null;
+		commentVote = null;
 	}
 	
 	@Test
 	@DisplayName("Testing RoadMap Class Mappings")
 	void test1() {
-		assertNotNull(commentvote);
-		assertEquals(1, commentvote.getId());
-		assertTrue(commentvote.getVote());
-		assertEquals(1, commentvote.getCommentId());
-		assertEquals(2, commentvote.getUserId());
+		assertNotNull(commentVote);
+		assertEquals(1, commentVote.getId());
+		assertTrue(commentVote.getVote());
+		assertEquals(2, commentVote.getUserId());
+	}
+	
+	@Test
+	@DisplayName("Test PostVote ManyToOne post_id Relationship")
+	void test2() {
+		assertNotNull(commentVote);
+		assertEquals(1, commentVote.getComment().getId());
 	}
 }
