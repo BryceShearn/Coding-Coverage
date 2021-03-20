@@ -1,8 +1,6 @@
 package com.skilldistillery.learning.entities;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -15,10 +13,11 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-class UserTest {
+class CommentTest {
+
 	private static EntityManagerFactory emf;
 	private EntityManager em;
-	private User user;
+	private Comment comment;
 	
 	@BeforeAll
 	static void setUpBeforeClass() throws Exception {
@@ -33,26 +32,21 @@ class UserTest {
 	@BeforeEach
 	void setUp() throws Exception {
 		em = emf.createEntityManager();
-		user = em.find(User.class, 2);
+		comment = em.find(Comment.class, 1);
 		
 	}
 
 	@AfterEach
 	void tearDown() throws Exception {
 		em.close();
-		user = null;
+		comment = null;
 	}
 
 	@Test
 	@DisplayName("Test user entity mapping")
 	void test1() {
-		assertNotNull(user);
-		assertEquals("thwebel", user.getUsername());
-		assertEquals("password", user.getPassword());
-		assertEquals("Thomas", user.getFirstName());
-		assertEquals("Webel", user.getLastName());
-		assertTrue(user.getEnabled());
-		
+		assertNotNull(comment);
+		assertEquals("That is a ridiculous statement!", comment.getContent());
 		
 	}
 
