@@ -62,4 +62,11 @@ class RoadmapTest {
 		assertNotNull(roadmap);
 		assertEquals("Java", roadmap.getLanguage().getName());
 	}
+	@Test
+	@DisplayName("Testing Roadmap to language relationship")
+	void test4() {
+		assertNotNull(roadmap);
+		assertEquals("Java Setup", roadmap.getCodeConcepts().get(0).getName());
+		assertEquals("Set up Java", roadmap.getCodeConcepts().get(0).getDescription());
+	}
 }
