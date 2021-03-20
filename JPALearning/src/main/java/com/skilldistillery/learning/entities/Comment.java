@@ -25,8 +25,11 @@ public class Comment {
 	@Column(name="date_updated")
 	private LocalDateTime dateUpdated;
 	
+	@ManyToOne
+	@JoinColumn(name="user_id")
+	private User user;
+	
 	//TODO post_id Post obj relation 
-	//TODO user_id User obj relation 
 	
 	@ManyToOne
 	@JoinColumn(name="post_id")
@@ -76,12 +79,21 @@ public class Comment {
 		this.dateUpdated = dateUpdated;
 	}
 	
+
 	public Post getPost() {
 		return post;
 	}
 
 	public void setPost(Post post) {
 		this.post = post;
+	}
+	
+	public User getUser() {
+		return user;
+	}
+
+	public void setUser(User user) {
+		this.user = user;
 	}
 
 	@Override
