@@ -31,6 +31,10 @@ public class Comment {
 	
 	//TODO post_id Post obj relation 
 	
+	@ManyToOne
+	@JoinColumn(name="post_id")
+	private Post post;
+	
 	public Comment() {
 		super();
 	}
@@ -73,6 +77,15 @@ public class Comment {
 
 	public void setDateUpdated(LocalDateTime dateUpdated) {
 		this.dateUpdated = dateUpdated;
+	}
+	
+
+	public Post getPost() {
+		return post;
+	}
+
+	public void setPost(Post post) {
+		this.post = post;
 	}
 	
 	public User getUser() {

@@ -42,7 +42,7 @@ class PostTest {
 	}
 
 	@Test
-	@DisplayName("Test Post entity mapping")
+	@DisplayName("Test Post Entity Mapping")
 	void test1() {
 		assertNotNull(post);
 		assertEquals("DB design", post.getSubject());
@@ -51,6 +51,14 @@ class PostTest {
 		assertTrue(post.getIsBlog());
 		assertFalse(post.getIsForumVisable());
 		assertFalse(post.getIsExpert());
+		
+	}
+	
+	@Test
+	@DisplayName("Test Post OneToMany Comment Relationship")
+	void test2() {
+		assertNotNull(post);
+		assertEquals("That is a ridiculous statement!", post.getComments().get(0).getContent());
 		
 	}
 
