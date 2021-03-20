@@ -30,10 +30,14 @@ public class Resource {
 	private LocalDateTime dateAdded;
 
 	@ManyToMany
-	@JoinTable(name = "resource_has_language", joinColumns =
-	@JoinColumn(name = "resource_id"), inverseJoinColumns =
-	@JoinColumn(name = "language_id"))
+	@JoinTable(name = "resource_has_language",
+			   joinColumns = @JoinColumn(name = "resource_id"),
+			   inverseJoinColumns = @JoinColumn(name = "language_id")
+			   )
 	private List<Language> languages;
+	
+	@ManyToMany(mappedBy = "resources")
+	private List<Task> tasks;
 	
 // Methods
 	
@@ -104,6 +108,14 @@ public class Resource {
 
 	public void setLanguages(List<Language> languages) {
 		this.languages = languages;
+	}
+
+	public List<Task> getTasks() {
+		return tasks;
+	}
+
+	public void setTasks(List<Task> tasks) {
+		this.tasks = tasks;
 	}
 
 	@Override

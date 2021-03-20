@@ -50,10 +50,17 @@ public class ResourceTest {
 		}
 		
 		@Test
-		@DisplayName("Test resource to language relationship")
+		@DisplayName("Test resource to Language relationship")
 		void test2() {
 			assertNotNull(resource);
 			assertEquals("Java", resource.getLanguages().get(0).getName());
 			assertEquals("HTML", resource.getLanguages().get(1).getName());
+		}
+		@Test
+		@DisplayName("Test resource to Task relationship")
+		void test3() {
+			assertNotNull(resource);
+			assertEquals("Complete Set Up", resource.getTasks().get(0).getName());
+			assertEquals("Go read a java book", resource.getTasks().get(0).getDescription());
 		}
 }

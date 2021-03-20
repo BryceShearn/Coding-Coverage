@@ -48,5 +48,11 @@ class TaskTest {
 		assertEquals("Complete Set Up", task.getName());
 		assertEquals("Go read a java book", task.getDescription());
 	}
-
+	@Test
+	@DisplayName("Test Task to Resource relationship")
+	void test2() {
+		assertNotNull(task);
+		assertEquals("basic tutorial", task.getResources().get(0).getDescription());
+		assertEquals("easy", task.getResources().get(0).getDifficulty());
+	}
 }

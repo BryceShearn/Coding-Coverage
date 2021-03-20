@@ -1,9 +1,14 @@
 package com.skilldistillery.learning.entities;
 
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 
 @Entity
 public class Task {
@@ -16,9 +21,12 @@ public class Task {
 	
 	private String description;
 
-	// TODO code_concept id CodeConcept Relation
-
-	// Method
+	@ManyToMany
+	@JoinTable(name = "task_has_resource",
+			   joinColumns = @JoinColumn(name = "task_id"),
+			   inverseJoinColumns = @JoinColumn(name = "resource_id")
+			   )
+	private List<Resource> resources;
 	
 	public Task() {
 		super();
@@ -57,6 +65,14 @@ public class Task {
 
 	
 	
+	public List<Resource> getResources() {
+		return resources;
+	}
+
+	public void setResources(List<Resource> resources) {
+		this.resources = resources;
+	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
