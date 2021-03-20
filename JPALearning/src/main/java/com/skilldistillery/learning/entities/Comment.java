@@ -1,6 +1,8 @@
 package com.skilldistillery.learning.entities;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -9,6 +11,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Comment {
@@ -35,11 +38,34 @@ public class Comment {
 	@JoinColumn(name="post_id")
 	private Post post;
 	
+	@OneToMany(mappedBy="comment")
+	private List<CommentVote> commentVote;
+	
 	public Comment() {
 		super();
 	}
+	
+	public void addCommentVote(CommentVote vote) {
+		if(commentVote == null) commentVote = new ArrayList<>();
+		
+		if (!commentVote.contains(vote)) {
+			commentVote.add(vote);
+			if (vote.getComment() != null) {
+				vote.getComment().getCommentVote().remove(vote);
+			}
+			vote.setComment(this);
+		}
+	}
+	
+	public void removeCommentVote(CommentVote vote) {
+		vote.setComment(null);
+		if (commentVote != null) {
+			commentVote.remove(vote);
+		}
+	}
 
-	public Comment(int id, String content, LocalDateTime dateCreated, LocalDateTime dateUpdated, User user, Post post) {
+	public Comment(int id, String content, LocalDateTime dateCreated, LocalDateTime dateUpdated, User user, Post post,
+			List<CommentVote> commentVote) {
 		super();
 		this.id = id;
 		this.content = content;
@@ -47,6 +73,7 @@ public class Comment {
 		this.dateUpdated = dateUpdated;
 		this.user = user;
 		this.post = post;
+		this.commentVote = commentVote;
 	}
 
 	public int getId() {
@@ -98,6 +125,14 @@ public class Comment {
 		this.user = user;
 	}
 
+	public List<CommentVote> getCommentVote() {
+		return commentVote;
+	}
+
+	public void setCommentVote(List<CommentVote> commentVote) {
+		this.commentVote = commentVote;
+	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -122,11 +157,8 @@ public class Comment {
 
 	@Override
 	public String toString() {
-		StringBuilder builder = new StringBuilder();
-		builder.append("Comment [id=").append(id).append(", content=").append(content).append(", dateCreated=")
-				.append(dateCreated).append(", dateUpdated=").append(dateUpdated).append("]");
-		return builder.toString();
+		return "Comment [id=" + id + ", content=" + content + ", dateCreated=" + dateCreated + ", dateUpdated="
+				+ dateUpdated + ", user=" + user + ", post=" + post + ", commentVote=" + commentVote + "]";
 	}
-	
 	
 }
