@@ -24,22 +24,40 @@ public class Resource {
 	
 	private String description;
 	
+	private String difficulty;
+	
+	@Column(name="date_added")
+	private LocalDateTime dateAdded;
+
 	@ManyToMany
 	@JoinTable(name = "resource_has_language", joinColumns =
 	@JoinColumn(name = "resource_id"), inverseJoinColumns =
 	@JoinColumn(name = "language_id"))
 	private List<Language> languages;
 	
-
-	@Column(name="date_added")
-	private LocalDateTime dateAdded;
+// Methods
 	
-	private String difficulty;
-
 	public Resource() {
 		super();
 	}
-
+	
+// Add / Remove Language
+	public void addLanguage (Language language) {
+		if(languages == null) { 
+			languages = new ArrayList<>();
+		}
+		if(!languages.contains(language)) {
+			languages.add(language);
+		}
+	}
+	
+	public void removeLanguage(Language language) {
+		if(languages != null && languages.contains(language)) {
+			languages.remove(language);
+		}
+	}
+	
+// Get / Set
 	public int getId() {
 		return id;
 	}
