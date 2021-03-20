@@ -1,6 +1,7 @@
 package com.skilldistillery.learning.entities;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.Column;
@@ -29,6 +30,7 @@ public class Resource {
 	@JoinColumn(name = "language_id"))
 	private List<Language> languages;
 	
+
 	@Column(name="date_added")
 	private LocalDateTime dateAdded;
 	
