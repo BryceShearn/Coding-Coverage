@@ -459,6 +459,16 @@ COMMIT;
 
 
 -- -----------------------------------------------------
+-- Data for table `user_roadmap_task`
+-- -----------------------------------------------------
+START TRANSACTION;
+USE `codingcoveragedb`;
+INSERT INTO `user_roadmap_task` (`id`, `user_id`, `task_id`, `completed`, `start_date`, `end_date`) VALUES (1, 2, 1, 1, NULL, NULL);
+
+COMMIT;
+
+
+-- -----------------------------------------------------
 -- Data for table `post_vote`
 -- -----------------------------------------------------
 START TRANSACTION;

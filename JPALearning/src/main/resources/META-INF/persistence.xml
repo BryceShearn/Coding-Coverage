@@ -18,7 +18,7 @@
     <class>com.skilldistillery.learning.entities.Roadmap</class>
     <class>com.skilldistillery.learning.entities.Task</class>
     <class>com.skilldistillery.learning.entities.User</class>
-    <class>com.skilldistillery.learning.entities.Userroadmaptask</class>
+    <class>com.skilldistillery.learning.entities.UserRoadmapTask</class>
    
     <!-- entities -->
     <properties>

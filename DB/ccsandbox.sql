@@ -21,6 +21,7 @@ SELECT * FROM post_vote;
 SELECT * FROM comment_vote;
 SELECT * FROM comment;
 SELECT * FROM task;
+SELECT * FROM user_roadmap_task;
 
 
 

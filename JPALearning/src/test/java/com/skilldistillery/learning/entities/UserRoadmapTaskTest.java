@@ -1,7 +1,7 @@
 package com.skilldistillery.learning.entities;
 
-//import static org.junit.jupiter.api.Assertions.assertNotNull;
-//import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -11,14 +11,14 @@ import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
-//import org.junit.jupiter.api.DisplayName;
-//import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
 
-class UserroadmaptaskTest {
+class UserRoadmapTaskTest {
 
 	private static EntityManagerFactory emf;
 	private EntityManager em;
-	private Userroadmaptask userroadmaptask;
+	private UserRoadmapTask userroadmaptask;
 	
 	@BeforeAll
 	static void setUpBeforeClass() throws Exception {
@@ -33,7 +33,7 @@ class UserroadmaptaskTest {
 	@BeforeEach
 	void setUp() throws Exception {
 		em = emf.createEntityManager();
-		userroadmaptask = em.find(Userroadmaptask.class, 1);
+		userroadmaptask = em.find(UserRoadmapTask.class, 1);
 	}
 	
 	@AfterEach
@@ -42,19 +42,11 @@ class UserroadmaptaskTest {
 		userroadmaptask = null;
 	}
 	
-//	@Test
-//	@DisplayName("Testing RoadMap Class Mappings")
-//	void test1() {
-	
-// !--> Test needs to be established for LocalDateTime of start_date && end_date <--!
+	@Test
+	@DisplayName("Testing RoadMap Class Mappings")
+	void test1() {
+		assertNotNull(userroadmaptask);
+		assertTrue(userroadmaptask.getCompleted());
 
-//		assertEquals("", userroadmaptask);
-//		assertEquals("", userroadmaptask);
-//		assertEquals("", userroadmaptask);		
-//		assertEquals("", userroadmaptask);
-//		assertEquals("", userroadmaptask);
-//		assertEquals("", userroadmaptask);
-	
-
-//	}
+	}
 }

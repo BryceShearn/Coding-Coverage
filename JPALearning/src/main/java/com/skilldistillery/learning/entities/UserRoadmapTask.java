@@ -7,15 +7,18 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
-public class Userroadmaptask {
+@Table(name="user_roadmap_task")
+public class UserRoadmapTask {
 
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
-	private int completed;
+	
+	private boolean completed;
 	
 	@Column(name = "user_id")
 	private int userId;
@@ -30,12 +33,12 @@ public class Userroadmaptask {
 	private LocalDateTime endDate ;
 
 	
-	public Userroadmaptask() {
+	public UserRoadmapTask() {
 		super();
 	}
 
 	
-	public Userroadmaptask(int id, int completed, int userId, int taskId, LocalDateTime startDate,
+	public UserRoadmapTask(int id, boolean completed, int userId, int taskId, LocalDateTime startDate,
 			LocalDateTime endDate) {
 		super();
 		this.id = id;
@@ -55,11 +58,11 @@ public class Userroadmaptask {
 		this.id = id;
 	}
 
-	public int getCompleted() {
+	public boolean getCompleted() {
 		return completed;
 	}
 
-	public void setCompleted(int completed) {
+	public void setCompleted(boolean completed) {
 		this.completed = completed;
 	}
 
@@ -100,7 +103,6 @@ public class Userroadmaptask {
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + completed;
 		result = prime * result + ((endDate == null) ? 0 : endDate.hashCode());
 		result = prime * result + id;
 		result = prime * result + ((startDate == null) ? 0 : startDate.hashCode());
@@ -117,7 +119,7 @@ public class Userroadmaptask {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Userroadmaptask other = (Userroadmaptask) obj;
+		UserRoadmapTask other = (UserRoadmapTask) obj;
 		if (completed != other.completed)
 			return false;
 		if (endDate == null) {
