@@ -1,5 +1,6 @@
 package com.skilldistillery.learning.entities;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
@@ -43,10 +44,18 @@ class UserRoadmapTaskTest {
 	}
 	
 	@Test
-	@DisplayName("Testing RoadMap Class Mappings")
+	@DisplayName("Testing UserRoadmapTask Class Mappings")
 	void test1() {
 		assertNotNull(userroadmaptask);
 		assertTrue(userroadmaptask.getCompleted());
 
+	}
+	@Test
+	@DisplayName("Testing UserRoadmapTask to user relationship")
+	void test2() {
+		assertNotNull(userroadmaptask);
+		assertEquals("Thomas",userroadmaptask.getUser().getFirstName());
+		assertEquals("thwebel",userroadmaptask.getUser().getUsername());
+		
 	}
 }
