@@ -2,6 +2,7 @@ package com.skilldistillery.learning.entities;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -32,7 +33,7 @@ class UserTest {
 	@BeforeEach
 	void setUp() throws Exception {
 		em = emf.createEntityManager();
-		user = em.find(User.class, 1);
+		user = em.find(User.class, 2);
 		
 	}
 
@@ -44,9 +45,14 @@ class UserTest {
 
 	@Test
 	@DisplayName("Test user entity mapping")
-	void test() {
+	void test1() {
 		assertNotNull(user);
-		assertEquals("admin", user.getUsername());
+		assertEquals("thwebel", user.getUsername());
+		assertEquals("password", user.getPassword());
+		assertEquals("Thomas", user.getFirstName());
+		assertEquals("Webel", user.getLastName());
+		assertTrue(user.getEnabled());
+		
 		
 	}
 
