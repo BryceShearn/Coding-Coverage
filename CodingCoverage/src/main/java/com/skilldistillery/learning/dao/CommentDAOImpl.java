@@ -10,6 +10,7 @@ public class CommentDAOImpl implements CommentDAO {
 	@Override
 	public Comment findById(int commentId) {
 		// TODO Auto-generated method stub
+		System.out.println("This");
 		return null;
 	}
 
