@@ -8,8 +8,8 @@ import com.skilldistillery.learning.entities.User;
 public interface CommentDAO {
 	
 	Comment findById(int commentId);
-	// This will be useful!
-	Comment findByUser(User user);
+	
+	List<Comment> findByUser(User user);
 	
 	List<Comment> findAll();
 	
