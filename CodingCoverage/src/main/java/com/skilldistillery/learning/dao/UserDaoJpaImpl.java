@@ -65,9 +65,15 @@ public class UserDaoJpaImpl implements UserDAO {
 	// archive 
 	@Override
 	public boolean archiveUser(User targetUser) {
+		User tempUser = null;
 		targetUser.setEnabled(false);
-		em.merge(targetUser);
-		return false;
+		tempUser = em.merge(targetUser);
+		
+		if (tempUser.getEnabled()) {
+			return false;
+		}
+		
+		return true;
 	}
 
 }
