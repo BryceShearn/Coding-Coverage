@@ -16,6 +16,6 @@ public class HomeController {
 	@RequestMapping(path= { "/", "home.do"})
 	public String home(Model model) {
 		model.addAttribute("TEST", userDao.findById(1));
-		return "index";
+		return "home/LoginCreateAcc";
 	}
 }
