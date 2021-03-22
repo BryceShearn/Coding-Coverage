@@ -8,4 +8,5 @@ public interface PostVoteDAO {
 
 	PostVote updatePostVote(PostVote updatedVote);
 
+	boolean deletePostVote(PostVote targetVote);
 }

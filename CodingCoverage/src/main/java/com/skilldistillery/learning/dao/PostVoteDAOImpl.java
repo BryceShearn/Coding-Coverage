@@ -22,4 +22,9 @@ public class PostVoteDAOImpl implements PostVoteDAO {
 		return null;
 	}
 
+// delete vote method	
+	@Override
+	public boolean deletePostVote(PostVote targetVote) {
+		return false;
+	}
 }
