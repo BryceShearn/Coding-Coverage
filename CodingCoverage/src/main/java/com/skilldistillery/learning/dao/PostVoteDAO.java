@@ -6,4 +6,6 @@ public interface PostVoteDAO {
 
 	PostVote createPostVote(PostVote newVote);
 
+	PostVote updatePostVote(PostVote updatedVote);
+
 }

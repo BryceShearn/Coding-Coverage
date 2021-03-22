@@ -15,4 +15,11 @@ public class PostVoteDAOImpl implements PostVoteDAO {
 	public PostVote createPostVote(PostVote newVote) {
 		return null;
 	}
+
+// update vote method	
+	@Override
+	public PostVote updatePostVote(PostVote updatedVote) {
+		return null;
+	}
+
 }
