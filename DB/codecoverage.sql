@@ -387,6 +387,19 @@ COMMIT;
 START TRANSACTION;
 USE `codingcoveragedb`;
 INSERT INTO `resource` (`id`, `link`, `description`, `date_added`, `difficulty`) VALUES (1, 'https://www.tutorialspoint.com/java/java_environment_setup.htm', 'basic tutorial', NULL, 'easy');
+INSERT INTO `resource` (`id`, `link`, `description`, `date_added`, `difficulty`) VALUES (2, 'https://www.oracle.com/java/technologies/javase/javase-jdk8-downloads.html', 'Download Java 8 here!', NULL, 'easy');
+INSERT INTO `resource` (`id`, `link`, `description`, `date_added`, `difficulty`) VALUES (3, 'https://www.geeksforgeeks.org/differences-jdk-jre-jvm/', 'Desc: JDK, JRE, and JVM described', NULL, 'easy');
+INSERT INTO `resource` (`id`, `link`, `description`, `date_added`, `difficulty`) VALUES (4, 'https://www.freecodecamp.org/news/best-java-8-tutorial/', 'Detailed JDK download guide, along with terminal commands', NULL, 'intermediate');
+INSERT INTO `resource` (`id`, `link`, `description`, `date_added`, `difficulty`) VALUES (5, 'https://atom.io/', 'Download Atom here!', NULL, 'easy');
+INSERT INTO `resource` (`id`, `link`, `description`, `date_added`, `difficulty`) VALUES (6, 'https://www.codecademy.com/articles/what-is-an-ide', 'What an IDE brings to the table', NULL, 'easy');
+INSERT INTO `resource` (`id`, `link`, `description`, `date_added`, `difficulty`) VALUES (7, 'https://www.infoworld.com/article/3114167/choosing-your-java-ide.html', 'Compares and contrasts three advanced Java IDEs', NULL, 'Advanced');
+INSERT INTO `resource` (`id`, `link`, `description`, `date_added`, `difficulty`) VALUES (8, 'https://www.vogella.com/tutorials/Eclipse/article.html', 'In-depth Eclipse (an advanced IDE)  download and setup guide', NULL, 'Intermediate');
+INSERT INTO `resource` (`id`, `link`, `description`, `date_added`, `difficulty`) VALUES (9, 'https://medium.com/@grace.m.nolan/terminal-for-beginners-e492ba10902a', 'Quick guide to the common commands', NULL, 'easy');
+INSERT INTO `resource` (`id`, `link`, `description`, `date_added`, `difficulty`) VALUES (10, 'https://ubuntu.com/tutorials/command-line-for-beginners#4-creating-folders-and-files', 'In depth introduction to the Linux command line interface', NULL, 'Intermediate');
+INSERT INTO `resource` (`id`, `link`, `description`, `date_added`, `difficulty`) VALUES (11, 'https://www.codecademy.com/articles/command-line-commands#:~:text=The%20command%20line%20is%20a,or%20Finder%20on%20Mac%20OS', 'List of useful Commands', NULL, 'easy');
+INSERT INTO `resource` (`id`, `link`, `description`, `date_added`, `difficulty`) VALUES (12, 'https://www.geeksforgeeks.org/beginning-java-programming-with-hello-world-example/', 'Basic description of HelloWorld and the terminal commands to compile and run a java program.', NULL, 'easy');
+INSERT INTO `resource` (`id`, `link`, `description`, `date_added`, `difficulty`) VALUES (13, 'https://en.wikiversity.org/wiki/Java_Tutorial/Hello_World', 'Clear guide for writing, compiling, and running HelloWorld', NULL, 'easy');
+INSERT INTO `resource` (`id`, `link`, `description`, `date_added`, `difficulty`) VALUES (14, 'https://docs.oracle.com/javase/tutorial/getStarted/cupojava/unix.html', 'Step-by-step guide for making a new directory and running your HelloWorld program!', NULL, 'easy');
 
 COMMIT;
 
@@ -406,7 +419,10 @@ COMMIT;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `codingcoveragedb`;
-INSERT INTO `roadmap` (`id`, `name`, `language_id`, `description`) VALUES (1, 'Java Fundementals', 1, 'Fundementals of Java');
+INSERT INTO `roadmap` (`id`, `name`, `language_id`, `description`) VALUES (1, 'Java Fundementals', 1, 'Learn the fundemental aspect of Java! This roadmap will guide you through your first Java program while establishing key concepts along the way.');
+INSERT INTO `roadmap` (`id`, `name`, `language_id`, `description`) VALUES (2, 'HTML Fundementals', 2, 'Interested in web design? Start here with the fundementals of HTML. Our HTML road map will have you creating webpages in no time!');
+INSERT INTO `roadmap` (`id`, `name`, `language_id`, `description`) VALUES (3, 'CSS Fundementals', 3, 'Got an eye for design and have the basics of HTML down? Let\'s spruce up those dreary webpages with some CSS! Follow this roadmap for easy CSS setup and essentail CSS concepts.');
+INSERT INTO `roadmap` (`id`, `name`, `language_id`, `description`) VALUES (4, 'SQL Fundementals', 4, 'Storing massive amounts of information and retrieving pinpoint accurate results is easy with SQL. This roadmap will make setup a breeze and have you querying for data in no time!');
 
 COMMIT;
 
@@ -416,7 +432,7 @@ COMMIT;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `codingcoveragedb`;
-INSERT INTO `code_concept` (`id`, `name`, `roadmap_id`, `description`) VALUES (1, 'Java Setup', 1, 'Set up Java');
+INSERT INTO `code_concept` (`id`, `name`, `roadmap_id`, `description`) VALUES (1, 'Java Setup and First Steps', 1, 'Description: Setup your coding environment and download necessary dependencies, i.e. make sure your tire has wheels before trying to drive.');
 
 COMMIT;
 
@@ -426,7 +442,10 @@ COMMIT;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `codingcoveragedb`;
-INSERT INTO `task` (`id`, `name`, `description`, `code_concept_id`) VALUES (1, 'Complete Set Up', 'Go read a java book', 1);
+INSERT INTO `task` (`id`, `name`, `description`, `code_concept_id`) VALUES (1, 'Download Java 8 and research the JDK.', 'Download Java 8. Then describe the JRE, Java, Javac, Jar, and Javadoc.', 1);
+INSERT INTO `task` (`id`, `name`, `description`, `code_concept_id`) VALUES (2, 'Download an IDE', 'Download an IDE (we recommend Atom or Eclipse). Be able to describe what IDEs are and the benefits they bring.', 1);
+INSERT INTO `task` (`id`, `name`, `description`, `code_concept_id`) VALUES (3, 'Demystify The Terminal', 'Navigate, examine, and manipulate your file system with simple terminal commands. Describe what a directory is, make one, make a new terminal window and navigate to that directory.', 1);
+INSERT INTO `task` (`id`, `name`, `description`, `code_concept_id`) VALUES (4, 'Write HelloWorld', 'Create, compile, and run your first java program! So IDEs will allow you to run your programs within them, but we suggest you compile and run your first programs through the command line.', 1);
 
 COMMIT;
 
@@ -477,6 +496,19 @@ COMMIT;
 START TRANSACTION;
 USE `codingcoveragedb`;
 INSERT INTO `task_has_resource` (`task_id`, `resource_id`) VALUES (1, 1);
+INSERT INTO `task_has_resource` (`task_id`, `resource_id`) VALUES (1, 2);
+INSERT INTO `task_has_resource` (`task_id`, `resource_id`) VALUES (1, 3);
+INSERT INTO `task_has_resource` (`task_id`, `resource_id`) VALUES (1, 4);
+INSERT INTO `task_has_resource` (`task_id`, `resource_id`) VALUES (2, 5);
+INSERT INTO `task_has_resource` (`task_id`, `resource_id`) VALUES (2, 6);
+INSERT INTO `task_has_resource` (`task_id`, `resource_id`) VALUES (2, 7);
+INSERT INTO `task_has_resource` (`task_id`, `resource_id`) VALUES (2, 8);
+INSERT INTO `task_has_resource` (`task_id`, `resource_id`) VALUES (3, 9);
+INSERT INTO `task_has_resource` (`task_id`, `resource_id`) VALUES (3, 10);
+INSERT INTO `task_has_resource` (`task_id`, `resource_id`) VALUES (3, 11);
+INSERT INTO `task_has_resource` (`task_id`, `resource_id`) VALUES (4, 12);
+INSERT INTO `task_has_resource` (`task_id`, `resource_id`) VALUES (4, 13);
+INSERT INTO `task_has_resource` (`task_id`, `resource_id`) VALUES (4, 14);
 
 COMMIT;
 

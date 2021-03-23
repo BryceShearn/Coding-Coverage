@@ -26,7 +26,7 @@ class ResourceDAOTest {
 		Language lang = new Language();
 		lang.setName("Java");
 		lang.setId(1);
-		List<Resource> resources = resourceDAO.filterByLanguageAndKeyword("basic", lang);
+		List<Resource> resources = resourceDAO.filterByLanguageAndKeyword("basic", 1);
 		assertNotNull(resources);
 		assertTrue(resources.size() > 0);
 		assertEquals("easy", resources.get(0).getDifficulty());
@@ -39,5 +39,6 @@ class ResourceDAOTest {
 		assertEquals(1, resources.get(0).getId());
 		assertEquals("easy", resources.get(0).getDifficulty());
 	}
+	
 
 }

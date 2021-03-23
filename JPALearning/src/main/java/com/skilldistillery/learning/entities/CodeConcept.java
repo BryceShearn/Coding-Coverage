@@ -128,8 +128,7 @@ public class CodeConcept {
 
 	@Override
 	public String toString() {
-		return "CodeConcept [id=" + id + ", name=" + name + ", description=" + description + ", roadmap=" + roadmap
-				+ ", task=" + task + "]";
+		return "CodeConcept [id=" + id + ", name=" + name + ", description=" + description + "]";
 	}
 
 }

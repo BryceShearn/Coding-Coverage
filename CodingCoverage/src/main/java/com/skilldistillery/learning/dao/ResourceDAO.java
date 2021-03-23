@@ -9,5 +9,5 @@ public interface ResourceDAO {
 	
 	List<Resource> findAll();
 	
-	List<Resource> filterByLanguageAndKeyword(String keyword, Language language);
+	List<Resource> filterByLanguageAndKeyword(String keyword, Integer languageId);
 }

@@ -47,14 +47,14 @@ public class CodeConceptTest {
 	@DisplayName("Testing Codeconcept Mappings")
 	void test1() {
 		assertNotNull(codeConcept);
-		assertEquals("Java Setup", codeConcept.getName());
+		assertEquals("Java Setup and First Steps", codeConcept.getName());
 	}
 	
 	@Test
 	@DisplayName("Test CodeConcept OneToMany task Relationship")
 	void test4() {
 		assertNotNull(codeConcept);
-		assertEquals("Complete Set Up", codeConcept.getTask().get(0).getName());
+		assertEquals("Download Java 8 and research the JDK.", codeConcept.getTask().get(0).getName());
 		
 	}
 }

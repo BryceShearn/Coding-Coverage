@@ -45,8 +45,8 @@ class TaskTest {
 	@DisplayName("Test Task entity mapping")
 	void test1() {
 		assertNotNull(task);
-		assertEquals("Complete Set Up", task.getName());
-		assertEquals("Go read a java book", task.getDescription());
+		assertEquals("Download Java 8 and research the JDK.", task.getName());
+		assertEquals("Download Java 8. Then describe the JRE, Java, Javac, Jar, and Javadoc.", task.getDescription());
 	}
 
 	@Test
