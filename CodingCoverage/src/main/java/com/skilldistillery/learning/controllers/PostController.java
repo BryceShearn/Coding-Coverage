@@ -26,16 +26,16 @@ public class PostController {
 		return "forms/ViewForum";
 	}
 	
-	@RequestMapping(path="ViewForum.do")
+	@RequestMapping(path="ViewExpertForum.do")
 	public String viewExpertForum(Model model) {
 		model.addAttribute("post", postDAO.findAll());
-		return "forms/ViewForum";
+		return "forms/ViewExpertForum";
 	}
 	
-	@RequestMapping(path="searchFilters.do", params= {"keyword", "language_id"})
+	@RequestMapping(path="searchFiltersExpertForum.do", params= {"keyword", "language_id"})
 	public String searchFiltersExpertForum(String keyword, @RequestParam("language_id")Integer languageId, Model model) {
 		model.addAttribute("post", postDAO.filterByLanguageAndKeyword(keyword, languageId));
-		return "forms/ViewForum";
+		return "forms/ViewExpertForum"; //TEST
 	}
 
 	
