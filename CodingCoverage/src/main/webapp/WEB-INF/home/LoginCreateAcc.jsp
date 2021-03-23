@@ -5,8 +5,12 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<meta charset="utf-8">
+		 <!-- meta tags -->
+    	<meta charset="utf-8">
+    	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes">
 		<title>Coding Coverage Login Page</title>
+		<!--  FavIcon Insert -->
+		<link rel="shortcut icon" type="image/jpg" href="images/codingCoverage.png"/>
 		<!-- Internal Resources -->
 		<link rel="stylesheet" href="css/index.css">
 	</head>
@@ -17,14 +21,16 @@
      				<h2 class ="animation a1"><img src="images/codingCoverage.png" alt="Coding Coverage Logo" width="200" height="175"></h2><br>
      				<h2 class="animation a1">Coding Coverage</h2>
       				<h4 class="animation a2"><b>Being a self-taught programmer is hard</b></h4>
-      				<h4 class="animation a2"><b>and it's easy to get lost.</b></h4>
-    				<h4 class="animation a2"><b>Let us be your light through the darkness.</b></h4>
+      				<h4 class="animation a2"><b>and it's easy to get lost along the way.</b></h4>
+    				<h4 class="animation a2"><b>Let us be your light in the dark</b></h4>
     			</div>
     			<div class="form">
-      				<input type="email" class="form-field animation a3" placeholder="Username">
+      				<form action="${testPath}/testpath" method="POST">
+      				<input type="text" th:field="*{username}" class="form-field animation a3" placeholder="Username">
       				<input type="password" class="form-field animation a4" placeholder="Password">
+     				</form>
       				<p class="animation a5"><a href="#">Forgot Password</a></p>
-      				<button class="animation a6">LOGIN</button>
+      			ß	<button class="animation a6">LOGIN</button>
       				<button class="animation a7">SIGN UP</button>
      			</div>
   			</div>
