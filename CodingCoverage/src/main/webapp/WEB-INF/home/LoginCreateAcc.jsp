@@ -30,12 +30,13 @@
       				<input type="text" th:value="${username}" id="username" class="form-field animation a3" placeholder="Username">
       				<input type="password" th:value="${password}" id="password" class="form-field animation a4" placeholder="Password">
      				</form>
+      				<button type="submit" name = "submit" value = "value" class="animation a6">LOGIN</button>
       				<!-- /\ end post request for username and password /\ -->
       				<p class="animation a5"><a href="#">Forgot Password</a></p>
       				<!-- \/ This is the link that sends the post request \/ -->
-      				<button type="submit" name = "submit" value = "value" class="animation a6">LOGIN</button>
       				<!-- \/ needs to be moved to it's own page exactly replicated for user account creation unless shortcut found \/ -->
       				<button type="submit" name = "submit" value = "value" class="animation a7">SIGN UP</button>
+     			<a HREF="/results/ProfilePage.jsp">Profile Page</a>
      			</div>
   			</div>
 		</div>
