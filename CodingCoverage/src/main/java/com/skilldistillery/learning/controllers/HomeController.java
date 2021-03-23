@@ -19,11 +19,7 @@ public class HomeController {
 		model.addAttribute("TEST", userDao.findById(1));
 		return "home/LoginCreateAcc";
 	}
-	@RequestMapping(path="createAccountForm.do", method = RequestMethod.GET)
-	public String createAccountPage(Model model) {
-		
-		return "forms/CreateAccount";
-	}
+	
 	@RequestMapping(path="profilePageResults.do", method = RequestMethod.GET)
 	public String profilePage(Model model) {
 		
