@@ -25,13 +25,17 @@
     				<h4 class="animation a2"><b>Let us be your light in the dark</b></h4>
     			</div>
     			<div class="form">
-      				<form action="${testPath}/testpath" method="POST">
-      				<input type="text" th:field="*{username}" class="form-field animation a3" placeholder="Username">
-      				<input type="password" class="form-field animation a4" placeholder="Password">
+      				<!-- \/ begin post request for username and password \/ -->
+      				<form action="${testPath}/testpath" method="POST"> 
+      				<input type="text" th:value="${username}" id="username" class="form-field animation a3" placeholder="Username">
+      				<input type="password" th:value="${password}" id="password" class="form-field animation a4" placeholder="Password">
      				</form>
+      				<!-- /\ end post request for username and password /\ -->
       				<p class="animation a5"><a href="#">Forgot Password</a></p>
-      			ß	<button class="animation a6">LOGIN</button>
-      				<button class="animation a7">SIGN UP</button>
+      				<!-- \/ This is the link that sends the post request \/ -->
+      				<button type="submit" name = "submit" value = "value" class="animation a6">LOGIN</button>
+      				<!-- \/ needs to be moved to it's own page exactly replicated for user account creation unless shortcut found \/ -->
+      				<button type="submit" name = "submit" value = "value" class="animation a7">SIGN UP</button>
      			</div>
   			</div>
 		</div>
