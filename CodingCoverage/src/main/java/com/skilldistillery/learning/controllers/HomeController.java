@@ -24,4 +24,9 @@ public class HomeController {
 		
 		return "forms/CreateAccount";
 	}
+	@RequestMapping(path="profilePageResults.do", method = RequestMethod.GET)
+	public String profilePage(Model model) {
+		
+		return "results/ProfilePage";
+	}
 }
