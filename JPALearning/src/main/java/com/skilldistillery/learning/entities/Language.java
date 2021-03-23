@@ -16,7 +16,7 @@ public class Language {
 	private String name;
 	
 	@Column(name="image_url")
-	private String string;
+	private String imageUrl;
 	
 	private String description;
 
@@ -40,20 +40,20 @@ public class Language {
 		this.name = name;
 	}
 
-	public String getString() {
-		return string;
-	}
-
-	public void setString(String string) {
-		this.string = string;
-	}
-
 	public String getDescription() {
 		return description;
 	}
 
 	public void setDescription(String description) {
 		this.description = description;
+	}
+
+	public String getImageUrl() {
+		return imageUrl;
+	}
+
+	public void setImageUrl(String imageUrl) {
+		this.imageUrl = imageUrl;
 	}
 
 	@Override
@@ -80,8 +80,8 @@ public class Language {
 
 	@Override
 	public String toString() {
-		return "Language [id=" + id + ", name=" + name + ", string=" + string + ", description=" + description + "]";
+		return "Language [id=" + id + ", name=" + name + ", imageUrl=" + imageUrl + ", description=" + description
+				+ "]";
 	}
 
-	
 }

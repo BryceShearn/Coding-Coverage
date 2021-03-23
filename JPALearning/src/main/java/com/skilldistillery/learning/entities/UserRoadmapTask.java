@@ -150,11 +150,8 @@ public class UserRoadmapTask {
 
 	@Override
 	public String toString() {
-		StringBuilder builder = new StringBuilder();
-		builder.append("UserRoadmapTask [id=").append(id).append(", completed=").append(completed)
-				.append(", startDate=").append(startDate).append(", endDate=").append(endDate).append(", user=")
-				.append(user).append(", task=").append(task).append("]");
-		return builder.toString();
+		return "UserRoadmapTask [id=" + id + ", completed=" + completed + ", startDate=" + startDate + ", endDate="
+				+ endDate + ", user=" + user + ", task=" + task + "]";
 	}
 
 	

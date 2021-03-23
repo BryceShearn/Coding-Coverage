@@ -125,6 +125,6 @@ public class PostVote {
 
 	@Override
 	public String toString() {
-		return "PostVote [id=" + id + ", dateVoted=" + dateVoted + ", vote=" + vote + ", post=" + post + "]";
+		return "PostVote [id=" + id + ", dateVoted=" + dateVoted + ", vote=" + vote + "]";
 	}
 }

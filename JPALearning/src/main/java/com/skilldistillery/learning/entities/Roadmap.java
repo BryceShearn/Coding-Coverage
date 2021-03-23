@@ -174,10 +174,7 @@ public Roadmap(int id, String name, String description, Language language, List<
 
 		@Override
 		public String toString() {
-			StringBuilder builder = new StringBuilder();
-			builder.append("Roadmap [id=").append(id).append(", name=").append(name).append(", description=")
-					.append(description).append(", language=").append(language).append(", users=").append(users)
-					.append("]");
-			return builder.toString();
+			return "Roadmap [id=" + id + ", name=" + name + ", description=" + description + ", language=" + language
+					+ "]";
 		}
 }
