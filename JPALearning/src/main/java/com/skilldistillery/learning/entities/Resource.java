@@ -142,8 +142,8 @@ public class Resource {
 
 	@Override
 	public String toString() {
-		return "Resource [id=" + id + ", link=" + link + ", description=" + description + ", dateAdded=" + dateAdded
-				+ ", difficulty=" + difficulty + "]";
+		return "Resource [id=" + id + ", link=" + link + ", description=" + description + ", difficulty=" + difficulty
+				+ ", dateAdded=" + dateAdded + "]";
 	}
 	
 	

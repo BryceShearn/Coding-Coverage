@@ -214,8 +214,8 @@ public class Post {
 	@Override
 	public String toString() {
 		return "Post [id=" + id + ", subject=" + subject + ", content=" + content + ", dateCreated=" + dateCreated
-				+ ", lastUpdate=" + lastUpdate + ", comments=" + comments + ", isBlog=" + isBlog + ", isForumVisable="
-				+ isForumVisable + ", isExpert=" + isExpert + ", language=" + language + ", postVote=" + postVote + "]";
+				+ ", lastUpdate=" + lastUpdate + ", isBlog=" + isBlog + ", isForumVisable=" + isForumVisable
+				+ ", isExpert=" + isExpert + "]";
 	}
 	
 }
