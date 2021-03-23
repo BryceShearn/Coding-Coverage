@@ -9,7 +9,7 @@
 
 .loginPage .container {
   display: inline-flex;
-  height: 100vh;
+  height: 90vh;
   flex: 1 1 auto;
   margin: 2rem;
 }
@@ -33,12 +33,7 @@
   display: inline-flex;
   transition: 1s;
   background: center / cover no-repeat url(https://images.unsplash.com/photo-1550745165-9bc0b252726f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2250&q=80);
-}
-
-.loginPage .href {
- 
-  
-}
+}  
 
 .loginPage .header > h2 {
   margin: 0;
@@ -49,7 +44,7 @@
   margin-top: 10px;
   font-weight: normal;
   font-size: 15px;
-  color: rgba(0, 0, 0, 0.4);
+  color: rgba(0, 0, 0, 0.6);
 }
 
 .loginPage .form {
@@ -128,7 +123,7 @@
    animation-delay: 2.6s;
 }
 
-/* @keyframes .loginPage .move {
+ @keyframes move {
   0% {
     opacity: 0;
     visibility: hidden;
@@ -142,7 +137,7 @@
   }
 }
 
-@keyframes .loginPage .left {
+@keyframes left {
   0% {
     opacity: 0;
     width: 0;
@@ -151,6 +146,6 @@
   100% {
     opacity: 1;
     padding: 20px 40px;
-    width: 440px;
-  } */
+    width: 305px;
+  }
 }

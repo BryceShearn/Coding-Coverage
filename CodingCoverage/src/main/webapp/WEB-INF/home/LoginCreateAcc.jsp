@@ -14,12 +14,14 @@
 		<div class="container">
   			<div class="left">
     			<div class="header">
-<!--     				<h2><img src="images/codingCoverage.png" alt="Coding Coverage Logo" width="500" height="600"></h2> Needs to link to internal image -->
+     				<h2 class ="animation a1"><img src="images/codingCoverage.png" alt="Coding Coverage Logo" width="200" height="175"></h2><br>
      				<h2 class="animation a1">Coding Coverage</h2>
-      				<h4 class="animation a2"><br>Being a self-taught programmer is hard.<br>Let us be your light in the dark.<br><br><br> Log in to your account using your email and password<br><br></h4>
+      				<h4 class="animation a2"><b>Being a self-taught programmer is hard</b></h4>
+      				<h4 class="animation a2"><b>and it's easy to get lost.</b></h4>
+    				<h4 class="animation a2"><b>Let us be your light through the darkness.</b></h4>
     			</div>
     			<div class="form">
-      				<input type="email" class="form-field animation a3" placeholder="Email Address">
+      				<input type="email" class="form-field animation a3" placeholder="Username">
       				<input type="password" class="form-field animation a4" placeholder="Password">
       				<p class="animation a5"><a href="#">Forgot Password</a></p>
       				<button class="animation a6">LOGIN</button>
