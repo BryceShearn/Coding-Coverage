@@ -5,7 +5,6 @@
 .loginPage {
   font-family: 'Rubik', sans-serif;
   display: flex;
-  background: black;
 }
 
 .loginPage .container {
@@ -78,7 +77,6 @@
   outline: 0;
   transition: 0.2s;
   margin-top: 20px;
-  background: linear-gradient(to right, #6914e1 0%, #db4a6c 100%);
 }
 
 ::placeholder { 
