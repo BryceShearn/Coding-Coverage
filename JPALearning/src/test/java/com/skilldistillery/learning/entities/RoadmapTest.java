@@ -47,7 +47,7 @@ class RoadmapTest {
 	void test1() {
 		assertNotNull(roadmap);
 		assertEquals("Java Fundementals", roadmap.getName());
-		assertEquals("Fundementals of Java", roadmap.getDescription());
+		assertEquals("Learn the fundemental aspect of Java! This roadmap will guide you through your first Java program while establishing key concepts along the way.", roadmap.getDescription());
 	}
 	@Test
 	@DisplayName("Testing Roadmap to User relationship")
@@ -66,7 +66,7 @@ class RoadmapTest {
 	@DisplayName("Testing Roadmap to language relationship")
 	void test4() {
 		assertNotNull(roadmap);
-		assertEquals("Java Setup", roadmap.getCodeConcepts().get(0).getName());
-		assertEquals("Set up Java", roadmap.getCodeConcepts().get(0).getDescription());
+		assertEquals("Java Setup and First Steps", roadmap.getCodeConcepts().get(0).getName());
+		assertEquals("Description: Setup your coding environment and download necessary dependencies, i.e. make sure your tire has wheels before trying to drive.", roadmap.getCodeConcepts().get(0).getDescription());
 	}
 }
