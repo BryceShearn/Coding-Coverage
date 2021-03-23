@@ -14,6 +14,51 @@
     <link rel="shortcut icon" type="image/jpg" href="images/codingCoverage.png"/>
   </head>
   <body>
+  
+  <h3> Expert Forum </h3>
+  <br>
+  <form action="searchFiltersExpertForum.do" method="GET">
+  <input class="search" type="text" name="keyword" placeholder="Search" />
+  <select class="language"
+  name="language_id" id="Language">
+  <option value="1">Java</option>
+  <option value="2">HTML</option>
+  <option value="3">CSS</option>
+<!-- <option value="4">SQL</option> -->
+  </select>
+  <input class="button" type="submit" value="Search Forum" />
+  </form>
+  <br>
+  
+  <c:choose>
+  <c:when test="${empty post}">
+  Your search criteria did not return any results. Please Try Again.
+  </c:when>
+  <c:otherwise>
+
+  <c:forEach var="p" items="${post}">
+  <c:choose>
+  <c:when test="${p.isExpert}">
+  ${p.user}
+  <br>
+  ${p.subject}
+  <br>
+  ${p.content}
+  <br>  
+  ${p.dateCreated}
+  <br>  
+  ${p.lastUpdate}
+  <br>  
+  ${p.comments}  
+  <br>  
+  ${p.language}  
+  <br>  
+  ${p.postVote}
+  </c:when>
+  </c:choose>  
+  </c:forEach>
+  </c:otherwise>
+  </c:choose>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
