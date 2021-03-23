@@ -14,7 +14,6 @@
 		<div class="container">
   			<div class="left">
     			<div class="header">
-<!--     				<h2><img src="images/codingCoverage.png" alt="Coding Coverage Logo" width="500" height="600"></h2> Needs to link to internal image -->
      				<h2 class ="animation a1"><img src="images/codingCoverage.png" alt="Coding Coverage Logo" width="200" height="175"></h2><br>
      				<h2 class="animation a1">Coding Coverage</h2>
       				<h4 class="animation a2"><b>Being a self-taught programmer is hard</b></h4>
