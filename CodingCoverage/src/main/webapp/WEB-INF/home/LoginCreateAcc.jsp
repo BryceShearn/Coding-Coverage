@@ -27,17 +27,19 @@
     			</div>
     			<div class="form">
       				<!-- \/ begin post request for username and password \/ -->
-      				<form id="loginForm" action="login.do" method="POST"> 
-      				<input type="text" id="username" class="form-field animation a3" placeholder="Username">
-      				<input type="password" id="password" class="form-field animation a4" placeholder="Password">
+      				<form id="loginForm" action="login.do" method="GET"> 
+      				<input type="text" id="username" name="username" class="form-field animation a3" placeholder="Username">
+      				<input type="password" id="password" name="password" class="form-field animation a4" placeholder="Password">
      				</form>
       				<!-- /\ end post request for username and password /\ -->
       				<p class="animation a5"><a href="#">Forgot Password</a></p>
-      				<!-- \/ This is the link that sends the post request \/ -->
+      				<!-- \/ This is the link that sends the post request for login \/ -->
       				<button type="submit" name = "submit" value = "value" form ="loginForm" class="animation a6">LOGIN</button>
-      				<!-- \/ needs to be moved to it's own page exactly replicated for user account creation unless shortcut found \/ -->
+      				<!-- \/ This is the link that sends the post request for signUp \/ -->
       				<form id = "signUp" action="createAccountForm.do" method="get"></form>
       				<button type="submit" name = "submit" form = "signUp" value = "value" class="animation a7">SIGN UP</button>
+     			    <!-- \/ Profile Page test Link \/ -->
+     			<a HREF="profilePageResults.do">Profile Page</a>
      			</div>
   			</div>
 		</div>

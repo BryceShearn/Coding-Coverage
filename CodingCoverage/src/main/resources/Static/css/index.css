@@ -9,7 +9,7 @@
 
 .loginPage .container {
   display: inline-flex;
-  height: 85vh;
+  height: 90vh;
   flex: 1 1 auto;
   margin: 2rem;
 }
@@ -45,9 +45,9 @@
   font-weight: normal;
   font-size: 15px;
   background: linear-gradient(to right, #6914e1 0%, #db4a6c 100%);
-	background-clip: text;
-	-webkit-background-clip: text;
-	-webkit-text-fill-color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .loginPage .form {
@@ -71,7 +71,7 @@
   height: 46px;
   padding: 0 16px;
   color: 000;
-  border: 2px solid #000;
+  border: 2px solid #ddd;
   border-radius: 4px;
   font-family: 'Rubik', sans-serif;
   outline: 0;
@@ -80,7 +80,7 @@
 }
 
 ::placeholder { 
-    color: black;
+  color: linear-gradient(to right, #6914e1 0%, #db4a6c 100%);;
 }
 
 .loginPage .form-field:focus {

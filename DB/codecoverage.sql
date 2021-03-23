@@ -377,6 +377,9 @@ COMMIT;
 START TRANSACTION;
 USE `codingcoveragedb`;
 INSERT INTO `post` (`id`, `subject`, `content`, `date_created`, `last_update`, `user_id`, `is_blog`, `is_forum_visable`, `is_expert`, `language_id`) VALUES (1, 'DB design', 'DB design is an essential aspect of full stack applications', NULL, NULL, 2, 1, 0, 0, 1);
+INSERT INTO `post` (`id`, `subject`, `content`, `date_created`, `last_update`, `user_id`, `is_blog`, `is_forum_visable`, `is_expert`, `language_id`) VALUES (2, 'Java Variables', 'It is extremely important to know java variables', NULL, NULL, 2, 0, 1, 0, 1);
+INSERT INTO `post` (`id`, `subject`, `content`, `date_created`, `last_update`, `user_id`, `is_blog`, `is_forum_visable`, `is_expert`, `language_id`) VALUES (3, 'Expert test', 'experts know enought to know they know how to google what they don\'t know, no?', NULL, NULL, 2, 0, 0, 1, 1);
+INSERT INTO `post` (`id`, `subject`, `content`, `date_created`, `last_update`, `user_id`, `is_blog`, `is_forum_visable`, `is_expert`, `language_id`) VALUES (4, 'Personal / Forum Test', 'This should display once per page', NULL, NULL, 2, 1, 1, 1, 1);
 
 COMMIT;
 
