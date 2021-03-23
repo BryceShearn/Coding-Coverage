@@ -27,7 +27,7 @@
     			</div>
     			<div class="form">
       				<!-- \/ begin post request for username and password \/ -->
-      				<form id="loginForm" action="${testPath}/testpath" method="POST"> 
+      				<form id="loginForm" action="login.do" method="POST"> 
       				<input type="text" id="username" class="form-field animation a3" placeholder="Username">
       				<input type="password" id="password" class="form-field animation a4" placeholder="Password">
      				</form>
