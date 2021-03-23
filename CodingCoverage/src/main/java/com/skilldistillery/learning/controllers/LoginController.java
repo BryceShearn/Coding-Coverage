@@ -18,13 +18,19 @@ public class LoginController {
 	@Autowired
 	private UserDAO userDao;
 	
-//	@Autowired
-//	private AuthenticationDAO authDao;
+	@Autowired
+	private AuthenticationDAO authDao;
 	
 	@RequestMapping(path="login.do", method = RequestMethod.GET)
-	public String login(Model model, User user, HttpSession session) {
+	public String login(Model model, User uncheckedUser, HttpSession session) {
 		
-		return "results/ProfilePage";
+		User storedUser = authDao.getUserByUserName(uncheckedUser);
+		if (storedUser.getPassword().equals(uncheckedUser.getPassword())) {
+			session.setAttribute("user", storedUser);
+			return "results/ProfilePage";
+		} else {
+			
+			return "home/LoginCreateAcc";
+		}
 	}
-	
 }

@@ -6,7 +6,7 @@ public interface AuthenticationDAO {
 	
 	public boolean isUserNameUnique(String username);
 	
-	public User getUserByUserName(String username);
+	public User getUserByUserName(User uncheckedUser);
 	
 	public boolean isValidUser(User u);
 
