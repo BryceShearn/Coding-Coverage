@@ -21,15 +21,9 @@
 </head>
 <body>
 	<div class="container1">
-	&nbsp;
-	<br>
-	&nbsp;
-	<br>
 	<div class="container2">
 	<h3>Find The Resources That Work For You</h3>
 	</div>
-	<br>
-	&nbsp;
 	</div>
 	<form action="SearchFilter.do" method="GET">
 		<div class="searchBox"><input class="search" type="text" name="keyword" placeholder="Search Our Resources" /> 
@@ -38,7 +32,7 @@
 		<option value="1">Java</option>
 		<option value="2">HTML</option>
 		<option value="3">CSS</option>
-		<option value="4">SQL</option>
+   <!-- <option value="4">SQL</option> -->
 		</select>
 		</div>
 		<div class="searchResources">
