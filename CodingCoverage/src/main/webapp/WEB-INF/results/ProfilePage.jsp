@@ -39,7 +39,7 @@
                 <div class="profile-menu">
                     <p>Me <a href="#26"><span class="entypo-down-open scnd-font-color"></span></a></p>
                     <div class="profile-picture small-profile-picture">
-                        <img width="40px" alt="Anne Hathaway picture" src="https://static.vecteezy.com/system/resources/previews/000/180/409/non_2x/software-engineers-vector.png">
+                        <img width="40px" alt="Anne Hathaway picture" src="images/profilePicture.png">
                     </div>
                 </div>
             </header>
@@ -53,7 +53,7 @@
                 <div class="profile block"> <!-- PROFILE (MIDDLE-CONTAINER) -->
                     <a class="add-button" href="#28"><span class="icon entypo-plus scnd-font-color"></span></a>
                     <div class="profile-picture big-profile-picture clear">
-                        <img width="150px" alt="Anne Hathaway picture" src="http://upload.wikimedia.org/wikipedia/commons/e/e1/Anne_Hathaway_Face.jpg" >
+                        <img width="150px" alt="Anne Hathaway picture" src="images/profilePicture.png" >
                     </div>
                     <h1 class="user-name">ILoveProgramming114</h1>
                     <div class="profile-description">
