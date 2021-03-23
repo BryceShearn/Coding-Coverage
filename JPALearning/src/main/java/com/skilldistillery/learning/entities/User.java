@@ -12,6 +12,9 @@ import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
+import javax.validation.constraints.AssertTrue;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Size;
 
 @Entity
 public class User {
@@ -20,20 +23,27 @@ public class User {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	
+	@NotBlank
 	private String username;
 	
+	@NotBlank
 	private String password;
 	
+	@NotBlank
 	@Column(name="first_name")
 	private String firstName;
 
+	@NotBlank
 	@Column(name="last_name")
 	private String lastName;
 	
+	@AssertTrue 
 	private Boolean enabled;
 	
 	private String role;
 	
+	@NotBlank
+	@Size(min=10, max=400, message="Bio must be between 10 and 400 characters")
 	private String bio;
 	
 	private String image;
