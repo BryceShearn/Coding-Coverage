@@ -29,16 +29,16 @@
 }
 
 [class^="icon-"], [class*=" icon-"] {
-	font-family: 'icomoon';
-	speak: none;
-	font-style: normal;
-	font-weight: normal;
-	font-variant: normal;
+	font-family:    'icomoon';
+	speak:          none;
+	font-style:     normal;
+	font-weight:    normal;
+	font-variant:   normal;
 	text-transform: none;
 	line-height: 1;
 
 	/* Better Font Rendering =========== */
-	-webkit-font-smoothing: antialiased;
+	-webkit-font-smoothing:  antialiased;
 	-moz-osx-font-smoothing: grayscale;
 }
 .icon-cloudy:before {
@@ -54,18 +54,23 @@
 
 * {
   -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;  
+  -moz-box-sizing:    border-box;
+  box-sizing:         border-box;  
 }
 
 body {
-	background: #1f253d;
+	background-image:    url("https://wallpaperaccess.com/full/1155007.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 170vh;
+  width: 100vw;
 }
 
 ul {
 	list-style-type: none;
-	margin: 0;
-	padding-left: 0;
+	margin:          0;
+	padding-left:    0;
 }
 
 h1 {
@@ -82,7 +87,7 @@ p {
 
 a {
 	text-decoration: none;
-	font-size: 15px;
+	font-size:       15px;
 }
 	a:hover {
 		text-decoration: underline;
@@ -127,17 +132,17 @@ h1, h2, p, a, span{
 	   	}
 	.input-icon {
 		font-size: 22px;
-		position: absolute;
-		left: 31px;
-		top: 10px;
+		position:  absolute;
+		left:      31px;
+		top:       10px;
 	}
 		.input-icon.password-icon {
 			left: 35px;
 		}
 
 .horizontal-list {
-	margin: 0;
-	padding: 0;
+	margin:          0;
+	padding:         0;
 	list-style-type: none;
 }
 	.horizontal-list li {
@@ -153,25 +158,25 @@ h1, h2, p, a, span{
 }
 
 .titular {
-	display: block;
-	line-height: 60px;
-	margin: 0;
-	text-align: center;
-	border-top-left-radius: 5px;
+	display:                 block;
+	line-height:             60px;
+	margin:                  0;
+	text-align:              center;
+	border-top-left-radius:  5px;
 	border-top-right-radius: 5px;
 }
 
 .button {
-	display: block;
-	width: 175px;
-	line-height: 50px;
-	font-size: 16px;
-	font-weight: 700;
-	text-align: center;
-	margin: 0 auto;
-	border-radius: 5px;
+	display:            block;
+	width:              175px;
+	line-height:        50px;
+	font-size:          16px;
+	font-weight:        700;
+	text-align:         center;
+	margin:             0 auto;
+	border-radius:      5px;
 	-webkit-transition: background .3s;
-	transition: background .3s;
+	transition:         background .3s;
 }
 	.button:hover {
 		text-decoration: none;
@@ -238,7 +243,7 @@ h1, h2, p, a, span{
 .main-container {
 	font-family: 'Ubuntu', sans-serif;
 	width: 950px;
-	height: 1725px;
+	height: 1200px;
 	margin: 1em auto;
 }	
 	/*********************************************** HEADER ***********************************************/
@@ -1076,3 +1081,5 @@ h1, h2, p, a, span{
 						background: #e64c65;
 						border-radius: 100%;
 					}
+					
+

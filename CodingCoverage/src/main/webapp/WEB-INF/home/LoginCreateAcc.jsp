@@ -39,7 +39,7 @@
       				<form id = "signUp" action="createAccountForm.do" method="get"></form>
       				<button type="submit" name = "submit" form = "signUp" value = "value" class="animation a7">SIGN UP</button>
      			    <!-- \/ Profile Page test Link \/ -->
-     			<a HREF="/results/ProfilePage.jsp">Profile Page</a>
+     			<a HREF="profilePageResults.do">Profile Page</a>
      			</div>
   			</div>
 		</div>
