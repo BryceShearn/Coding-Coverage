@@ -60,7 +60,7 @@ public class ResourceTest {
 		@DisplayName("Test resource to Task relationship")
 		void test3() {
 			assertNotNull(resource);
-			assertEquals("Complete Set Up", resource.getTasks().get(0).getName());
-			assertEquals("Go read a java book", resource.getTasks().get(0).getDescription());
+			assertEquals("Download Java 8 and research the JDK.", resource.getTasks().get(0).getName());
+			assertEquals("Download Java 8. Then describe the JRE, Java, Javac, Jar, and Javadoc.", resource.getTasks().get(0).getDescription());
 		}
 }

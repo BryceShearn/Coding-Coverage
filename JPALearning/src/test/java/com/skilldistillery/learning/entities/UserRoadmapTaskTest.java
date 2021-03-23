@@ -64,7 +64,7 @@ class UserRoadmapTaskTest {
 	@DisplayName("Testing UserRoadmapTask to Test relationship")
 	void test3() {
 		assertNotNull(userroadmaptask);
-		assertEquals("Complete Set Up", userroadmaptask.getTask().getName());
-		assertEquals("Go read a java book",userroadmaptask.getTask().getDescription());
+		assertEquals("Download Java 8 and research the JDK.", userroadmaptask.getTask().getName());
+		assertEquals("Download Java 8. Then describe the JRE, Java, Javac, Jar, and Javadoc.", userroadmaptask.getTask().getDescription());
 	}
 }
