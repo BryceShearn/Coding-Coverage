@@ -38,7 +38,7 @@
 
   <c:forEach var="p" items="${post}">
   <c:choose>
-  <c:when test="${!p.isForumVisable}">
+  <c:when test="${p.isForumVisable}">
   ${p.user}
   <br>
   ${p.subject}
