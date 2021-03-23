@@ -123,7 +123,7 @@
    animation-delay: 2.6s;
 }
 
-/* @keyframes .loginPage .move {
+ @keyframes move {
   0% {
     opacity: 0;
     visibility: hidden;
@@ -137,7 +137,7 @@
   }
 }
 
-@keyframes .loginPage .left {
+@keyframes left {
   0% {
     opacity: 0;
     width: 0;
@@ -146,5 +146,6 @@
   100% {
     opacity: 1;
     padding: 20px 40px;
-    width: 440px;
-  } }*/
+    width: 305px;
+  }
+}
