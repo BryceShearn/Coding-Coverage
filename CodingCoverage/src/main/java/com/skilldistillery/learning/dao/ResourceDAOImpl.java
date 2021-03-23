@@ -27,17 +27,18 @@ public class ResourceDAOImpl implements ResourceDAO {
 	}
 
 	@Override
-	public List<Resource> filterByLanguageAndKeyword(String keyword, Language language) {
+	public List<Resource> filterByLanguageAndKeyword(String keyword, Integer languageId) {
 		List<Resource> resources = null;
 		keyword = "%" + keyword + "%";
-		if (language == null) {
+		if (languageId < 1) {
 			String keywordQuery = "SELECT r FROM Resource r WHERE r.description LIKE :keyword";
 			resources = em.createQuery(keywordQuery, Resource.class).setParameter("keyword", keyword).getResultList();
 			System.out.println(resources);
 			return resources;
 		}
 		else {
-			String languageKeywordQuery = "SELECT DISTINCT r FROM Resource r JOIN FETCH r.languages WHERE :language MEMBER OF r.languages AND r.description LIKE :keyword";
+			String languageKeywordQuery = "SELECT DISTINCT r FROM Resource r JOIN FETCH r.languages WHERE :language MEMBER OF r.languages AND r.description LIKE :keyword OR r.difficulty LIKE :keyword";
+			Language language = em.find(Language.class, languageId);
 			resources = em.createQuery(languageKeywordQuery, Resource.class).setParameter("keyword", keyword).setParameter("language", language).getResultList();
 			System.out.println(resources);
 			return resources;

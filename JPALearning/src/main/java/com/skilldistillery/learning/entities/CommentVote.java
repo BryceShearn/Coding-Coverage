@@ -110,8 +110,7 @@ public class CommentVote {
 
 	@Override
 	public String toString() {
-		return "CommentVote [id=" + id + ", vote=" + vote + ", dateVoted=" + dateVoted + ", userId=" + userId
-				+ ", comment=" + comment + "]";
+		return "CommentVote [id=" + id + ", vote=" + vote + ", dateVoted=" + dateVoted + "]";
 	}
 
 }

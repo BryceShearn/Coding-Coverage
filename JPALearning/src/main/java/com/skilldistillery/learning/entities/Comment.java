@@ -158,7 +158,7 @@ public class Comment {
 	@Override
 	public String toString() {
 		return "Comment [id=" + id + ", content=" + content + ", dateCreated=" + dateCreated + ", dateUpdated="
-				+ dateUpdated + ", user=" + user + ", post=" + post + ", commentVote=" + commentVote + "]";
+				+ dateUpdated + "]";
 	}
 	
 }
