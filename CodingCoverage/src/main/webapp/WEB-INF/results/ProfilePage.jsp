@@ -39,7 +39,7 @@
                 <div class="profile-menu">
                     <p>Me <a href="#26"><span class="entypo-down-open scnd-font-color"></span></a></p>
                     <div class="profile-picture small-profile-picture">
-                        <img width="40px" alt="Anne Hathaway picture" src="https://www.flaticon.com/svg/vstatic/svg/4299/4299685.svg?token=exp=1616530136~hmac=8ca469ffa2df5436d806188a6e7b6860">
+                        <img width="40px" alt="Anne Hathaway picture" src="https://static.vecteezy.com/system/resources/previews/000/180/409/non_2x/software-engineers-vector.png">
                     </div>
                 </div>
             </header>
@@ -53,11 +53,11 @@
                 <div class="profile block"> <!-- PROFILE (MIDDLE-CONTAINER) -->
                     <a class="add-button" href="#28"><span class="icon entypo-plus scnd-font-color"></span></a>
                     <div class="profile-picture big-profile-picture clear">
-                        <img width="150px" alt="Anne Hathaway picture" src="https://www.flaticon.com/svg/vstatic/svg/4299/4299685.svg?token=exp=1616530136~hmac=8ca469ffa2df5436d806188a6e7b6860" >
+                        <img width="150px" alt="Anne Hathaway picture" src="http://upload.wikimedia.org/wikipedia/commons/e/e1/Anne_Hathaway_Face.jpg" >
                     </div>
-                    <h1 class="user-name">Anne Hathaway</h1>
+                    <h1 class="user-name">ILoveProgramming114</h1>
                     <div class="profile-description">
-                        <p class="scnd-font-color">Lorem ipsum dolor sit amet consectetuer adipiscing</p>
+                        <p class="scnd-font-color">Hey, I'm john and I love programming! I was introduced to this site by a friend. I have never been more focused or in-tune with staying on track to becoming a developer until I found Coding Coverage!</p>
                     </div>
               </div>
                 
