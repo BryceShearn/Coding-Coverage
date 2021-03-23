@@ -23,7 +23,8 @@
 	<div class="container1">
 	&nbsp;
 	<br>
-	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="images/codingCoverage.png">
+	&nbsp;
+	<br>
 	<div class="container2">
 	<h3>Find The Resources That Work For You</h3>
 	</div>
@@ -43,6 +44,7 @@
 		<div class="searchResources">
 		<input class="button" type="submit" value="Search Resources" />
 		</div>
+		<img src="images/codingCoverage.png">
 	</form>
 	
 	<c:choose>
