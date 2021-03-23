@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 
 <!DOCTYPE html>
 <html>
@@ -26,16 +27,18 @@
     			</div>
     			<div class="form">
       				<!-- \/ begin post request for username and password \/ -->
-      				<form action="${testPath}/testpath" method="POST"> 
-      				<input type="text" th:value="${username}" id="username" class="form-field animation a3" placeholder="Username">
-      				<input type="password" th:value="${password}" id="password" class="form-field animation a4" placeholder="Password">
+      				<form id="loginForm" action="login.do" method="POST"> 
+      				<input type="text" id="username" class="form-field animation a3" placeholder="Username">
+      				<input type="password" id="password" class="form-field animation a4" placeholder="Password">
      				</form>
-      				<button type="submit" name = "submit" value = "value" class="animation a6">LOGIN</button>
       				<!-- /\ end post request for username and password /\ -->
       				<p class="animation a5"><a href="#">Forgot Password</a></p>
-      				<!-- \/ This is the link that sends the post request \/ -->
-      				<!-- \/ needs to be moved to it's own page exactly replicated for user account creation unless shortcut found \/ -->
-      				<button type="submit" name = "submit" value = "value" class="animation a7">SIGN UP</button>
+      				<!-- \/ This is the link that sends the post request for login \/ -->
+      				<button type="submit" name = "submit" value = "value" form ="loginForm" class="animation a6">LOGIN</button>
+      				<!-- \/ This is the link that sends the post request for signUp \/ -->
+      				<form id = "signUp" action="createAccountForm.do" method="get"></form>
+      				<button type="submit" name = "submit" form = "signUp" value = "value" class="animation a7">SIGN UP</button>
+     			    <!-- \/ Profile Page test Link \/ -->
      			<a HREF="/results/ProfilePage.jsp">Profile Page</a>
      			</div>
   			</div>
