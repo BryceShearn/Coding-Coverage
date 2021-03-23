@@ -13,9 +13,9 @@ public class PostController {
 	@Autowired
 	PostDAO postDAO;
 	
-	@RequestMapping(path="")
+	@RequestMapping(path="ViewForum.do")
 	public String viewForum(Model model) {
-		return "";
+		return "forms/ViewForum";
 	}
 	
 }
