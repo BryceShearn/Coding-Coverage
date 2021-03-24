@@ -37,6 +37,7 @@ public class AuthenticationDAOimpl implements AuthenticationDAO {
 		}catch (NoResultException e) {
 			return null;
 		}
+		foundUser.getComments().size();
 		
 		return foundUser;
 	}
