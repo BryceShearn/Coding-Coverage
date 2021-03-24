@@ -26,7 +26,7 @@
                         <a class="header-menu-tab" href="Resources.do"><span class="icon fontawesome-user scnd-font-color"></span>Account</a>
                     </li>
                     <li>
-                        <a class="header-menu-tab" href="#3"><span class="icon fontawesome-envelope scnd-font-color"></span>Messages</a>
+                        <a class="header-menu-tab" href="#########"><span class="icon fontawesome-envelope scnd-font-color"></span>Messages</a>
                         <a class="header-menu-number" href="#4"></a>
                     </li>
                     <li>
@@ -137,7 +137,7 @@
                             <a class="menu-box-tab" href="#12"><span class="icon entypo-cog scnd-font-color"></span>View External Resources</a>
                         </li>
                         <li>
-                            <a class="menu-box-tab" href="#13"><sapn class="icon entypo-chart-line scnd-font-color"></sapn>Statistics</a>
+                            <a class="menu-box-tab" href="ViewComment.do?id=${comment.id}"><sapn class="icon entypo-chart-line scnd-font-color"></sapn>View My Comments</a>
                         </li>                        
                     </ul>
                 </div>
@@ -171,7 +171,8 @@
             <!-- RIGHT-CONTAINER -->
             <div class="right-container container">
                <div class="donut-chart-block block"> <!-- DONUT CHART BLOCK (LEFT-CONTAINER) -->
-                    <h2 class="titular">LANGUAGE LEARNING STATS</h2>
+                    <h2 class="titular"> LEARNING METRICS</h2>
+                    
                     	<div class="donut-chart">
                         	<!-- DONUT-CHART -->
                         	<div id="porcion1" class="recorte">
