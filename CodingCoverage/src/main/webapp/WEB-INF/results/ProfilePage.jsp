@@ -60,7 +60,14 @@
            
            
             <div class="scrolling-box block"> <!-- PROFILE (MIDDLE-CONTAINER) -->
-                     <p> Your Posts </p>
+            	<h2 class="titular">YOUR POSTS</h2>
+            	<ul class= "scrolling-box-menu">
+            		<c:forEach var="post" items="${sessionScope.user.posts }">
+            			<li>
+                            <a class="menu-box-tab" href="#6"><span class="icon fontawesome-envelope scnd-font-color"></span>${post.subject }<div class="menu-box-number"></div></a>                            
+                        </li>
+            		</c:forEach>
+            	</ul>
                       <section id="1">This is the first section</section>
   						<section id="2">This is the second section</section>
  						 <section id="3">This is the third section</section>
