@@ -63,6 +63,11 @@
   </c:forEach>
 		</c:otherwise>
 	</c:choose>
+  <!-- TEST -->
+  <br>
+  ---------------------------------------------------------------------------
+  <br>
+  ${sessionScope.user.comments}
 
 	<!-- Optional JavaScript -->
 	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
