@@ -80,8 +80,8 @@ public class Language {
 
 	@Override
 	public String toString() {
-		return "Language [id=" + id + ", name=" + name + ", imageUrl=" + imageUrl + ", description=" + description
-				+ "]";
+		return name;
+			
 	}
 
 }
