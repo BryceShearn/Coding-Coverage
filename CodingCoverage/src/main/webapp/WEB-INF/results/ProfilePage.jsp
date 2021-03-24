@@ -65,7 +65,7 @@
             			<ul class= "scrolling-box-menu">
             				<c:forEach var="post" items="${sessionScope.user.posts }">
             					<li>
-                            		<a class="menu-box-tab" href="########">
+                            		<a class="menu-box-tab" href="viewForumPost.do?id=${post.id}">
                             			<span class="icon fontawesome-envelope scnd-font-color"></span>
                             				${post.subject }
                             			<div class="menu-box-number"></div>
