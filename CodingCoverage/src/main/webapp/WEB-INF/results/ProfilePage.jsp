@@ -49,13 +49,29 @@
                 <div class="profile block"> <!-- PROFILE (MIDDLE-CONTAINER) -->
                     <a class="add-button" href="#28"><span class="icon entypo-plus scnd-font-color"></span></a>
                     	<div class="profile-picture big-profile-picture clear">
-                        	<img width="150px" alt="Anne Hathaway picture" src="images/profilePicture.png" >
+                        	<img width="150px" alt="Filler profile picture" src="images/profilePicture.png" >
                     	</div>
                     <h1 class="user-name">ILoveProgramming114</h1>
                     	<div class="profile-description">
                         	<p class="scnd-font-color">Hey, I'm john and I love programming! I was introduced to this site by a friend. I have never been more focused or in-tune with staying on track to becoming a developer until I found Coding Coverage!</p>
                     	</div>
               	</div>
+           
+           
+           
+            <div class="scrolling-box block"> <!-- PROFILE (MIDDLE-CONTAINER) -->
+                     <p> Your Posts </p>
+                      <section id="1">This is the first section</section>
+  						<section id="2">This is the second section</section>
+ 						 <section id="3">This is the third section</section>
+                    	
+                    
+                    
+                    
+              	</div>
+            
+            
+            
             </div>
             <!-- MIDDLE-CONTAINER -->
             <div class="middle-container container">
