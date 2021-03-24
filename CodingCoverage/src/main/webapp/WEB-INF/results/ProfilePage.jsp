@@ -26,7 +26,7 @@
                         <a class="header-menu-tab" href="Resources.do"><span class="icon fontawesome-user scnd-font-color"></span>Account</a>
                     </li>
                     <li>
-                        <a class="header-menu-tab" href="#3"><span class="icon fontawesome-envelope scnd-font-color"></span>Messages</a>
+                        <a class="header-menu-tab" href="#########"><span class="icon fontawesome-envelope scnd-font-color"></span>Messages</a>
                         <a class="header-menu-number" href="#4"></a>
                     </li>
                     <li>
@@ -56,12 +56,9 @@
                         	<p class="scnd-font-color">${sessionScope.user.bio }</p>
                     	</div>
               	</div>
-           
-           
-           
             <div class="scrolling-box block">
             	<h2 class="titular">YOUR POSTS</h2>
-                	<section id="1">This is the first section</section>
+                	<section id="1">PERSONAL POSTS</section>
             			<ul class= "scrolling-box-menu">
             				<c:forEach var="post" items="${sessionScope.user.posts }">
             					<li>
@@ -73,23 +70,12 @@
                         		</li>
             				</c:forEach>
             			</ul>
-  					<p>This is your second section</p>
-  					<p>test</p>
-                    <p>test</p>
-                    <p>test</p>
-                    <p>test</p>
-                    <p>test</p>
-                    <p>test</p>
-                    <p>test</p>
-                    <p>test</p>
-                    <p>test</p>
-                    <p>test</p>
-                    <p>test</p>
-                    <p>test</p>
-                    <p>test</p>
-                    <p>test</p>
-                    <p>test</p>
-                    <p>test</p>
+  					<p>COMMUNITY POSTS</p>
+                    <p>Filler Post 1</p>
+                    <p>Filler Post 2</p>
+                    <p>Filler Post 3</p>
+                    <p>Filler Post 4</p>
+                    <p>Filler Post 5</p>
   						<ul class= "scrolling-box-menu">
             				<c:forEach var="post" items="${sessionScope.user.posts }">
             					<li>
@@ -103,7 +89,7 @@
             			</ul>
 					<c:choose>
  					<c:when test="${user.role == 'admin'}">
- 					<p>Your Expert Posts</p>
+ 					<p>EXPERT POSTS</p>
             			<ul class= "scrolling-box-menu">
             				<c:forEach var="post" items="${sessionScope.user.posts }">
             					<li>
@@ -137,7 +123,7 @@
                             <a class="menu-box-tab" href="#12"><span class="icon entypo-cog scnd-font-color"></span>View External Resources</a>
                         </li>
                         <li>
-                            <a class="menu-box-tab" href="#13"><sapn class="icon entypo-chart-line scnd-font-color"></sapn>Statistics</a>
+                            <a class="menu-box-tab" href="ViewComment.do?id=${comment.id}"><sapn class="icon entypo-chart-line scnd-font-color"></sapn>View My Comments</a>
                         </li>                        
                     </ul>
                 </div>
@@ -171,7 +157,8 @@
             <!-- RIGHT-CONTAINER -->
             <div class="right-container container">
                <div class="donut-chart-block block"> <!-- DONUT CHART BLOCK (LEFT-CONTAINER) -->
-                    <h2 class="titular">LANGUAGE LEARNING STATS</h2>
+                    <h2 class="titular"> LEARNING METRICS</h2>
+                    
                     	<div class="donut-chart">
                         	<!-- DONUT-CHART -->
                         	<div id="porcion1" class="recorte">
