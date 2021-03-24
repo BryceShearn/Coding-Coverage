@@ -62,7 +62,7 @@
             			<ul class= "scrolling-box-menu">
             				<c:forEach var="post" items="${sessionScope.user.posts }">
             					<li>
-                            		<a class="menu-box-tab" href="viewForumPost.do?id=${post.id}">
+                            		<a class="menu-box-tab" href="########">
                             			<span class="icon fontawesome-envelope scnd-font-color"></span>
                             				${post.subject }
                             			<div class="menu-box-number"></div>
@@ -123,7 +123,7 @@
                             <a class="menu-box-tab" href="#12"><span class="icon entypo-cog scnd-font-color"></span>View External Resources</a>
                         </li>
                         <li>
-                            <a class="menu-box-tab" href="viewUserComments.do"><sapn class="icon entypo-chart-line scnd-font-color"></sapn>View My Comments</a>
+                            <a class="menu-box-tab" href="ViewComment.do"><sapn class="icon entypo-chart-line scnd-font-color"></sapn>View My Comments</a>
                         </li>                        
                     </ul>
                 </div>

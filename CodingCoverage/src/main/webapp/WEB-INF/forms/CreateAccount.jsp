@@ -1,57 +1,58 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
-<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>  
-<!doctype html>
-<html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <title>title</title>
-  </head>
-  <body>
-	<div>
-  		<form:form action="createAccount.do" method="POST" modelAttribute="user">
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+
+<!DOCTYPE html>
+<html>
+	<head>
+		 <!-- meta tags -->
+    	<meta charset="utf-8">
+    	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes">
+		<title>Coding Coverage Account Creation Page</title>
+		<!--  FavIcon Insert -->
+		<link rel="shortcut icon" type="image/jpg" href="images/codingCoverage.png"/>
+		<!-- Internal Resources -->
+		<link rel="stylesheet" href="css/index.css">
+	</head>
+	<body class = loginPage>
+		<div class="container">
+  			<div class="left">
+    			<div class="header">
+     				<h2 class ="animation a1"><img src="images/codingCoverage.png" alt="Coding Coverage Logo" width="200" height="175"></h2><br>
+     				<h2 class="animation a1">Coding Coverage</h2>
+      				<h4 class="animation a2"><b>We're happy to see you join the team!</b></h4>
+      				<h4 class="animation a2"><b>Complete your registration below!</b></h4>
+    			</div>
+    			<div class="form">
+      		<form:form id="registerForm" action="createAccount.do" method="POST" modelAttribute="user">
   			<!-- firstName -->
-  			<form:label path="firstName">First Name:</form:label>
-  			<form:input path="firstName"/>
+  			<form:input path="firstName" class="form-field animation a1" placeholder="First Name"/>
   			<form:errors path="firstName"/>
-  			<br/>
   			<!-- lastName -->
-  			<form:label path="lastName">Last Name:</form:label>
-  			<form:input path="lastName"/>
+  			<form:input path="lastName" class="form-field animation a2" placeholder="Last Name"/>
   			<form:errors path="lastName"/>
-  			<br/>
   			<!-- username -->
-  			<form:label path="username"> Username:</form:label>
-  			<form:input path="username"/>
+  			<form:input path="username" class="form-field animation a3" placeholder="Username"/>
   			<form:errors path="username"/>
-  			<br/>
   			<!-- password -->
-  			<form:label path="password">Password:</form:label>
-  			<form:password path="password"/>
+  			<form:input type ="password" path="password" class="form-field animation a4" placeholder="Password"/>
   			<form:errors path="password"/>
-  			<br/>
   			<!-- bio -->
-  			<form:label path="bio">Short Bio:</form:label>
-  			<form:textarea path="bio"/>
+  			<form:input type="text" path="bio" class="form-field animation a5" placeholder="About Me!"/>
   			<form:errors path="bio"/>
-  			<br/>
   			<!-- enabled -->
   			<form:hidden path="enabled" value="true"/>
   			<!-- role -->
   			<form:hidden path="role" value="Student"/>
-  			
-			<input type="submit" value="Register"/>
-  		</form:form>	
-	</div>
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-  </body>
-</html>   
+	  		</form:form>	
+      			<button type="submit" name = "submit" value = "Register" form ="registerForm" class="animation a6">SUBMIT</button>
+      			
+      			<form id = "returnHome" action="login.do" method="get"></form>
+     			<button type="submit" name = "submit" form = "returnHome" value = "value" class="animation a7">RETURN TO LOGIN</button>
+     			</div>
+  			</div>
+		</div>
+  	<div class="right"></div>
+</body>
+</html>
