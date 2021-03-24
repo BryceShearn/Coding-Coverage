@@ -25,6 +25,9 @@ public class LoginController {
 	public String login(Model model, User uncheckedUser, HttpSession session) {
 		
 		User storedUser = authDao.getUserByUserName(uncheckedUser);
+		if (storedUser == null) {
+			return "home/LoginCreateAcc";
+		}
 		if (storedUser.getPassword().equals(uncheckedUser.getPassword())) {
 			session.setAttribute("user", storedUser);
 			return "results/ProfilePage";
