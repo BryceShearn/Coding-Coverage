@@ -34,7 +34,7 @@
                     </li>
                 </ul>
                 <div class="profile-menu">
-                    <p>Me <a href="#26"><span class="entypo-down-open scnd-font-color"></span></a></p>
+                    <p>${sessionScope.user.username } <a href="#26"><span class="entypo-down-open scnd-font-color"></span></a></p>
                     <div class="profile-picture small-profile-picture">
                         <img width="40px" alt="Anne Hathaway picture" src="images/profilePicture.png">
                     </div>
@@ -51,16 +51,23 @@
                     	<div class="profile-picture big-profile-picture clear">
                         	<img width="150px" alt="Filler profile picture" src="images/profilePicture.png" >
                     	</div>
-                    <h1 class="user-name">ILoveProgramming114</h1>
+                    <h1 class="user-name">${sessionScope.user.firstName } </h1>
                     	<div class="profile-description">
-                        	<p class="scnd-font-color">Hey, I'm john and I love programming! I was introduced to this site by a friend. I have never been more focused or in-tune with staying on track to becoming a developer until I found Coding Coverage!</p>
+                        	<p class="scnd-font-color">${sessionScope.user.bio }</p>
                     	</div>
               	</div>
            
            
            
             <div class="scrolling-box block"> <!-- PROFILE (MIDDLE-CONTAINER) -->
-                     <p> Your Posts </p>
+            	<h2 class="titular">YOUR POSTS</h2>
+            	<ul class= "scrolling-box-menu">
+            		<c:forEach var="post" items="${sessionScope.user.posts }">
+            			<li>
+                            <a class="menu-box-tab" href="#6"><span class="icon fontawesome-envelope scnd-font-color"></span>${post.subject }<div class="menu-box-number"></div></a>                            
+                        </li>
+            		</c:forEach>
+            	</ul>
                       <section id="1">This is the first section</section>
   						<section id="2">This is the second section</section>
  						 <section id="3">This is the third section</section>
@@ -217,6 +224,11 @@
                 </div> 
             </div> <!-- END OF RIGHT-CONTAINER -->
         </div> <!-- END OF MAIN CONTAINER -->
+	<footer>
+		<span>Created By <a href="https://github.com/BryceShearn">Bryce Shearn,</a>
+						<a href="https://github.com/BryceShearn">Tylor Shearn,</a>
+						<a href="https://github.com/BryceShearn">Thomas Webel</a> | <span class="far fa-copyright"></span> CodingCoverage.</span>
+	</footer>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

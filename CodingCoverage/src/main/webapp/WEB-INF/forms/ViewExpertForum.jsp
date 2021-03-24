@@ -39,21 +39,16 @@
   <c:forEach var="p" items="${post}">
   <c:choose>
   <c:when test="${p.isExpert}">
-  ${p.user}
+  ${p.user.username} <b><i>${p.user.role}</i></b>
   <br>
   ${p.subject}
   <br>
-  ${p.content}
-  <br>  
-  ${p.dateCreated}
-  <br>  
-  ${p.lastUpdate}
-  <br>  
-  ${p.comments}  
-  <br>  
-  ${p.language}  
-  <br>  
-  ${p.postVote}
+  Includes ${p.language}<br>
+  <form action="viewForumPost.do" method="GET">
+  <input type="hidden" value= ${p.id} name="id"/>
+  <input class="button" type="submit" value="View Post" />
+  </form>
+  <br> 
   </c:when>
   </c:choose>  
   </c:forEach>
