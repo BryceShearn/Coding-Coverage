@@ -96,4 +96,9 @@ public class PostDAOImpl implements PostDAO {
 			return post;
 		}
 	}
+
+	@Override
+	public Post viewPost(int postId) {
+		return em.find(Post.class, postId);
+	}
 }
