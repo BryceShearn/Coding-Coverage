@@ -1,5 +1,6 @@
 package com.skilldistillery.learning.controllers;
 
+import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,7 +35,7 @@ public class RegistrationController {
 	}
 
 	@RequestMapping(path = "createAccount.do", method = RequestMethod.POST)
-	public String createAccount(@Valid User user, Errors errors) {
+	public String createAccount(@Valid User user, Errors errors, HttpSession session) {
 		if (errors.hasErrors()) {
 			return "forms/CreateAccount";
 		}
@@ -43,6 +44,7 @@ public class RegistrationController {
 			return "forms/CreateAccount";
 		}
 		userDao.createUser(user);
+		session.setAttribute("user", user);
 
 		return "results/ProfilePage";
 	}
