@@ -21,5 +21,7 @@ public interface PostDAO {
 	boolean deletePost(Post targetPost);
 	
 	List<Post> filterByLanguageAndKeyword(String keyword, Integer languageId);
+	
+	Post viewPost(int postId); 
 
 }
