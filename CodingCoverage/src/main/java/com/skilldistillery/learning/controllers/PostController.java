@@ -1,12 +1,17 @@
 package com.skilldistillery.learning.controllers;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.skilldistillery.learning.dao.PostDAO;
+import com.skilldistillery.learning.entities.Post;
+import com.skilldistillery.learning.entities.User;
 
 @Controller
 public class PostController {
@@ -42,6 +47,19 @@ public class PostController {
 	public String viewForumPost(Model model, @RequestParam("id")Integer postId) {
 		model.addAttribute("post", postDAO.viewPost(postId));
 		return "results/ViewForumPost";
+	}
+	
+	@RequestMapping(path="getForumPostForm.do")
+	public String getForumPostForm(Model model) {
+		
+		return "forms/CreateForumPost";
+	}
+	
+	@RequestMapping(path="createForumPost.do", method=RequestMethod.POST)
+	public String createForumPost(Model model, Post post, HttpSession session) {
+		User thisUser = (User)session.getAttribute("user");
+		
+		return "forms/ViewForum";
 	}
 
 	
