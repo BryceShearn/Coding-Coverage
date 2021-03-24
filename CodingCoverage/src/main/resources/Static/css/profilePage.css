@@ -865,14 +865,14 @@ p.center-date {
 	padding: 1em;
 	overflow-y: scroll;
 	text-align: center;
-	scrollbar-color:dark;
 }
 
 .scrolling-box>section {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	height: 100%;
+	height: 10%;
+	color: #fff;
 }
 
 ::-webkit-scrollbar-track-piece  {
@@ -912,6 +912,7 @@ background-color: #000;
 .scrolling-box-tab {
 	line-height: 60px;
 	display: block;
+	border-top: 1px solid #1f253d;
 	border-bottom: 1px solid #1f253d;
 	-webkit-transition: background .2s;
 	transition: background .2s;
