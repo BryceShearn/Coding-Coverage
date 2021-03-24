@@ -123,7 +123,7 @@
                             <a class="menu-box-tab" href="#12"><span class="icon entypo-cog scnd-font-color"></span>View External Resources</a>
                         </li>
                         <li>
-                            <a class="menu-box-tab" href="ViewComment.do?id=${comment.id}"><sapn class="icon entypo-chart-line scnd-font-color"></sapn>View My Comments</a>
+                            <a class="menu-box-tab" href="viewUserComments.do"><sapn class="icon entypo-chart-line scnd-font-color"></sapn>View My Comments</a>
                         </li>                        
                     </ul>
                 </div>
