@@ -23,7 +23,7 @@
                         <a class="header-menu-tab" href="#1"><span class="icon entypo-cog scnd-font-color"></span>Settings</a>
                     </li>
                     <li>
-                        <a class="header-menu-tab" href="#2"><span class="icon fontawesome-user scnd-font-color"></span>Account</a>
+                        <a class="header-menu-tab" href="Resources.do"><span class="icon fontawesome-user scnd-font-color"></span>Account</a>
                     </li>
                     <li>
                         <a class="header-menu-tab" href="#3"><span class="icon fontawesome-envelope scnd-font-color"></span>Messages</a>
@@ -46,7 +46,7 @@
             </header>
             <!-- LEFT-CONTAINER -->
             <div class="left-container container">
-                <div class="profile block"> <!-- PROFILE (MIDDLE-CONTAINER) -->
+                <div class="profile block"> <!-- PROFILE PICTURE AND DESCRIPTION(MIDDLE-CONTAINER) -->
                     <a class="add-button" href="#28"><span class="icon entypo-plus scnd-font-color"></span></a>
                     	<div class="profile-picture big-profile-picture clear">
                         	<img width="150px" alt="Filler profile picture" src="images/profilePicture.png" >
@@ -59,19 +59,65 @@
            
            
            
-            <div class="scrolling-box block"> <!-- PROFILE (MIDDLE-CONTAINER) -->
-                     <p> Your Posts </p>
-                      <section id="1">This is the first section</section>
-  						<section id="2">This is the second section</section>
- 						 <section id="3">This is the third section</section>
-                    	
-                    
-                    
-                    
+            <div class="scrolling-box block">
+            	<h2 class="titular">YOUR POSTS</h2>
+                	<section id="1">This is the first section</section>
+            			<ul class= "scrolling-box-menu">
+            				<c:forEach var="post" items="${sessionScope.user.posts }">
+            					<li>
+                            		<a class="menu-box-tab" href="########">
+                            			<span class="icon fontawesome-envelope scnd-font-color"></span>
+                            				${post.subject }
+                            			<div class="menu-box-number"></div>
+                            		</a>                            
+                        		</li>
+            				</c:forEach>
+            			</ul>
+  					<p>This is your second section</p>
+  					<p>test</p>
+                    <p>test</p>
+                    <p>test</p>
+                    <p>test</p>
+                    <p>test</p>
+                    <p>test</p>
+                    <p>test</p>
+                    <p>test</p>
+                    <p>test</p>
+                    <p>test</p>
+                    <p>test</p>
+                    <p>test</p>
+                    <p>test</p>
+                    <p>test</p>
+                    <p>test</p>
+                    <p>test</p>
+  						<ul class= "scrolling-box-menu">
+            				<c:forEach var="post" items="${sessionScope.user.posts }">
+            					<li>
+                            		<a class="menu-box-tab" href="########">
+                            			<span class="icon fontawesome-envelope scnd-font-color"></span>
+                            				${post.subject }
+                            			<div class="menu-box-number"></div>
+                            		</a>                            
+                        		</li>
+            				</c:forEach>
+            			</ul>
+					<c:choose>
+ 					<c:when test="${user.role == 'admin'}">
+ 					<p>Your Expert Posts</p>
+            			<ul class= "scrolling-box-menu">
+            				<c:forEach var="post" items="${sessionScope.user.posts }">
+            					<li>
+                            		<a class="menu-box-tab" href="########">
+                            			<span class="icon fontawesome-envelope scnd-font-color"></span>
+                            				${post.subject }
+                            			<div class="menu-box-number"></div>
+                            		</a>                            
+                        		</li>
+            				</c:forEach>
+            			</ul>
+					</c:when>
+            		</c:choose>
               	</div>
-            
-            
-            
             </div>
             <!-- MIDDLE-CONTAINER -->
             <div class="middle-container container">
