@@ -865,6 +865,7 @@ p.center-date {
 	padding: 1em;
 	overflow-y: scroll;
 	text-align: center;
+	scrollbar-color:dark;
 }
 
 .scrolling-box>section {
@@ -872,6 +873,9 @@ p.center-date {
 	align-items: center;
 	justify-content: center;
 	height: 100%;
+}
+::-webkit-scrollbar-track-piece  {
+background-color: #000;
 }
 
 
