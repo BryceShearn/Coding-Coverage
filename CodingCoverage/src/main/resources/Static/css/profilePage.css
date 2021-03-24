@@ -867,6 +867,11 @@ p.center-date {
 	text-align: center;
 }
 
+menu-box-number>p {
+		border-top: 1px solid #1f253d;
+	border-bottom: 1px solid #1f253d;
+}
+
 .scrolling-box>section {
 	display: flex;
 	align-items: center;
@@ -907,6 +912,8 @@ background-color: #000;
 .scrolling-box-menu li {
 	height: 60px;
 	position: relative;
+		border-top: 1px solid #1f253d;
+	border-bottom: 1px solid #1f253d;
 }
 
 .scrolling-box-tab {

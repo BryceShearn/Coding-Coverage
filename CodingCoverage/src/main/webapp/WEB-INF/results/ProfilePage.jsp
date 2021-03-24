@@ -56,12 +56,9 @@
                         	<p class="scnd-font-color">${sessionScope.user.bio }</p>
                     	</div>
               	</div>
-           
-           
-           
             <div class="scrolling-box block">
             	<h2 class="titular">YOUR POSTS</h2>
-                	<section id="1">This is the first section</section>
+                	<section id="1">PERSONAL POSTS</section>
             			<ul class= "scrolling-box-menu">
             				<c:forEach var="post" items="${sessionScope.user.posts }">
             					<li>
@@ -73,23 +70,12 @@
                         		</li>
             				</c:forEach>
             			</ul>
-  					<p>This is your second section</p>
-  					<p>test</p>
-                    <p>test</p>
-                    <p>test</p>
-                    <p>test</p>
-                    <p>test</p>
-                    <p>test</p>
-                    <p>test</p>
-                    <p>test</p>
-                    <p>test</p>
-                    <p>test</p>
-                    <p>test</p>
-                    <p>test</p>
-                    <p>test</p>
-                    <p>test</p>
-                    <p>test</p>
-                    <p>test</p>
+  					<p>COMMUNITY POSTS</p>
+                    <p>Filler Post 1</p>
+                    <p>Filler Post 2</p>
+                    <p>Filler Post 3</p>
+                    <p>Filler Post 4</p>
+                    <p>Filler Post 5</p>
   						<ul class= "scrolling-box-menu">
             				<c:forEach var="post" items="${sessionScope.user.posts }">
             					<li>
@@ -103,7 +89,7 @@
             			</ul>
 					<c:choose>
  					<c:when test="${user.role == 'admin'}">
- 					<p>Your Expert Posts</p>
+ 					<p>EXPERT POSTS</p>
             			<ul class= "scrolling-box-menu">
             				<c:forEach var="post" items="${sessionScope.user.posts }">
             					<li>
