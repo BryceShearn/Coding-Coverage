@@ -34,4 +34,9 @@ public class CommentController {
 		model.addAttribute("comment", commentDao.findById(commentId));
 		return "results/ViewUserComments";
 	}
+	
+	@RequestMapping(path="viewSessionUserComments.do")
+	public String viewSessionUserComments(Model model) {
+		return "results/ViewUserComments";
+	}
 }
