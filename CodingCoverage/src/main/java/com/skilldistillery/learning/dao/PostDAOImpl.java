@@ -1,5 +1,6 @@
 package com.skilldistillery.learning.dao;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 import javax.persistence.EntityManager;
@@ -50,6 +51,8 @@ public class PostDAOImpl implements PostDAO {
 	@Override
 	public Post createPost(Post newPost) {
 		
+		newPost.setDateCreated(LocalDateTime.now());
+		
 		em.persist(newPost);
 		em.flush();
 		
@@ -58,6 +61,8 @@ public class PostDAOImpl implements PostDAO {
 
 	@Override
 	public Post updatePost(Post updatedPost) {
+		
+		updatedPost.setLastUpdate(LocalDateTime.now());
 		
 		return em.merge(updatedPost);
 	}

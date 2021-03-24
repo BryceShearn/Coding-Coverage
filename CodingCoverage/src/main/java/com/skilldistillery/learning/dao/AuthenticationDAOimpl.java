@@ -1,6 +1,7 @@
 package com.skilldistillery.learning.dao;
 
 import javax.persistence.EntityManager;
+import javax.persistence.NoResultException;
 import javax.persistence.PersistenceContext;
 import javax.transaction.Transactional;
 
@@ -17,16 +18,25 @@ public class AuthenticationDAOimpl implements AuthenticationDAO {
 	
 	@Override
 	public boolean isUserNameUnique(String username) {
-		// TODO Auto-generated method stub
-		return false;
+		String count = "SELECT COUNT(u) FROM User u WHERE u.username = :username";
+		Long numUsers = em.createQuery(count, Long.class).setParameter("username", username).getSingleResult(); 
+		if (numUsers > 0) {
+			return false;
+		} else { 
+			return true;
+		}
 	}
 
 	@Override
 	public User getUserByUserName(User uncheckedUser) {
 		
 		String getUser = "SELECT u FROM User u WHERE u.username = :username";
-		
-		User foundUser = em.createQuery(getUser, User.class).setParameter("username", uncheckedUser.getUsername()).getSingleResult();
+		User foundUser =  null;
+		try {
+			foundUser = em.createQuery(getUser, User.class).setParameter("username", uncheckedUser.getUsername()).getSingleResult();	
+		}catch (NoResultException e) {
+			return null;
+		}
 		
 		return foundUser;
 	}

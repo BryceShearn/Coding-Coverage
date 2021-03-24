@@ -13,6 +13,41 @@
     <title>title</title>
   </head>
   <body>
+	<div>
+  		<form:form action="createAccount.do" method="POST" modelAttribute="user">
+  			<!-- firstName -->
+  			<form:label path="firstName">First Name:</form:label>
+  			<form:input path="firstName"/>
+  			<form:errors path="firstName"/>
+  			<br/>
+  			<!-- lastName -->
+  			<form:label path="lastName">Last Name:</form:label>
+  			<form:input path="lastName"/>
+  			<form:errors path="lastName"/>
+  			<br/>
+  			<!-- username -->
+  			<form:label path="username"> Username:</form:label>
+  			<form:input path="username"/>
+  			<form:errors path="username"/>
+  			<br/>
+  			<!-- password -->
+  			<form:label path="password">Password:</form:label>
+  			<form:password path="password"/>
+  			<form:errors path="password"/>
+  			<br/>
+  			<!-- bio -->
+  			<form:label path="bio">Short Bio:</form:label>
+  			<form:textarea path="bio"/>
+  			<form:errors path="bio"/>
+  			<br/>
+  			<!-- enabled -->
+  			<form:hidden path="enabled" value="true"/>
+  			<!-- role -->
+  			<form:hidden path="role" value="Student"/>
+  			
+			<input type="submit" value="Register"/>
+  		</form:form>	
+	</div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
