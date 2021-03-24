@@ -37,8 +37,11 @@ public class AuthenticationDAOimpl implements AuthenticationDAO {
 		}catch (NoResultException e) {
 			return null;
 		}
-		foundUser.getComments().size();
 		
+		foundUser.getComments().size();
+		foundUser.getRoadmaps().size();
+		foundUser.getUserRoadmapTasks().size();
+		foundUser.getPosts().size();
 		return foundUser;
 	}
 

@@ -1,5 +1,6 @@
 package com.skilldistillery.learning.controllers;
 
+
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,6 +31,14 @@ public class LoginController {
 		}
 		if (storedUser.getPassword().equals(uncheckedUser.getPassword())) {
 			session.setAttribute("user", storedUser);
+//*****************************************************************************************			
+// ********  Displays what is currently in session  ***************************************
+//			 Enumeration<String> e = session.getAttributeNames();
+//			 while (e.hasMoreElements())
+//	                System.out.println("Value is: " + e.nextElement() + "***************");
+//*****************************************************************************************			
+// Test JSP 
+//			return "template/Test";
 			return "results/ProfilePage";
 		} else {
 			

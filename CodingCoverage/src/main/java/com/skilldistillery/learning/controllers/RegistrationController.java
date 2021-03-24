@@ -52,7 +52,7 @@ public class RegistrationController {
 		user.addRoadmap(rmDao.findRoadmapById(2));
 		user.addRoadmap(rmDao.findRoadmapById(3));
 		user.addRoadmap(rmDao.findRoadmapById(4));
-		userDao.createUser(user);
+		user = userDao.createUser(user);
 		session.setAttribute("user", user);
 
 		return "results/ProfilePage";
