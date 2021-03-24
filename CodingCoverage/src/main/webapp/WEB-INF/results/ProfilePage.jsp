@@ -23,14 +23,14 @@
                         <a class="header-menu-tab" href="#1"><span class="icon entypo-cog scnd-font-color"></span>Settings</a>
                     </li>
                     <li>
-                        <a class="header-menu-tab" href="Resources.do"><span class="icon fontawesome-user scnd-font-color"></span>Account</a>
+                        <a class="header-menu-tab" href="Resources.do"><span class="icon fontawesome-user scnd-font-color"></span>Resources</a>
                     </li>
                     <li>
-                        <a class="header-menu-tab" href="#########"><span class="icon fontawesome-envelope scnd-font-color"></span>Messages</a>
+                        <a class="header-menu-tab" href="ViewForum.do"><span class="icon fontawesome-envelope scnd-font-color"></span>Forum</a>
                         <a class="header-menu-number" href="#4"></a>
                     </li>
                     <li>
-                        <a class="header-menu-tab" href="#5"><span class="icon fontawesome-star-empty scnd-font-color"></span>Favorites</a>
+                        <a class="header-menu-tab" href="ViewExpertForum.do"><span class="icon fontawesome-star-empty scnd-font-color"></span>Expert Forum</a>
                     </li>
                 </ul>
                 <div class="profile-menu">
@@ -62,7 +62,7 @@
             			<ul class= "scrolling-box-menu">
             				<c:forEach var="post" items="${sessionScope.user.posts }">
             					<li>
-                            		<a class="menu-box-tab" href="viewForumPost.do?id=${post.id}">
+                            		<a class="menu-box-tab" href="########">
                             			<span class="icon fontawesome-envelope scnd-font-color"></span>
                             				${post.subject }
                             			<div class="menu-box-number"></div>
@@ -123,7 +123,11 @@
                             <a class="menu-box-tab" href="#12"><span class="icon entypo-cog scnd-font-color"></span>View External Resources</a>
                         </li>
                         <li>
+
                             <a class="menu-box-tab" href="viewSessionUserComments.do"><sapn class="icon entypo-chart-line scnd-font-color"></sapn>View My Comments</a>
+
+                            <a class="menu-box-tab" href="ViewComment.do"><sapn class="icon entypo-chart-line scnd-font-color"></sapn>View My Comments</a>
+
                         </li>                        
                     </ul>
                 </div>
@@ -134,24 +138,24 @@
             				<span class="zocial-facebook"></span>
             			</div>
             		<h2 class="facebook titular">SHARE TO FACEBOOK</h2>
-            	</li>
                 </a>
+            	</li>
                 <li>
 	                <a href="#51">
                 		<div class="twitter icon">
                 			<span class="zocial-twitter"></span>
                 		</div>
                 	<h2 class="twitter titular">SHARE TO TWITTER</h2>
-                </li>
                 </a>
+                </li>
                 <li>
                		<a href="#52">
                 		<div class="googleplus icon">
                				<span class="zocial-googleplus"></span>
                			</div>
                		<h2 class="googleplus titular">SHARE TO GOOGLE+</h2>
-               	</li>
                 </a>
+               	</li>
             </ul>
             </div>
             <!-- RIGHT-CONTAINER -->
