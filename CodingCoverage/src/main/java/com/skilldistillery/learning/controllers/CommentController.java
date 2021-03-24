@@ -29,8 +29,8 @@ public class CommentController {
 		return "forms/ViewingForum";
 	}
 	
-	@RequestMapping(path= "viewUserComments.do", params= "id")
-	public String viewComment(Model model, HttpSession session, @RequestParam("id")Integer commentId) {
+	@RequestMapping(path= "showIndividualComment.do", params= "id")
+	public String viewComment(Model model, @RequestParam("id")Integer commentId) {
 		model.addAttribute("comment", commentDao.findById(commentId));
 		return "results/ViewUserComments";
 	}
