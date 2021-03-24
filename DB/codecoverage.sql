@@ -352,8 +352,12 @@ SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `codingcoveragedb`;
-INSERT INTO `user` (`id`, `username`, `password`, `first_name`, `last_name`, `enabled`, `role`, `bio`, `image`) VALUES (1, 'admin', 'admin', NULL, NULL, 1, NULL, NULL, NULL);
-INSERT INTO `user` (`id`, `username`, `password`, `first_name`, `last_name`, `enabled`, `role`, `bio`, `image`) VALUES (2, 'thwebel', 'password', 'Thomas', 'Webel', 1, 'admin', 'Good Coder', NULL);
+INSERT INTO `user` (`id`, `username`, `password`, `first_name`, `last_name`, `enabled`, `role`, `bio`, `image`) VALUES (1, 'admin', 'admin', 'admin', 'admin', 1, 'admin', 'admin', NULL);
+INSERT INTO `user` (`id`, `username`, `password`, `first_name`, `last_name`, `enabled`, `role`, `bio`, `image`) VALUES (2, 'thwebel', 'password', 'Thomas', 'Webel', 1, 'admin', 'The Best Skiier on the Mountian', NULL);
+INSERT INTO `user` (`id`, `username`, `password`, `first_name`, `last_name`, `enabled`, `role`, `bio`, `image`) VALUES (3, 'BryceShearn', 'Founder', 'Bryce', 'Shearn', 1, 'admin', 'One of the three original founders of Coding Coverage', NULL);
+INSERT INTO `user` (`id`, `username`, `password`, `first_name`, `last_name`, `enabled`, `role`, `bio`, `image`) VALUES (4, 'TylorShearn', 'World01!', 'Tylor', 'Shearn', 1, 'admin', 'One of the three original founders of Coding Coverage', NULL);
+INSERT INTO `user` (`id`, `username`, `password`, `first_name`, `last_name`, `enabled`, `role`, `bio`, `image`) VALUES (5, 'Student', 'student', 'Olivia', 'Garton', 1, 'student', 'Makes amazing bread sticks, and better code.', NULL);
+INSERT INTO `user` (`id`, `username`, `password`, `first_name`, `last_name`, `enabled`, `role`, `bio`, `image`) VALUES (6, 'expert', 'expert', 'Tahra', 'Dactyl', 1, 'expert', 'Old school coding expert. Especially capable in the Jurassic Framework.', NULL);
 
 COMMIT;
 
@@ -376,10 +380,10 @@ COMMIT;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `codingcoveragedb`;
-INSERT INTO `post` (`id`, `subject`, `content`, `date_created`, `last_update`, `user_id`, `is_blog`, `is_forum_visable`, `is_expert`, `language_id`) VALUES (1, 'DB design', 'DB design is an essential aspect of full stack applications', NULL, NULL, 2, 1, 0, 0, 1);
-INSERT INTO `post` (`id`, `subject`, `content`, `date_created`, `last_update`, `user_id`, `is_blog`, `is_forum_visable`, `is_expert`, `language_id`) VALUES (2, 'Java Variables', 'It is extremely important to know java variables', NULL, NULL, 2, 0, 1, 0, 1);
-INSERT INTO `post` (`id`, `subject`, `content`, `date_created`, `last_update`, `user_id`, `is_blog`, `is_forum_visable`, `is_expert`, `language_id`) VALUES (3, 'Expert test', 'experts know enought to know they know how to google what they don\'t know, no?', NULL, NULL, 2, 0, 0, 1, 1);
-INSERT INTO `post` (`id`, `subject`, `content`, `date_created`, `last_update`, `user_id`, `is_blog`, `is_forum_visable`, `is_expert`, `language_id`) VALUES (4, 'Personal / Forum Test', 'This should display once per page', NULL, NULL, 2, 1, 1, 1, 1);
+INSERT INTO `post` (`id`, `subject`, `content`, `date_created`, `last_update`, `user_id`, `is_blog`, `is_forum_visable`, `is_expert`, `language_id`) VALUES (1, 'DB design', 'DB design is an essential aspect of full stack applications', '2020-01-01T20:40:20', '2021-01-01T20:40:20', 2, 1, 0, 0, 1);
+INSERT INTO `post` (`id`, `subject`, `content`, `date_created`, `last_update`, `user_id`, `is_blog`, `is_forum_visable`, `is_expert`, `language_id`) VALUES (2, 'Java Variables', 'It is extremely important to know java variables', '2020-01-01T20:40:20', '2021-01-01T20:40:20', 2, 0, 1, 0, 1);
+INSERT INTO `post` (`id`, `subject`, `content`, `date_created`, `last_update`, `user_id`, `is_blog`, `is_forum_visable`, `is_expert`, `language_id`) VALUES (3, 'Expert test', 'experts know enought to know they know how to google what they don\'t know, no?', '2020-01-01T20:40:20', '2021-01-01T20:40:20', 2, 0, 0, 1, 1);
+INSERT INTO `post` (`id`, `subject`, `content`, `date_created`, `last_update`, `user_id`, `is_blog`, `is_forum_visable`, `is_expert`, `language_id`) VALUES (4, 'Personal / Forum Test', 'This should display once per page', '2020-01-01T20:40:20', '2021-01-01T20:40:20', 2, 1, 1, 1, 1);
 
 COMMIT;
 
@@ -389,20 +393,20 @@ COMMIT;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `codingcoveragedb`;
-INSERT INTO `resource` (`id`, `link`, `description`, `date_added`, `difficulty`) VALUES (1, 'https://www.tutorialspoint.com/java/java_environment_setup.htm', 'basic tutorial', NULL, 'easy');
-INSERT INTO `resource` (`id`, `link`, `description`, `date_added`, `difficulty`) VALUES (2, 'https://www.oracle.com/java/technologies/javase/javase-jdk8-downloads.html', 'Download Java 8 here!', NULL, 'easy');
-INSERT INTO `resource` (`id`, `link`, `description`, `date_added`, `difficulty`) VALUES (3, 'https://www.geeksforgeeks.org/differences-jdk-jre-jvm/', 'Desc: JDK, JRE, and JVM described', NULL, 'easy');
-INSERT INTO `resource` (`id`, `link`, `description`, `date_added`, `difficulty`) VALUES (4, 'https://www.freecodecamp.org/news/best-java-8-tutorial/', 'Detailed JDK download guide, along with terminal commands', NULL, 'intermediate');
-INSERT INTO `resource` (`id`, `link`, `description`, `date_added`, `difficulty`) VALUES (5, 'https://atom.io/', 'Download Atom here!', NULL, 'easy');
-INSERT INTO `resource` (`id`, `link`, `description`, `date_added`, `difficulty`) VALUES (6, 'https://www.codecademy.com/articles/what-is-an-ide', 'What an IDE brings to the table', NULL, 'easy');
-INSERT INTO `resource` (`id`, `link`, `description`, `date_added`, `difficulty`) VALUES (7, 'https://www.infoworld.com/article/3114167/choosing-your-java-ide.html', 'Compares and contrasts three advanced Java IDEs', NULL, 'Advanced');
-INSERT INTO `resource` (`id`, `link`, `description`, `date_added`, `difficulty`) VALUES (8, 'https://www.vogella.com/tutorials/Eclipse/article.html', 'In-depth Eclipse (an advanced IDE)  download and setup guide', NULL, 'Intermediate');
-INSERT INTO `resource` (`id`, `link`, `description`, `date_added`, `difficulty`) VALUES (9, 'https://medium.com/@grace.m.nolan/terminal-for-beginners-e492ba10902a', 'Quick guide to the common commands', NULL, 'easy');
-INSERT INTO `resource` (`id`, `link`, `description`, `date_added`, `difficulty`) VALUES (10, 'https://ubuntu.com/tutorials/command-line-for-beginners#4-creating-folders-and-files', 'In depth introduction to the Linux command line interface', NULL, 'Intermediate');
-INSERT INTO `resource` (`id`, `link`, `description`, `date_added`, `difficulty`) VALUES (11, 'https://www.codecademy.com/articles/command-line-commands#:~:text=The%20command%20line%20is%20a,or%20Finder%20on%20Mac%20OS', 'List of useful Commands', NULL, 'easy');
-INSERT INTO `resource` (`id`, `link`, `description`, `date_added`, `difficulty`) VALUES (12, 'https://www.geeksforgeeks.org/beginning-java-programming-with-hello-world-example/', 'Basic description of HelloWorld and the terminal commands to compile and run a java program.', NULL, 'easy');
-INSERT INTO `resource` (`id`, `link`, `description`, `date_added`, `difficulty`) VALUES (13, 'https://en.wikiversity.org/wiki/Java_Tutorial/Hello_World', 'Clear guide for writing, compiling, and running HelloWorld', NULL, 'easy');
-INSERT INTO `resource` (`id`, `link`, `description`, `date_added`, `difficulty`) VALUES (14, 'https://docs.oracle.com/javase/tutorial/getStarted/cupojava/unix.html', 'Step-by-step guide for making a new directory and running your HelloWorld program!', NULL, 'easy');
+INSERT INTO `resource` (`id`, `link`, `description`, `date_added`, `difficulty`) VALUES (1, 'https://www.tutorialspoint.com/java/java_environment_setup.htm', 'basic tutorial', '2021-03-22T20:40:20', 'easy');
+INSERT INTO `resource` (`id`, `link`, `description`, `date_added`, `difficulty`) VALUES (2, 'https://www.oracle.com/java/technologies/javase/javase-jdk8-downloads.html', 'Download Java 8 here!', '2021-03-22T20:40:20', 'easy');
+INSERT INTO `resource` (`id`, `link`, `description`, `date_added`, `difficulty`) VALUES (3, 'https://www.geeksforgeeks.org/differences-jdk-jre-jvm/', 'Desc: JDK, JRE, and JVM described', '2021-03-22T20:40:20', 'easy');
+INSERT INTO `resource` (`id`, `link`, `description`, `date_added`, `difficulty`) VALUES (4, 'https://www.freecodecamp.org/news/best-java-8-tutorial/', 'Detailed JDK download guide, along with terminal commands', '2021-03-22T20:40:20', 'intermediate');
+INSERT INTO `resource` (`id`, `link`, `description`, `date_added`, `difficulty`) VALUES (5, 'https://atom.io/', 'Download Atom here!', '2021-03-22T20:40:20', 'easy');
+INSERT INTO `resource` (`id`, `link`, `description`, `date_added`, `difficulty`) VALUES (6, 'https://www.codecademy.com/articles/what-is-an-ide', 'What an IDE brings to the table', '2021-03-22T20:40:20', 'easy');
+INSERT INTO `resource` (`id`, `link`, `description`, `date_added`, `difficulty`) VALUES (7, 'https://www.infoworld.com/article/3114167/choosing-your-java-ide.html', 'Compares and contrasts three advanced Java IDEs', '2021-03-22T20:40:20', 'Advanced');
+INSERT INTO `resource` (`id`, `link`, `description`, `date_added`, `difficulty`) VALUES (8, 'https://www.vogella.com/tutorials/Eclipse/article.html', 'In-depth Eclipse (an advanced IDE)  download and setup guide', '2021-03-22T20:40:20', 'Intermediate');
+INSERT INTO `resource` (`id`, `link`, `description`, `date_added`, `difficulty`) VALUES (9, 'https://medium.com/@grace.m.nolan/terminal-for-beginners-e492ba10902a', 'Quick guide to the common commands', '2021-03-22T20:40:20', 'easy');
+INSERT INTO `resource` (`id`, `link`, `description`, `date_added`, `difficulty`) VALUES (10, 'https://ubuntu.com/tutorials/command-line-for-beginners#4-creating-folders-and-files', 'In depth introduction to the Linux command line interface', '2021-03-22T20:40:20', 'Intermediate');
+INSERT INTO `resource` (`id`, `link`, `description`, `date_added`, `difficulty`) VALUES (11, 'https://www.codecademy.com/articles/command-line-commands#:~:text=The%20command%20line%20is%20a,or%20Finder%20on%20Mac%20OS', 'List of useful Commands', '2021-03-22T20:40:20', 'easy');
+INSERT INTO `resource` (`id`, `link`, `description`, `date_added`, `difficulty`) VALUES (12, 'https://www.geeksforgeeks.org/beginning-java-programming-with-hello-world-example/', 'Basic description of HelloWorld and the terminal commands to compile and run a java program.', '2021-03-22T20:40:20', 'easy');
+INSERT INTO `resource` (`id`, `link`, `description`, `date_added`, `difficulty`) VALUES (13, 'https://en.wikiversity.org/wiki/Java_Tutorial/Hello_World', 'Clear guide for writing, compiling, and running HelloWorld', '2021-03-22T20:40:20', 'easy');
+INSERT INTO `resource` (`id`, `link`, `description`, `date_added`, `difficulty`) VALUES (14, 'https://docs.oracle.com/javase/tutorial/getStarted/cupojava/unix.html', 'Step-by-step guide for making a new directory and running your HelloWorld program!', '2021-03-22T20:40:20', 'easy');
 
 COMMIT;
 
@@ -412,7 +416,7 @@ COMMIT;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `codingcoveragedb`;
-INSERT INTO `comment` (`id`, `content`, `date_created`, `date_updated`, `post_id`, `user_id`) VALUES (1, 'That is a ridiculous statement!', NULL, NULL, 1, 2);
+INSERT INTO `comment` (`id`, `content`, `date_created`, `date_updated`, `post_id`, `user_id`) VALUES (1, 'That is a ridiculous statement!', '2020-01-01T20:40:20', '2021-01-01T20:40:20', 1, 2);
 
 COMMIT;
 
@@ -468,7 +472,7 @@ COMMIT;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `codingcoveragedb`;
-INSERT INTO `user_roadmap_task` (`id`, `user_id`, `task_id`, `completed`, `start_date`, `end_date`) VALUES (1, 2, 1, 1, NULL, NULL);
+INSERT INTO `user_roadmap_task` (`id`, `user_id`, `task_id`, `completed`, `start_date`, `end_date`) VALUES (1, 2, 1, 1, '2021-03-22T20:40:20', '2021-03-23T1:40:20');
 
 COMMIT;
 
@@ -478,7 +482,7 @@ COMMIT;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `codingcoveragedb`;
-INSERT INTO `post_vote` (`id`, `date_voted`, `vote`, `post_id`, `user_id`) VALUES (1, NULL, 1, 1, 2);
+INSERT INTO `post_vote` (`id`, `date_voted`, `vote`, `post_id`, `user_id`) VALUES (1, '2020-01-01T20:40:20', 1, 1, 2);
 
 COMMIT;
 
@@ -488,7 +492,7 @@ COMMIT;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `codingcoveragedb`;
-INSERT INTO `comment_vote` (`id`, `date_voted`, `vote`, `comment_id`, `user_id`) VALUES (1, NULL, 1, 1, 2);
+INSERT INTO `comment_vote` (`id`, `date_voted`, `vote`, `comment_id`, `user_id`) VALUES (1, '2020-01-01T20:40:20', 1, 1, 2);
 
 COMMIT;
 

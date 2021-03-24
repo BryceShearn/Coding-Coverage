@@ -31,8 +31,12 @@ public class AuthenticationDAOimpl implements AuthenticationDAO {
 	public User getUserByUserName(User uncheckedUser) {
 		
 		String getUser = "SELECT u FROM User u WHERE u.username = :username";
-		
-		User foundUser = em.createQuery(getUser, User.class).setParameter("username", uncheckedUser.getUsername()).getSingleResult();
+		User foundUser =  null;
+		try {
+			foundUser = em.createQuery(getUser, User.class).setParameter("username", uncheckedUser.getUsername()).getSingleResult();	
+		}catch (NoResultException e) {
+			return null;
+		}
 		
 		return foundUser;
 	}
