@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.skilldistillery.learning.dao.AuthenticationDAO;
+import com.skilldistillery.learning.dao.RoadmapDAO;
 import com.skilldistillery.learning.dao.UserDAO;
 import com.skilldistillery.learning.entities.User;
 
@@ -22,6 +23,10 @@ public class RegistrationController {
 
 	@Autowired
 	private AuthenticationDAO authDao;
+	
+	@Autowired
+	private RoadmapDAO rmDao;
+	
 
 	@RequestMapping(path = "createAccountForm.do", method = RequestMethod.GET)
 	public ModelAndView createAccountPage() {
@@ -43,6 +48,10 @@ public class RegistrationController {
 			errors.rejectValue("username", "error.username", "Usename already in use!");
 			return "forms/CreateAccount";
 		}
+		user.addRoadmap(rmDao.findRoadmapById(1));
+		user.addRoadmap(rmDao.findRoadmapById(2));
+		user.addRoadmap(rmDao.findRoadmapById(3));
+		user.addRoadmap(rmDao.findRoadmapById(4));
 		userDao.createUser(user);
 		session.setAttribute("user", user);
 
