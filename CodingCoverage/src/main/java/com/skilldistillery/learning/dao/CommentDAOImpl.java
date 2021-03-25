@@ -1,5 +1,6 @@
 package com.skilldistillery.learning.dao;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 import javax.persistence.EntityManager;
@@ -58,6 +59,9 @@ public class CommentDAOImpl implements CommentDAO {
 
 	@Override
 	public Comment updateComment(Comment updatedComment) {
+		
+		updatedComment.setDateUpdated(LocalDateTime.now());
+		updatedComment.setContent(updatedComment.getContent());
 		
 		return em.merge(updatedComment);	
 	}

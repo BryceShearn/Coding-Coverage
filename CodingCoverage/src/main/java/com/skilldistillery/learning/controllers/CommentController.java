@@ -15,6 +15,7 @@ import org.springframework.web.context.annotation.SessionScope;
 
 import com.skilldistillery.learning.dao.CommentDAO;
 import com.skilldistillery.learning.entities.Comment;
+import com.skilldistillery.learning.entities.Post;
 
 @Controller
 public class CommentController {
@@ -32,7 +33,7 @@ public class CommentController {
 	}
 	
 	@RequestMapping(path= "showIndividualComment.do", params= "id")
-	public String viewComment(Model model, @RequestParam("id")Integer commentId) {
+	public String viewComment(Model model, @RequestParam("id")Integer commentId, Comment comment) {
 		model.addAttribute("comment", commentDao.findById(commentId));
 		return "forms/EditComment";
 	}
@@ -41,5 +42,12 @@ public class CommentController {
 	public String viewSessionUserComments(Model model) {
 		return "results/ViewUserComments";
 	}
+	
+	@RequestMapping(path="updateComment.do", params= {"id"})
+	public String updateComment(Model model, Comment comment, Post post) {
+		commentDao.updateComment(comment);
+		return "redirect:viewSessionUserComments.do";
+	}
+	
 	
 }
