@@ -30,7 +30,7 @@ public class PostController {
 	@RequestMapping(path="ViewForum.do")
 	public String viewForum(Model model) {
 		model.addAttribute("posts", postDAO.findAll());
-		return "forms/ViewForum";
+		return "forms/ViewForum2";
 	}
 	
 	@RequestMapping(path="searchFilters.do", params= {"keyword", "language_id"})
