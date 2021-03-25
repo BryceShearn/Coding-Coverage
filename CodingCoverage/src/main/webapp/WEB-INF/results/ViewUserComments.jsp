@@ -36,7 +36,7 @@
   ${sessionScope.user.comments.get(0).commentVote}
   <br>
   <form action="showIndividualComment.do" method="GET">
-  <input type="hidden" value= ${comment.id} name="id"/>
+  <input type="hidden" value= ${sessionScope.user.comments.get(0).id} name="id"/>
   <input class="button" type="submit" value="Edit Comment" />
   </form>
   <br>

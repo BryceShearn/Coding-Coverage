@@ -39,13 +39,14 @@ public class AuthenticationDAOimpl implements AuthenticationDAO {
 		}catch (NoResultException e) {
 			return null;
 		}
-		
-		foundUser.getComments().size();
+		int i = foundUser.getComments().size();
+		System.out.println("************************" + i);
 		foundUser.getRoadmaps().size();
 		foundUser.getUserRoadmapTasks().size();
 		foundUser.getPosts().size();
 		for (Post post : foundUser.getPosts()) {
 			post.getPostVote().size();
+		System.out.println(i);
 		}
 		for (Comment post : foundUser.getComments()) {
 			post.getCommentVote().size();

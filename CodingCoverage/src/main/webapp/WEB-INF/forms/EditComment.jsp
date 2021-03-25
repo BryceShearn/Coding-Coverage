@@ -8,10 +8,29 @@
 </head>
 <body>
 <br>
+  ${sessionScope.user.comments.get(0).post.dateCreated}    ${sessionScope.user.comments.get(0).post.user.image} ${sessionScope.user.comments.get(0).post.user.username} <b><i>${sessionScope.user.comments.get(0).post.user.role}</i></b>
+  <br>
+  ${sessionScope.user.comments.get(0).post.subject}
+  <br>
+  Includes ${sessionScope.user.comments.get(0).post.language}
+  <br>
+  ${sessionScope.user.comments.get(0).post.content}
+  <br>
+  ${sessionScope.user.comments.get(0).post.postVote}
+  <br>
+  ----------------------------------------------------------
+  <br>
   ${sessionScope.user.comments.get(0).dateCreated}    ${sessionScope.user.comments.get(0).user.image} ${sessionScope.user.comments.get(0).user.username} <b><i>${sessionScope.user.comments.get(0).user.role}</i></b>
   <br>
-  ${sessionScope.user.comments.get(0).content}
+  <form action="updateComment.do" method="POST">
+  <input type="text" value= '${sessionScope.user.comments.get(0).content}' name="content"/>
   <br>
   ${sessionScope.user.comments.get(0).commentVote}
+  <br>
+  <input type="hidden" value= "${sessionScope.user.comments.get(0).post.id}" name="postId" />
+  <input type="hidden" value= "${sessionScope.user.comments.get(0).id}" name="commentId" />
+  <input type="hidden" value= "${sessionScope.user.id}" name="userId" />
+  <input class="button" type="submit" value="Submit Edit" />
+  </form>
 </body>
 </html>
