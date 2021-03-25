@@ -18,8 +18,8 @@
 <body class="userPostFormBody">
 	<div class="userPostFormDiv">
 		<h2 class="active"> Create a Post </h2>
-		<h2 class="nonactive"> Return Home </h2>
-		<form:form class="userPostFormForm" action="createForumPost.do" method="POST" modelAttribute="post">
+		<a href="profilePageResults.do"><h2 class="nonactive"> Return Home </h2></a>
+		<form:form class="userPostFormForm" id="thisForm" action="createForumPost.do" method="POST" modelAttribute="post">
 			<form:input path="subject" type="text" class="text1" name="subject" placeholder="Subject" />
 			<span class = "title-span">Title</span>
 			<form:errors path="subject"/>
@@ -42,8 +42,8 @@
 			<form:hidden path="isBlog" value="false" />
 			<form:hidden path="isExpert" value="false" />
 		</form:form>
-		<button class="signInButton">
-        Post Comment
+		<button type="button" form="thisForm" class="signInButton">
+        Submit Post
       </button>
 	<hr></hr>
 	</div>
