@@ -24,12 +24,7 @@
 	<link rel="shortcut icon" type="image/jpg" href="images/codingCoverage.png"/>
 </head>
 <body>
-	
-
 	<div class="wrapper">
-		
-
-
 		<header>
 			<div class="container">
 				<div class="header-data">
@@ -59,8 +54,6 @@
 				</div><!--header-data end-->
 			</div>
 		</header>	
-
-
 		<section class="forum-sec">
 			<div class="container">
 				<div class="forum-links">
@@ -77,7 +70,6 @@
 				</div>
 			</div>
 		</section>
-
 		<section class="forum-page">
 			<div class="container">
 				<div class="forum-questions-sec">
@@ -293,7 +285,6 @@
 				</div><!--forum-questions-sec end-->
 			</div>
 		</section><!--forum-page end-->
-
 		<footer>
 			<div class="footy-sec mn no-margin">
 				<div class="container">
@@ -313,8 +304,6 @@
 				</div>
 			</div>
 		</footer>
-
-
 		<div class="overview-box" id="question-box">
 			<div class="overview-edit">
 				<h3>Ask a Question</h3>
@@ -328,18 +317,12 @@
 				<a href="#" title="" class="close-box"><i class="la la-close"></i></a>
 			</div><!--overview-edit end-->
 		</div><!--overview-box end-->
-
 	</div><!--theme-layout end-->
-
-
-
 <script type="text/javascript" src="js/jquery.min.js"></script>
 <script type="text/javascript" src="js/popper.js"></script>
 <script type="text/javascript" src="js/bootstrap.min.js"></script>
 <script type="text/javascript" src="js/jquery.mCustomScrollbar.js"></script>
 <script type="text/javascript" src="js/slick.min.js"></script>
 <script type="text/javascript" src="js/script.js"></script>
-
-
 </body>
 </html>
