@@ -10,22 +10,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <title>${post.content}</title>
+    <title>Edit Your Comment</title>
     <link rel="shortcut icon" type="image/jpg" href="images/codingCoverage.png"/>
   </head>
   <body>
   <br>
-  ${post.dateCreated}    ${post.user.image} ${post.user.username} <b><i>${post.user.role}</i></b>
+  
+  <c:if test="${sessionScope.user.comments.size() > 0}">
+  ${sessionScope.user.comments.get(0).post.user.username}
   <br>
-  ${post.subject}
-  <br>
-  Includes ${post.language}
-  <br>
-  ${post.content}
-  <br>
-  ${post.postVote}
-  <br>
-  ${post.comments}
+  ${sessionScope.user.comments.get(0).content}
+  </c:if>
+  
+  
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
