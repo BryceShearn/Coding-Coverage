@@ -10,16 +10,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <title>Edit Your Comment</title>
+    <title>Your Comments</title>
     <link rel="shortcut icon" type="image/jpg" href="images/codingCoverage.png"/>
   </head>
   <body>
   <br>
   
   <c:if test="${sessionScope.user.comments.size() > 0}">
-  ${sessionScope.user.comments.get(0).post.user.username}
+  ${sessionScope.user.comments.get(0).post.dateCreated}    ${sessionScope.user.comments.get(0).post.user.image} ${sessionScope.user.comments.get(0).post.user.username} <b><i>${sessionScope.user.comments.get(0).post.user.role}</i></b>
+  <br>
+  ${sessionScope.user.comments.get(0).post.subject}
+  <br>
+  Includes ${sessionScope.user.comments.get(0).post.language}
+  <br>
+  ${sessionScope.user.comments.get(0).post.content}
+  <br>
+  ${sessionScope.user.comments.get(0).post.postVote}
+  <br>
+  ----------------------------------------------------------
+  <br>
+  ${sessionScope.user.comments.get(0).dateCreated}    ${sessionScope.user.comments.get(0).user.image} ${sessionScope.user.comments.get(0).user.username} <b><i>${sessionScope.user.comments.get(0).user.role}</i></b>
   <br>
   ${sessionScope.user.comments.get(0).content}
+  <br>
+  ${sessionScope.user.comments.get(0).commentVote}
+  <br>
+  <form action="showIndividualComment.do" method="GET">
+  <input type="hidden" value= ${comment.id} name="id"/>
+  <input class="button" type="submit" value="Edit Comment" />
+  </form>
+  <br>
   </c:if>
   
   

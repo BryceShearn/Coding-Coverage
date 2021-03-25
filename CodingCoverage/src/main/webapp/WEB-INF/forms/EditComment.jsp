@@ -4,9 +4,14 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Edit Your Comment</title>
 </head>
 <body>
-
+<br>
+  ${sessionScope.user.comments.get(0).dateCreated}    ${sessionScope.user.comments.get(0).user.image} ${sessionScope.user.comments.get(0).user.username} <b><i>${sessionScope.user.comments.get(0).user.role}</i></b>
+  <br>
+  ${sessionScope.user.comments.get(0).content}
+  <br>
+  ${sessionScope.user.comments.get(0).commentVote}
 </body>
 </html>
