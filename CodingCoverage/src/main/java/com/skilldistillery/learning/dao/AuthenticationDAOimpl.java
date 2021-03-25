@@ -7,8 +7,12 @@ import javax.transaction.Transactional;
 
 import org.springframework.stereotype.Service;
 
+import com.skilldistillery.learning.entities.CodeConcept;
 import com.skilldistillery.learning.entities.Comment;
 import com.skilldistillery.learning.entities.Post;
+import com.skilldistillery.learning.entities.Resource;
+import com.skilldistillery.learning.entities.Roadmap;
+import com.skilldistillery.learning.entities.Task;
 import com.skilldistillery.learning.entities.User;
 
 @Service
@@ -51,6 +55,15 @@ public class AuthenticationDAOimpl implements AuthenticationDAO {
 		for (Comment post : foundUser.getComments()) {
 			post.getCommentVote().size();
 		}
+		// load Rm -> CC -> T -> Re Lists 
+		for (Roadmap map : foundUser.getRoadmaps()) {
+			for (CodeConcept concept : map.getCodeConcepts()) {
+				for (Task task : concept.getTask()) {
+					task.getResources().size();
+				}
+			}
+		}
+	
 		
 		
 		return foundUser;

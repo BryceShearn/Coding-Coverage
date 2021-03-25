@@ -32,11 +32,11 @@ public class PostDAOImpl implements PostDAO {
 		
 		int id = user.getId();
 		
-		List<Post> comments = em.createQuery(getUsersPost, Post.class)
+		List<Post> posts = em.createQuery(getUsersPost, Post.class)
 				.setParameter("userID", id)
 				.getResultList();
 		
-		return comments;
+		return posts;
 	}
 
 	@Override
