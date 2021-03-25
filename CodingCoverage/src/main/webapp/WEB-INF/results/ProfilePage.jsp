@@ -111,7 +111,7 @@
           <h2 class="titular">MENU BOX</h2>
                     <ul class="menu-box-menu">
                         <li>
-                            <a class="menu-box-tab" href="#6"><span class="icon fontawesome-envelope scnd-font-color"></span>View RoadMap<div class="menu-box-number"></div></a>                            
+                            <a class="menu-box-tab" href="roadmap.do"><span class="icon fontawesome-envelope scnd-font-color"></span>View RoadMaps<div class="menu-box-number"></div></a>                            
                         </li>
                         <li>
                             <a class="menu-box-tab" href="getForumPostForm.do"><span class="icon entypo-paper-plane scnd-font-color"></span>Post to Community Forum<div class="menu-box-number"></div></a>                            
