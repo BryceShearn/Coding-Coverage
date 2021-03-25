@@ -1,0 +1,203 @@
+.userPostFormBody {
+  background-image: url("https://wallpaperaccess.com/full/1155007.jpg");
+  font-family: 'Montserrat', sans-serif;
+  color: #fff;
+  font-size: 14px;
+  letter-spacing: 1px;
+  padding-top: 120px;
+}
+
+.signInButton {
+  background-color: d3d3d3;
+  font-family: 'Montserrat', sans-serif;
+  color: #fff;
+  font-size: 14px;
+  letter-spacing: 1px;
+  padding-top: 1px;
+}
+
+.userPostFormDiv{
+  position: relative;
+  height: 560px;
+  width: 405px;
+  margin: auto;
+  padding: 60px 60px;
+  background: url(https://images.unsplash.com/photo-1523800503107-5bc3ba2a6f81?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80) no-repeat   center center #505050;
+  background-size: cover;
+  box-shadow: 0px 30px 60px -5px #000;
+}
+
+form {
+  padding-top: 50px;
+    
+}
+
+.active {
+  border-bottom: 2px solid #1161ed;
+  
+}
+
+.nonactive {
+  color: rgba(255, 255, 255, 0.2);
+  
+}
+
+h2 {
+  padding-left: 12px;
+  font-size: 22px;
+  text-transform: uppercase;
+  padding-bottom: 1px;
+  letter-spacing: 2px;
+  display: inline-block;
+  font-weight: 100;
+  
+  
+
+}
+
+h2:first-child {
+  padding-left: 0px;
+
+}
+
+.title-span {
+  text-transform: uppercase;
+  font-size: 20px;
+  opacity: 0.4;
+  display: inline-block;
+  position: relative;
+  top: -65px;
+  padding-left: 10px;
+  transition: all 0.5s ease-in-out;
+}
+
+.body-span {
+  text-transform: uppercase;
+  font-size: 20px;
+  opacity: 0.4;
+  display: inline-block;
+  position: relative;
+  top: -30px;
+  padding-left: 10px;
+  transition: all 0.5s ease-in-out;
+}
+
+input[name="subject"] {
+  width: 89%;
+  padding: 5px 20px 20px 10px;
+  display: block;
+  height: 5px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid rgba(255, 255, 255, 0);
+  overflow: hidden;
+  margin-top: -10px;
+  margin-bottom: -20px;
+  transition: all 0.5s ease-in-out;
+  
+}
+
+textarea[name="content"] {
+  width: 89%;
+  padding: 5px 20px 100px 10px;
+  display: block;
+  height: 5px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid rgba(255, 255, 255, 0);
+  overflow:hidden;
+  margin-top: -25px;
+  transition: all 0.5s ease-in-out;
+  word-break: break-word;
+  overflow-y: scroll;
+          scrollbar-3dlight-color:gold;
+        scrollbar-arrow-color:blue;
+        scrollbar-base-color:blue;
+        scrollbar-darkshadow-color:blue;
+        scrollbar-face-color:green;
+        scrollbar-highlight-color:yellowww;
+}
+
+  input[name="subject"]:focus, textarea[name="content"]:focus {
+  outline: 0;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  border-radius: 20px;
+  background: rgba(0, 0, 0, 0);
+  }
+
+input[name="subject"]:focus + span , textarea[name="content"]:focus + span{
+  opacity: 0.6;
+}
+ input[name="subject"], textarea[name="content"]{
+  font-family: 'Montserrat', sans-serif;
+  color: #fff;
+}
+
+
+
+input[name="subject"], textarea[name="content"] {
+  display: inline-block;
+  padding-top: 10px;
+  font-size: 14px;
+}
+input[name="subject"], textarea[name="content"],
+h2,
+span,
+.radio {
+  margin-left: 20px;
+}
+
+  .radio {
+  -webkit-appearance: none;
+  padding-left: 20px;
+  border-radius: 2px;
+  display: inline-block;
+  position: relative;
+  top: 6px;
+}
+
+.radio:checked {
+  background-color: rgba(17, 97, 237, 1);
+}
+
+.radio:checked:after {
+  content: '\2714';
+  font-size: 10px;
+  position: absolute;
+  top: 1px;
+  left: 4px;
+  color: #fff;
+}
+
+.radio:focus {
+  outline: none;
+  
+}
+
+.signInButton {
+  background-color: #1161ed;
+  color: #FFF;
+  width: 100%;
+  padding: 10px 20px;
+  display: block;
+  height: 39px;
+  border-radius: 20px;
+  margin-top: 20px;
+  transition: all 0.5s ease-in-out;
+  border: none;
+  text-transform: uppercase;
+  
+}
+
+.signInButton:hover {
+  background: #4082f5;
+  box-shadow: 0px 4px 35px -5px #4082f5;
+  cursor: pointer;
+  
+}
+
+.signInButton:focus {
+  outline: none;
+  
+}
+
