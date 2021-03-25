@@ -70,13 +70,9 @@
                         		</li>
             				</c:forEach>
             			</ul>
-  					<p>COMMUNITY POSTS</p>
-                    <p>Filler Post 1</p>
-                    <p>Filler Post 2</p>
-                    <p>Filler Post 3</p>
-                    <p>Filler Post 4</p>
-                    <p>Filler Post 5</p>
-  						<ul class= "scrolling-box-menu">
+            			
+            			<!-- TBD EXPERT ONLY -->
+  						<%-- <ul class= "scrolling-box-menu">
             				<c:forEach var="post" items="${sessionScope.user.posts }">
             					<li>
                             		<a class="menu-box-tab" href="########">
@@ -102,7 +98,8 @@
             				</c:forEach>
             			</ul>
 					</c:when>
-            		</c:choose>
+            		</c:choose> --%>
+            		<!-- TBD EXPERT -->
               	</div>
             </div>
             <!-- MIDDLE-CONTAINER -->
@@ -126,8 +123,8 @@
 
                             <a class="menu-box-tab" href="viewSessionUserComments.do"><sapn class="icon entypo-chart-line scnd-font-color"></sapn>View My Comments</a>
 
-                            <a class="menu-box-tab" href="ViewComment.do"><sapn class="icon entypo-chart-line scnd-font-color"></sapn>View My Comments</a>
-
+<!--                             <a class="menu-box-tab" href="ViewComment.do"><sapn class="icon entypo-chart-line scnd-font-color"></sapn>View My Comments</a>
+ -->
                         </li>                        
                     </ul>
                 </div>
