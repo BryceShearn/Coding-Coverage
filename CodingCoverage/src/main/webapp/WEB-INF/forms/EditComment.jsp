@@ -27,8 +27,9 @@
   <br>
   ${sessionScope.user.comments.get(0).commentVote}
   <br>
-  <input type="hidden" value= ${sessionScope.user.comments.get(0).post.id} name="id" />
-  <input type="hidden" value= ${sessionScope.user.comments.get(0).id} name="id" />
+  <input type="hidden" value= "${sessionScope.user.comments.get(0).post.id}" name="postId" />
+  <input type="hidden" value= "${sessionScope.user.comments.get(0).id}" name="commentId" />
+  <input type="hidden" value= "${sessionScope.user.id}" name="userId" />
   <input class="button" type="submit" value="Submit Edit" />
   </form>
 </body>

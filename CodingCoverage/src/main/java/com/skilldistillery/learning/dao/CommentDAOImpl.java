@@ -10,6 +10,8 @@ import javax.transaction.Transactional;
 import org.springframework.stereotype.Service;
 
 import com.skilldistillery.learning.entities.Comment;
+import com.skilldistillery.learning.entities.CommentVote;
+import com.skilldistillery.learning.entities.PostVote;
 import com.skilldistillery.learning.entities.User;
 
 @Transactional
@@ -58,12 +60,23 @@ public class CommentDAOImpl implements CommentDAO {
 	}
 
 	@Override
-	public Comment updateComment(Comment updatedComment) {
-		
-		updatedComment.setDateUpdated(LocalDateTime.now());
-		updatedComment.setContent(updatedComment.getContent());
-		
-		return em.merge(updatedComment);	
+	public Comment updateComment(Comment updatedComment, Integer id) {
+		Comment comment = em.find(Comment.class, id);
+		System.out.println("**********************************" + updatedComment);
+		comment.setDateUpdated(LocalDateTime.now());
+		System.out.println("**********************************" + updatedComment);
+		comment.setContent(updatedComment.getContent());
+		System.out.println(comment);
+		List<PostVote> pList = comment.getPost().getPostVote();
+		if (pList != null) {
+			pList.size();
+		}
+		List<CommentVote> cList = comment.getCommentVote();
+		if (cList != null) {
+			cList.size();
+		}
+		System.out.println(cList + "******************************************************");
+		return comment;	
 	}
 
 	@Override

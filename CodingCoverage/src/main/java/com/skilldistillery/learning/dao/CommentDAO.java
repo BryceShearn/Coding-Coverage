@@ -15,7 +15,7 @@ public interface CommentDAO {
 	
 	Comment createComment(Comment newComment);
 	
-	Comment updateComment(Comment updatedComment);
+	Comment updateComment(Comment updatedComment, Integer id);
 	
 	boolean deleteComment(Comment targetComment);
 	
