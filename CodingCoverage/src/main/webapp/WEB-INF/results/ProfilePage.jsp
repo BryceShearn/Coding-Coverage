@@ -56,33 +56,28 @@
                         	<p class="scnd-font-color">${sessionScope.user.bio }</p>
                     	</div>
               	</div>
+            <!-- POST BOX -->
             <div class="scrolling-box block">
             	<h2 class="titular">YOUR POSTS</h2>
                 	<section id="1">PERSONAL POSTS</section>
             			<ul class= "scrolling-box-menu">
             				<c:forEach var="post" items="${sessionScope.user.posts }">
             					<li>
-                            		<a class="menu-box-tab" href="########">
+                            		<a class="scrolling-box-tab" href="########">
                             			<span class="icon fontawesome-envelope scnd-font-color"></span>
                             				${post.subject }
-                            			<div class="menu-box-number"></div>
+                            			<div class="scrolling-box-number"></div>
                             		</a>                            
                         		</li>
             				</c:forEach>
             			</ul>
-  					<p>COMMUNITY POSTS</p>
-                    <p>Filler Post 1</p>
-                    <p>Filler Post 2</p>
-                    <p>Filler Post 3</p>
-                    <p>Filler Post 4</p>
-                    <p>Filler Post 5</p>
   						<ul class= "scrolling-box-menu">
             				<c:forEach var="post" items="${sessionScope.user.posts }">
             					<li>
-                            		<a class="menu-box-tab" href="########">
+                            		<a class="scrolling-box-tab" href="########">
                             			<span class="icon fontawesome-envelope scnd-font-color"></span>
                             				${post.subject }
-                            			<div class="menu-box-number"></div>
+                            			<div class="scrolling-box-number"></div>
                             		</a>                            
                         		</li>
             				</c:forEach>
@@ -93,10 +88,10 @@
             			<ul class= "scrolling-box-menu">
             				<c:forEach var="post" items="${sessionScope.user.posts }">
             					<li>
-                            		<a class="menu-box-tab" href="########">
+                            		<a class="scrolling-box-tab" href="########">
                             			<span class="icon fontawesome-envelope scnd-font-color"></span>
                             				${post.subject }
-                            			<div class="menu-box-number"></div>
+                            			<div class="scrolling-box-number"></div>
                             		</a>                            
                         		</li>
             				</c:forEach>
@@ -123,11 +118,7 @@
                             <a class="menu-box-tab" href="#12"><span class="icon entypo-cog scnd-font-color"></span>View External Resources</a>
                         </li>
                         <li>
-
                             <a class="menu-box-tab" href="viewSessionUserComments.do"><sapn class="icon entypo-chart-line scnd-font-color"></sapn>View My Comments</a>
-
-                            <a class="menu-box-tab" href="ViewComment.do"><sapn class="icon entypo-chart-line scnd-font-color"></sapn>View My Comments</a>
-
                         </li>                        
                     </ul>
                 </div>
