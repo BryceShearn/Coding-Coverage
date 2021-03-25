@@ -10,47 +10,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <title>Create A Post!</title>
+    <link rel="shortcut icon" type="image/jpg" href="images/codingCoverage.png"/>
+	<link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+    <title>Create A Forum Post</title>
+  	<link rel="stylesheet" href="css/CreatePost.css">
   </head>
-  <body>
-	<div class="form">
-		<form:form id="createPost" action="createForumPost.do" method="POST" modelAttribute="post">
-  			<!-- subject -->
-  			<form:input path="subject"  placeholder="Subject"/>
-  			<form:errors path="subject"/>
-  			<!-- content -->
-  			<form:textarea path="content" placeholder="Content"/>
-  			<form:errors path="content"/>
-  			<!-- Language Radio Selection -->
-  			<label for="langId">What language is this post about?</label>
-			<select name="langId" id="langId">
-			    <option value="">--Please choose an option--</option>
-			    <option value="1">Java</option>
-			    <option value="2">HTML</option>
-			    <option value="3">CSS</option>
-			    <option value="4">SQL</option>
-			</select>
-
-  			<!-- hidden visibility booleans  -->
-  			<form:hidden path="isForumVisable" value="true"/>
-  			<form:hidden path="isBlog" value="false"/>
-  			<form:hidden path="isExpert" value="false"/>
-		</form:form>	
-      		<button type="submit" name = "submit" value = "createPost" form ="createPost">SUBMIT POST</button>
-      			
-      		<form id = "returnHome" action="profilePageResults.do" method="get"></form>
-     		<button type="submit" name = "submit" form = "returnHome" class="animation a7">RETURN TO PROFILE</button>
+<body class="userPostFormBody">
+	<div class="userPostFormDiv">
+		<h2 class="active"> Create a Post </h2>
+		<h2 class="nonactive"> Return Home </h2>
+		<form:form class="userPostFormForm" action="createForumPost.do" method="POST" modelAttribute="post">
+			<form:input path="subject" type="text" class="text1" name="subject" placeholder="Subject" />
+			<span class = "title-span">Title</span>
+			<form:errors path="subject"/>
+			<br>
+			<br>
+			<span class = "body-span">Body</span>
+			<form:textarea path="content" type="text" class="text2" name="content" placeholder="Content" />
+			<form:errors path="content" />
+			<br>
+			<label class="radio" for="langId">What language is this post about?</label><br>
+			<input type="radio" id="langId1" name="langId" value="1"/>
+			<label for="langId">Java</label>
+			<input type="radio" id="langId2" name="langId" value="2"/>
+			<label for="langId">HTML</label>
+			<input type="radio" id="langId3" name="langId" value="3"/>
+			<label for="langId">CSS</label>
+			<input type="radio" id="langId4" name="langId" value="4"/>
+			<label for="langId">SQL</label>
+			<form:hidden path="isForumVisable" value="true" />
+			<form:hidden path="isBlog" value="false" />
+			<form:hidden path="isExpert" value="false" />
+		</form:form>
+		<button class="signInButton">
+        Post Comment
+      </button>
+	<hr></hr>
 	</div>
-  
-  
-  <!-- 
-'subject','varchar(500)
-'content','text',
-'is_blog','tinyint(1)',
-'is_forum_visable','tinyint(4)''
-'is_expert','tinyint(4)'
-'language_id','int(11)'
-   -->
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
