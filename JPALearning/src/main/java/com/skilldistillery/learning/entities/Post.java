@@ -12,6 +12,8 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Size;
 
 @Entity
 public class Post {
@@ -19,9 +21,13 @@ public class Post {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
-
+	
+	@NotBlank 
+	@Size(min=20, max=400, message="Subject must be between 20 to 400 characters")
 	private String subject;
 	
+	@NotBlank
+	@Size(min=20, max=20000, message="Content must be more than 20 characters")
 	private String content;
 	
 	@Column(name="date_created")
@@ -30,7 +36,6 @@ public class Post {
 	@Column(name="last_update")
 	private LocalDateTime lastUpdate;
 	
-	// TODO user_id add user obj relation
 	@OneToMany(mappedBy="post")
 	private List<Comment> comments;
 

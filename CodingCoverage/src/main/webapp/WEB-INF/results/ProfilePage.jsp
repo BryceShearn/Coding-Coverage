@@ -114,7 +114,7 @@
                             <a class="menu-box-tab" href="#6"><span class="icon fontawesome-envelope scnd-font-color"></span>View RoadMap<div class="menu-box-number"></div></a>                            
                         </li>
                         <li>
-                            <a class="menu-box-tab" href="#8"><span class="icon entypo-paper-plane scnd-font-color"></span>Post to Community Forum<div class="menu-box-number"></div></a>                            
+                            <a class="menu-box-tab" href="getForumPostForm.do"><span class="icon entypo-paper-plane scnd-font-color"></span>Post to Community Forum<div class="menu-box-number"></div></a>                            
                         </li>
                         <li>
                             <a class="menu-box-tab" href="#10"><span class="icon entypo-calendar scnd-font-color"></span>Post to Expert Forum (EXPERT)<div class="menu-box-number"></div></a>                            
