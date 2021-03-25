@@ -39,6 +39,12 @@
   <input type="hidden" value= ${sessionScope.user.comments.get(0).id} name="id"/>
   <input class="button" type="submit" value="Edit Comment" />
   </form>
+  
+  <form action="deleteComment.do" method="POST">
+   <input type="hidden" value= "${sessionScope.user.comments.get(0).id}" name="commentId" />
+   <input type="hidden" value= "${sessionScope.user.id}" name="userId" />
+  <input class="button" type="submit" value="Delete Comment" />
+  </form>
   <br>
   </c:if>
   

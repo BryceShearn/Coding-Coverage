@@ -38,7 +38,7 @@ public class Comment {
 	@JoinColumn(name="post_id")
 	private Post post;
 	
-	@OneToMany(mappedBy="comment")
+	@OneToMany(orphanRemoval = true, mappedBy = "comment")
 	private List<CommentVote> commentVote;
 	
 	public Comment() {

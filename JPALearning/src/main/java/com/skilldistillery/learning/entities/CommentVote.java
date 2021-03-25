@@ -2,6 +2,7 @@ package com.skilldistillery.learning.entities;
 
 import java.time.LocalDateTime;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -28,7 +29,7 @@ public class CommentVote {
 	@Column(name = "user_id")
 	private int userId;
 	
-	@ManyToOne
+	@ManyToOne(cascade= {CascadeType.PERSIST, CascadeType.REMOVE})
 	@JoinColumn(name="comment_id")
 	private Comment comment;
 
