@@ -4,60 +4,269 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>  
 <!doctype html>
 <html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <title>Forum</title>
-    <link rel="shortcut icon" type="image/jpg" href="images/codingCoverage.png"/>
-  </head>
-  <body>
-   
-  <h3> Forum </h3>
-  <br>
-  <form action="searchFilters.do" method="GET">
-  <input class="search" type="text" name="keyword" placeholder="Search" />
-  <select class="language"
-  name="language_id" id="Language">
-  <option value="1">Java</option>
-  <option value="2">HTML</option>
-  <option value="3">CSS</option>
-<!-- <option value="4">SQL</option> -->
-  </select>
-  <input class="button" type="submit" value="Search Forum" />
-  </form>
-  <br>
-  
-  <c:choose>
-  <c:when test="${empty posts}">
-  Your search criteria did not return any results. Please Try Again.
-  </c:when>
-  <c:otherwise>
+<head>
+	<meta charset="UTF-8">
+	<title>User Forum</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="" />
+	<meta name="keywords" content="" />
+	<link rel="stylesheet" type="text/css" href="css/animate.css">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/line-awesome.css">
+	<link rel="stylesheet" type="text/css" href="css/line-awesome-font-awesome.min.css">
+	<link href="css/all.min.css" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="css/jquery.mCustomScrollbar.min.css">
+	<link rel="stylesheet" type="text/css" href="lib/slick/slick.css">
+	<link rel="stylesheet" type="text/css" href="lib/slick/slick-theme.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="css/responsive.css">
+	<link rel="shortcut icon" type="image/jpg" href="images/codingCoverage.png"/>
+</head>
+<body>
+	
 
-  <c:forEach var="p" items="${posts}">
-  <c:choose>
-  <c:when test="${p.isForumVisable}">
-  ${p.user.username} <b><i>${p.user.role}</i></b>
-  <br>
-  ${p.subject}
-  <br>  
-  ${p.language}<br> 
-  <form action="viewForumPost.do" method="GET">
-  <input type="hidden" value= ${p.id} name="id"/>
-  <input class="button" type="submit" value="View Post" />
-  </form>
-  <br>
-  </c:when>
-  </c:choose>  
-  </c:forEach>
-  </c:otherwise>
-  </c:choose>
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-  </body>
-</html>   
+	<div class="wrapper">
+		
+
+
+		<header>
+			<div class="container">
+				<div class="header-data">
+					<div class="logo pd-btm">
+						<a href="index.html" title=""><img src="images/logo.png" alt=""></a>
+					</div><!--logo end-->
+					<div class="forum-bar">
+						<h2>Forum</h2>
+						<ul>
+							<li><a href="#" title="">Tags</a></li>
+							<li><a href="#" title="">Users</a></li>
+							<li><a href="#" title="" class="ask-question">Ask a question</a></li>
+						</ul>
+					</div><!--search-bar end-->
+					
+					<!-- LOGIN / Reg button -->
+					<div class="login_register">
+						<ul>
+							<li><a href="profilePageResults.do" title="">Home</a></li>
+							<!-- <li><a href="sign-in.html" title="">Register</a></li> -->
+						</ul>
+					</div>
+					<!--login_register end-->
+					<div class="search-bar st2">
+						<form id="searchBarForm" action="searchFilters.do" method="GET">
+							<input type="text" name="keyword" placeholder="Search...">
+							
+							<button type="submit"><i class="la la-search"></i></button>
+							<select form="searchBarForm" class="language" name="language_id" id="Language">
+  								<option value="1">Java</option>
+ 								<option value="2">HTML</option>
+								<option value="3">CSS</option>
+							<!-- <option value="4">SQL</option> -->
+ 							</select>
+						</form>
+					</div><!--search-bar end-->
+				</div><!--header-data end-->
+			</div>
+		</header>	
+
+
+		<section class="forum-sec">
+			<div class="container">
+				<div class="forum-links">
+					<ul>
+						<li class="active"><a href="#" title="">Latest</a></li>
+						<li><a href="#" title="">Unanswered</a></li>
+						<li><a href="#" title="">Treading</a></li>
+						<li><a href="#" title="">Popular This Week</a></li>
+						<li><a href="#" title="">Popular of Month</a></li>
+					</ul>
+				</div><!--forum-links end-->
+				<div class="forum-links-btn">
+					<a href="#" title=""><i class="fa fa-bars"></i></a>
+				</div>
+			</div>
+		</section>
+
+		<section class="forum-page">
+			<div class="container">
+				<div class="forum-questions-sec">
+					<div class="row">
+						<div class="col-lg-8">
+							<div class="forum-questions">
+							<!-- Where the fun begins -->
+							<c:forEach var="post" items="${posts }">
+							<c:choose>
+								<c:when test="${post.isForumVisable }">
+								<div class="usr-question">
+									<div class="usr_img">
+										<img src="images/resources/usrr-img1.png" alt="">
+									</div>
+									<div class="usr_quest">
+										<h3>${post.subject }</h3>
+										<ul class="react-links">
+											<li><a href="#" title=""><i class="fas fa-heart"></i> Vote 150</a></li>
+											<li><a href="#" title=""><i class="fas fa-comment-alt"></i> Comment on post</a></li>
+											<li><a href="viewForumPost.do?id=${post.id }" title=""><i class="fas fa-eye"></i> View Post Content</a></li>
+										</ul>
+										<ul class="quest-tags">
+											<li><a href="#" title="">${post.language }</a></li>
+										</ul>
+									</div><!--usr_quest end-->
+									<span class="quest-posted-time"><i class="fa fa-clock-o"></i>Authored By: ${post.user.username }</span>
+								</div><!--usr-question end-->
+								</c:when>
+								<c:otherwise>
+								</c:otherwise>
+							</c:choose>
+							</c:forEach>
+							<!-- Where the fun ends -->
+							
+							<!-- SAVED EXAMPLE -->
+							<!-- 	<div class="usr-question">
+									<div class="usr_img">
+										<img src="images/resources/m-img2.png" alt="">
+									</div>
+									<div class="usr_quest">
+										<h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h3>
+										<ul class="react-links">
+											<li><a href="#" title=""><i class="fas fa-heart"></i> Vote 150</a></li>
+											<li><a href="#" title=""><i class="fas fa-comment-alt"></i> Comments  15</a></li>
+											<li><a href="#" title=""><i class="fas fa-eye"></i> Views  50</a></li>
+										</ul>
+										<ul class="quest-tags">
+											<li><a href="#" title="">Work</a></li>
+											<li><a href="#" title="">Php</a></li>
+											<li><a href="#" title="">Design</a></li>
+										</ul>
+									</div>usr_quest end
+									<span class="quest-posted-time"><i class="fa fa-clock-o"></i>3 min ago</span>
+								</div>usr-question end
+								 -->
+							<!-- SAVED EXAMPLE -->
+							</div><!--forum-questions end-->
+							<nav aria-label="Page navigation example" class="full-pagi">
+							<ul class="pagination">
+								<li class="page-item"><a class="page-link pvr" href="#">Previous</a></li>
+								<li class="page-item"><a class="page-link active" href="#">1</a></li>
+								<li class="page-item"><a class="page-link" href="#">2</a></li>
+								<li class="page-item"><a class="page-link" href="#">3</a></li>
+								<li class="page-item"><a class="page-link" href="#">4</a></li>
+								<li class="page-item"><a class="page-link" href="#">5</a></li>
+								<li class="page-item"><a class="page-link" href="#">6</a></li>
+								<li class="page-item"><a class="page-link pvr" href="#">Next</a></li>
+							</ul>
+							</nav>
+						</div>
+						<div class="col-lg-4">
+							<div class="widget widget-user">
+								<h3 class="title-wd">Top User of the Week</h3>
+								<ul>
+									<li>
+										<div class="usr-msg-details">
+											<div class="usr-ms-img">
+												<img src="images/resources/m-img1.png" alt="">
+											</div>
+											<div class="usr-mg-info">
+												<h3>Olivia Kinds</h3>
+												<p>Graphic Designer </p>
+											</div><!--usr-mg-info end-->
+										</div>
+										<span><img src="images/price1.png" alt="">1185</span>
+									</li>
+									<li>
+										<div class="usr-msg-details">
+											<div class="usr-ms-img">
+												<img src="images/resources/m-img2.png" alt="">
+											</div>
+											<div class="usr-mg-info">
+												<h3>John Doe</h3>
+												<p>PHP Developer</p>
+											</div><!--usr-mg-info end-->
+										</div>
+										<span><img src="images/price2.png" alt="">1165</span>
+									</li>
+									<li>
+										<div class="usr-msg-details">
+											<div class="usr-ms-img">
+												<img src="images/resources/m-img3.png" alt="">
+											</div>
+											<div class="usr-mg-info">
+												<h3>kevin</h3>
+												<p>Wordpress Developer </p>
+											</div><!--usr-mg-info end-->
+										</div>
+										<span><img src="images/price3.png" alt="">1120</span>
+									</li>
+									<li>
+										<div class="usr-msg-details">
+											<div class="usr-ms-img">
+												<img src="images/resources/m-img4.png" alt="">
+											</div>
+											<div class="usr-mg-info">
+												<h3>Bill Gates</h3>
+												<p>C & C++ Developer </p>
+											</div><!--usr-mg-info end-->
+										</div>
+										<span><img src="images/price4.png" alt="">1009</span>
+									</li>
+								</ul>
+							</div><!--widget-user end-->
+							<div class="widget widget-adver">
+								<img src="images/resources/adver-img.png" alt="">
+							</div><!--widget-adver end-->
+						</div>
+					</div>
+				</div><!--forum-questions-sec end-->
+			</div>
+		</section><!--forum-page end-->
+
+		<footer>
+			<div class="footy-sec mn no-margin">
+				<div class="container">
+					<ul>
+						<li><a href="help-center.html" title="">Help Center</a></li>
+						<li><a href="about.html" title="">About</a></li>
+						<li><a href="#" title="">Privacy Policy</a></li>
+						<li><a href="#" title="">Community Guidelines</a></li>
+						<li><a href="#" title="">Cookies Policy</a></li>
+						<li><a href="#" title="">Career</a></li>
+						<li><a href="forum.html" title="">Forum</a></li>
+						<li><a href="#" title="">Language</a></li>
+						<li><a href="#" title="">Copyright Policy</a></li>
+					</ul>
+					<p><img src="images/copy-icon2.png" alt="">Copyright 2019</p>
+					<img class="fl-rgt" src="images/logo2.png" alt="">
+				</div>
+			</div>
+		</footer>
+
+
+		<div class="overview-box" id="question-box">
+			<div class="overview-edit">
+				<h3>Ask a Question</h3>
+				<form>
+					<input type="text" name="question" placeholder="Type Question Here">
+					<input type="text" name="tags" placeholder="Tags">
+					<textarea placeholder="Description"></textarea>
+					<button type="submit" class="save">Submit</button>
+					<button type="submit" class="cancel">Cancel</button>
+				</form>
+				<a href="#" title="" class="close-box"><i class="la la-close"></i></a>
+			</div><!--overview-edit end-->
+		</div><!--overview-box end-->
+
+	</div><!--theme-layout end-->
+
+
+
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/popper.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/jquery.mCustomScrollbar.js"></script>
+<script type="text/javascript" src="js/slick.min.js"></script>
+<script type="text/javascript" src="js/script.js"></script>
+
+
+</body>
+</html>

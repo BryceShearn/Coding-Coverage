@@ -30,24 +30,24 @@ public class PostController {
 	@RequestMapping(path="ViewForum.do")
 	public String viewForum(Model model) {
 		model.addAttribute("posts", postDAO.findAll());
-		return "forms/ViewForum2";
+		return "forms/ViewForum";
 	}
 	
 	@RequestMapping(path="searchFilters.do", params= {"keyword", "language_id"})
 	public String searchFilters(String keyword, @RequestParam("language_id")Integer languageId, Model model) {
-		model.addAttribute("post", postDAO.filterByLanguageAndKeyword(keyword, languageId));
+		model.addAttribute("posts", postDAO.filterByLanguageAndKeyword(keyword, languageId));
 		return "forms/ViewForum";
 	}
 	
 	@RequestMapping(path="ViewExpertForum.do")
 	public String viewExpertForum(Model model) {
-		model.addAttribute("post", postDAO.findAll());
+		model.addAttribute("posts", postDAO.findAll());
 		return "forms/ViewExpertForum";
 	}
 	
 	@RequestMapping(path="searchFiltersExpertForum.do", params= {"keyword", "language_id"})
 	public String searchFiltersExpertForum(String keyword, @RequestParam("language_id")Integer languageId, Model model) {
-		model.addAttribute("post", postDAO.filterByLanguageAndKeyword(keyword, languageId));
+		model.addAttribute("posts", postDAO.filterByLanguageAndKeyword(keyword, languageId));
 		return "forms/ViewExpertForum"; 
 	}
 	
