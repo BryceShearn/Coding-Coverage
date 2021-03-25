@@ -15,8 +15,13 @@
   </head>
   <body>
   <br>
+  
+  <c:if test="${sessionScope.user.comments.size() > 0}">
+  ${sessionScope.user.comments.get(0).post.user.username}
   <br>
-  ${sessionScope.user.comments.get(0).content.get(0).post}
+  ${sessionScope.user.comments.get(0).content}
+  </c:if>
+  
   
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

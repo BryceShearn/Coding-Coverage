@@ -33,7 +33,7 @@
      				</form>
       				<!-- /\ end post request for username and password /\ -->
       				<p class="animation a5"><a href="#">Forgot Password</a></p>
-      				<!-- \/ This is the link that sends the post request for login \/ -->
+      				<!-- \/ This is the link that sends the post request for login \/ -->    
       				<button type="submit" name = "submit" value = "value" form ="loginForm" class="animation a6">LOGIN</button>
       				<!-- \/ This is the link that sends the post request for signUp \/ -->
       				<form id = "signUp" action="createAccountForm.do" method="get"></form>
