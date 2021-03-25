@@ -10,6 +10,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.SessionAttributes;
+import org.springframework.web.context.annotation.SessionScope;
 
 import com.skilldistillery.learning.dao.CommentDAO;
 import com.skilldistillery.learning.entities.Comment;
@@ -29,9 +31,15 @@ public class CommentController {
 		return "forms/ViewingForum";
 	}
 	
-	@RequestMapping(path= "viewComment.do", params= "id")
-	public String viewComment(Model model, HttpSession session, @RequestParam("id")Integer commentId) {
+	@RequestMapping(path= "showIndividualComment.do", params= "id")
+	public String viewComment(Model model, @RequestParam("id")Integer commentId) {
 		model.addAttribute("comment", commentDao.findById(commentId));
-		return "results/ViewComment";
+		return "forms/EditComment";
 	}
+	
+	@RequestMapping(path="viewSessionUserComments.do")
+	public String viewSessionUserComments(Model model) {
+		return "results/ViewUserComments";
+	}
+	
 }
