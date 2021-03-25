@@ -356,7 +356,7 @@ INSERT INTO `user` (`id`, `username`, `password`, `first_name`, `last_name`, `en
 INSERT INTO `user` (`id`, `username`, `password`, `first_name`, `last_name`, `enabled`, `role`, `bio`, `image`) VALUES (2, 'thwebel', 'password', 'Thomas', 'Webel', 1, 'admin', 'The Best Skiier on the Mountian', NULL);
 INSERT INTO `user` (`id`, `username`, `password`, `first_name`, `last_name`, `enabled`, `role`, `bio`, `image`) VALUES (3, 'BryceShearn', 'Founder', 'Bryce', 'Shearn', 1, 'admin', 'One of the three original founders of Coding Coverage', NULL);
 INSERT INTO `user` (`id`, `username`, `password`, `first_name`, `last_name`, `enabled`, `role`, `bio`, `image`) VALUES (4, 'TylorShearn', 'World01!', 'Tylor', 'Shearn', 1, 'admin', 'One of the three original founders of Coding Coverage', NULL);
-INSERT INTO `user` (`id`, `username`, `password`, `first_name`, `last_name`, `enabled`, `role`, `bio`, `image`) VALUES (5, 'Student', 'student', 'Olivia', 'Garton', 1, 'student', 'Makes amazing bread sticks, and better code.', NULL);
+INSERT INTO `user` (`id`, `username`, `password`, `first_name`, `last_name`, `enabled`, `role`, `bio`, `image`) VALUES (5, 'student', 'student', 'Olivia', 'Garton', 1, 'student', 'Makes amazing bread sticks, and better code.', NULL);
 INSERT INTO `user` (`id`, `username`, `password`, `first_name`, `last_name`, `enabled`, `role`, `bio`, `image`) VALUES (6, 'expert', 'expert', 'Tahra', 'Dactyl', 1, 'expert', 'Old school coding expert. Especially capable in the Jurassic Framework.', NULL);
 
 COMMIT;
@@ -440,6 +440,7 @@ COMMIT;
 START TRANSACTION;
 USE `codingcoveragedb`;
 INSERT INTO `code_concept` (`id`, `name`, `roadmap_id`, `description`) VALUES (1, 'Java Setup and First Steps', 1, 'Description: Setup your coding environment and download necessary dependencies, i.e. make sure your tire has wheels before trying to drive.');
+INSERT INTO `code_concept` (`id`, `name`, `roadmap_id`, `description`) VALUES (2, 'Java Variables', 1, 'Become familiar with fundemental variables');
 
 COMMIT;
 
@@ -453,6 +454,7 @@ INSERT INTO `task` (`id`, `name`, `description`, `code_concept_id`) VALUES (1, '
 INSERT INTO `task` (`id`, `name`, `description`, `code_concept_id`) VALUES (2, 'Download an IDE', 'Download an IDE (we recommend Atom or Eclipse). Be able to describe what IDEs are and the benefits they bring.', 1);
 INSERT INTO `task` (`id`, `name`, `description`, `code_concept_id`) VALUES (3, 'Demystify The Terminal', 'Navigate, examine, and manipulate your file system with simple terminal commands. Describe what a directory is, make one, make a new terminal window and navigate to that directory.', 1);
 INSERT INTO `task` (`id`, `name`, `description`, `code_concept_id`) VALUES (4, 'Write HelloWorld', 'Create, compile, and run your first java program! So IDEs will allow you to run your programs within them, but we suggest you compile and run your first programs through the command line.', 1);
+INSERT INTO `task` (`id`, `name`, `description`, `code_concept_id`) VALUES (5, 'Hello Variables!', 'Define what a variable is and make a list of all the different variables you can find.', 2);
 
 COMMIT;
 
@@ -463,6 +465,25 @@ COMMIT;
 START TRANSACTION;
 USE `codingcoveragedb`;
 INSERT INTO `user_has_roadmap` (`user_id`, `roadmap_id`) VALUES (2, 1);
+INSERT INTO `user_has_roadmap` (`user_id`, `roadmap_id`) VALUES (2, 2);
+INSERT INTO `user_has_roadmap` (`user_id`, `roadmap_id`) VALUES (2, 3);
+INSERT INTO `user_has_roadmap` (`user_id`, `roadmap_id`) VALUES (2, 4);
+INSERT INTO `user_has_roadmap` (`user_id`, `roadmap_id`) VALUES (3, 1);
+INSERT INTO `user_has_roadmap` (`user_id`, `roadmap_id`) VALUES (3, 2);
+INSERT INTO `user_has_roadmap` (`user_id`, `roadmap_id`) VALUES (3, 3);
+INSERT INTO `user_has_roadmap` (`user_id`, `roadmap_id`) VALUES (3, 4);
+INSERT INTO `user_has_roadmap` (`user_id`, `roadmap_id`) VALUES (4, 1);
+INSERT INTO `user_has_roadmap` (`user_id`, `roadmap_id`) VALUES (4, 2);
+INSERT INTO `user_has_roadmap` (`user_id`, `roadmap_id`) VALUES (4, 3);
+INSERT INTO `user_has_roadmap` (`user_id`, `roadmap_id`) VALUES (4, 4);
+INSERT INTO `user_has_roadmap` (`user_id`, `roadmap_id`) VALUES (5, 1);
+INSERT INTO `user_has_roadmap` (`user_id`, `roadmap_id`) VALUES (5, 2);
+INSERT INTO `user_has_roadmap` (`user_id`, `roadmap_id`) VALUES (5, 3);
+INSERT INTO `user_has_roadmap` (`user_id`, `roadmap_id`) VALUES (5, 4);
+INSERT INTO `user_has_roadmap` (`user_id`, `roadmap_id`) VALUES (6, 1);
+INSERT INTO `user_has_roadmap` (`user_id`, `roadmap_id`) VALUES (6, 2);
+INSERT INTO `user_has_roadmap` (`user_id`, `roadmap_id`) VALUES (6, 3);
+INSERT INTO `user_has_roadmap` (`user_id`, `roadmap_id`) VALUES (6, 4);
 
 COMMIT;
 
