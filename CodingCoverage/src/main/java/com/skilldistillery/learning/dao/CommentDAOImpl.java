@@ -80,9 +80,10 @@ public class CommentDAOImpl implements CommentDAO {
 	}
 
 	@Override
-	public boolean deleteComment(Comment targetComment) {
+	public boolean deleteComment(Comment targetComment, Integer commentId) {
+		targetComment = em.find(Comment.class, commentId);
 		boolean deleted = false;
-
+		
 		if (targetComment != null) {
 			em.remove(targetComment);
 		}

@@ -35,9 +35,15 @@
   <br>
   ${sessionScope.user.comments.get(0).commentVote}
   <br>
-  <form action="showIndividualComment.do" method="GET">
+  <br><form action="showIndividualComment.do" method="GET">                               
   <input type="hidden" value= ${sessionScope.user.comments.get(0).id} name="id"/>
   <input class="button" type="submit" value="Edit Comment" />
+  </form>
+  <br>
+  <form action="deleteComment.do" method="POST">
+   <input type="hidden" value= "${sessionScope.user.comments.get(0).id}" name="commentId" />
+   <input type="hidden" value= "${sessionScope.user.id}" name="userId" />
+  <input class="button" type="submit" value="Delete Comment" />
   </form>
   <br>
   </c:if>

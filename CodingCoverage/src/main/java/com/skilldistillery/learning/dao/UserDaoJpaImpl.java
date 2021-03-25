@@ -8,6 +8,8 @@ import javax.transaction.Transactional;
 
 import org.springframework.stereotype.Service;
 
+import com.skilldistillery.learning.entities.Comment;
+import com.skilldistillery.learning.entities.Post;
 import com.skilldistillery.learning.entities.User;
 
 @Service
@@ -21,7 +23,20 @@ public class UserDaoJpaImpl implements UserDAO {
 	@Override
 	public User findById(int userId) {
 
-		return em.find(User.class, userId);
+		User foundUser = em.find(User.class, userId);
+		int i = foundUser.getComments().size();
+		System.out.println("************************" + i);
+		foundUser.getRoadmaps().size();
+		foundUser.getUserRoadmapTasks().size();
+		foundUser.getPosts().size();
+		for (Post post : foundUser.getPosts()) {
+			post.getPostVote().size();
+		System.out.println(i);
+		}
+		for (Comment post : foundUser.getComments()) {
+			post.getCommentVote().size();
+		}
+		return foundUser;
 	}
 
 	@Override
@@ -75,5 +90,6 @@ public class UserDaoJpaImpl implements UserDAO {
 		
 		return true;
 	}
+
 
 }
