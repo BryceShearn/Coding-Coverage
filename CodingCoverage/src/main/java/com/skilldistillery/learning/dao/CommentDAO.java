@@ -17,6 +17,6 @@ public interface CommentDAO {
 	
 	Comment updateComment(Comment updatedComment, Integer id);
 	
-	boolean deleteComment(Comment targetComment);
+	boolean deleteComment(Comment targetComment, Integer commentId);
 	
 }

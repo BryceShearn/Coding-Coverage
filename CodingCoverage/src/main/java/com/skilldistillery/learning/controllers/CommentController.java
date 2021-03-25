@@ -67,5 +67,12 @@ public class CommentController {
 		return "redirect:viewSessionUserComments.do";
 	}
 	
+	@RequestMapping(path="deleteComment.do", params = {"commentId", "userId"} )
+	public String deleteComment(Model mode, Comment targetComment, Post post, Integer commentId, Integer userId, HttpSession session) {
+		commentDao.deleteComment(targetComment, commentId);
+		session.setAttribute("user", userDao.findById(userId));
+		return "redirect:viewSessionUserComments.do";
+	}
+	
 	
 }
