@@ -13,7 +13,7 @@ public interface UserRoadmapTaskDAO {
 	
 	List<UserRoadmapTask> findAll();
 	
-	UserRoadmapTask createURT(UserRoadmapTask newUrt);
+	UserRoadmapTask createURT(UserRoadmapTask newUrt, Integer taskId);
 	
 	UserRoadmapTask updateURT(UserRoadmapTask updatedUrt);
 	

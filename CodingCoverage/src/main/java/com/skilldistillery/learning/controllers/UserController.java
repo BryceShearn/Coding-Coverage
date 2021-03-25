@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.skilldistillery.learning.dao.UserDAO;
 import com.skilldistillery.learning.dao.UserRoadmapTaskDAO;
+import com.skilldistillery.learning.entities.User;
+import com.skilldistillery.learning.entities.UserRoadmapTask;
 
 @Controller 
 public class UserController {
@@ -22,7 +24,12 @@ public class UserController {
 	
 	@RequestMapping(path="completedTask.do", method= RequestMethod.POST)
 	public String completeTask(Model model, Integer taskId, HttpSession session) {
+		UserRoadmapTask urt = new UserRoadmapTask();
 		
+		User thisUser = (User)session.getAttribute("user");
+		urt.setUser(thisUser);
+		
+		urtDao.createURT(urt, taskId);
 		
 		return "redirect:backToMaps.do";
 	}

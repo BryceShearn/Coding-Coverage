@@ -9,6 +9,7 @@ import javax.transaction.Transactional;
 
 import org.springframework.stereotype.Service;
 
+import com.skilldistillery.learning.entities.Task;
 import com.skilldistillery.learning.entities.User;
 import com.skilldistillery.learning.entities.UserRoadmapTask;
 
@@ -45,8 +46,8 @@ public class UserRoadmapTaskDAOImpl implements UserRoadmapTaskDAO {
 	}
 
 	@Override
-	public UserRoadmapTask createURT(UserRoadmapTask newUrt) {
-		
+	public UserRoadmapTask createURT(UserRoadmapTask newUrt, Integer taskId) {
+		newUrt.setTask(em.find(Task.class, taskId));
 		newUrt.setStartDate(LocalDateTime.now());
 		newUrt.setEndDate(LocalDateTime.now());
 		newUrt.setCompleted(true);

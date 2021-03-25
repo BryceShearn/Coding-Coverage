@@ -27,9 +27,18 @@
 			<li><a href="${rsrc.link }">${rsrc.description }</a></li>
 		</c:forEach>
 	</ul>
-	<form action="completedTask.do">
-		
+	<form action="completedTask.do" method="POST">
+		<input type="hidden" name="taskId" value="${sessionScope.user.roadmaps.get(0).codeConcepts.get(0).task.get(0).id }" />
+		<input type="submit" value="Task Completed!">
 	</form>
+	<c:choose>
+		<c:when test="">
+		Completed!
+		</c:when>
+		<c:otherwise>
+		TODO!
+		</c:otherwise>
+	</c:choose>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
