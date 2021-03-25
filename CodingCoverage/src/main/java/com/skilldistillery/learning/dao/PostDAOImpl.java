@@ -52,6 +52,7 @@ public class PostDAOImpl implements PostDAO {
 	public Post createPost(Post newPost) {
 		
 		newPost.setDateCreated(LocalDateTime.now());
+		newPost.setLastUpdate(LocalDateTime.now());
 		
 		em.persist(newPost);
 		em.flush();

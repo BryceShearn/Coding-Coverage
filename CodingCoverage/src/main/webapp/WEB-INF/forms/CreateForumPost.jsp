@@ -14,41 +14,38 @@
   </head>
   <body>
 	<div class="form">
-      		<form:form id="registerForm" action="createAccount.do" method="POST" modelAttribute="user">
-  			<!-- firstName -->
-  			<form:input path="firstName" class="form-field animation a1" placeholder="First Name"/>
-  			<form:errors path="firstName"/>
-  			<!-- lastName -->
-  			<form:input path="lastName" class="form-field animation a2" placeholder="Last Name"/>
-  			<form:errors path="lastName"/>
-  			<!-- username -->
-  			<form:input path="username" class="form-field animation a3" placeholder="Username"/>
-  			<form:errors path="username"/>
-  			<!-- password -->
-  			<form:input type ="password" path="password" class="form-field animation a4" placeholder="Password"/>
-  			<form:errors path="password"/>
-  			<!-- bio -->
-  			<form:input type="text" path="bio" class="form-field animation a5" placeholder="About Me!"/>
-  			<form:errors path="bio"/>
-  			<!-- enabled -->
-  			<form:hidden path="enabled" value="true"/>
-  			<!-- role -->
-  			<form:hidden path="role" value="Student"/>
-	  		</form:form>	
-      		<button type="submit" name = "submit" value = "Register" form ="registerForm" class="animation a6">SUBMIT</button>
+		<form:form id="createPost" action="createForumPost.do" method="POST" modelAttribute="post">
+  			<!-- subject -->
+  			<form:input path="subject"  placeholder="Subject"/>
+  			<form:errors path="subject"/>
+  			<!-- content -->
+  			<form:textarea path="content" placeholder="Content"/>
+  			<form:errors path="content"/>
+  			<!-- Language Radio Selection -->
+  			<label for="langId">What language is this post about?</label>
+			<select name="langId" id="langId">
+			    <option value="">--Please choose an option--</option>
+			    <option value="1">Java</option>
+			    <option value="2">HTML</option>
+			    <option value="3">CSS</option>
+			    <option value="4">SQL</option>
+			</select>
+
+  			<!-- hidden visibility booleans  -->
+  			<form:hidden path="isForumVisable" value="true"/>
+  			<form:hidden path="isBlog" value="false"/>
+  			<form:hidden path="isExpert" value="false"/>
+		</form:form>	
+      		<button type="submit" name = "submit" value = "createPost" form ="createPost">SUBMIT POST</button>
       			
-      		<form id = "returnHome" action="login.do" method="get"></form>
-     		<button type="submit" name = "submit" form = "returnHome" value = "value" class="animation a7">RETURN TO LOGIN</button>
+      		<form id = "returnHome" action="profilePageResults.do" method="get"></form>
+     		<button type="submit" name = "submit" form = "returnHome" class="animation a7">RETURN TO PROFILE</button>
 	</div>
   
   
   <!-- 
- 'id','int(11)',
 'subject','varchar(500)
 'content','text',
-'date_created','datetime'
-'last_update','datetime',
-'user_id','int(11)',
 'is_blog','tinyint(1)',
 'is_forum_visable','tinyint(4)''
 'is_expert','tinyint(4)'
