@@ -5,11 +5,13 @@
 <!doctype html>
 <html lang="en">
 <head>
+		<!-- Meta Info -->
 	<meta charset="UTF-8">
 	<title>User Forum</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="description" content="" />
 	<meta name="keywords" content="" />
+		<!--  Internal Resources -->
 	<link rel="stylesheet" type="text/css" href="css/animate.css">
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="css/line-awesome.css">
@@ -22,14 +24,12 @@
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<link rel="stylesheet" type="text/css" href="css/responsive.css">
 	<link rel="shortcut icon" type="image/jpg" href="images/codingCoverage.png"/>
+	<link rel="stylesheet" type="text/css" href="css/navBar.css">
+	<!-- External Resources -->
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
 </head>
 <body>
-	
-
-	<div class="wrapper">
-		
-
-
+<!-- <div class="wrapper"> -->
 		<header>
 			<div class="container">
 				<div class="header-data">
@@ -44,7 +44,6 @@
 							<li><a href="#" title="" class="ask-question">Ask a question</a></li>
 						</ul>
 					</div><!--search-bar end-->
-					
 					<!-- LOGIN / Reg button -->
 					<div class="login_register">
 						<ul>
@@ -56,7 +55,6 @@
 					<div class="search-bar st2">
 						<form id="searchBarForm" action="searchFilters.do" method="GET">
 							<input type="text" name="keyword" placeholder="Search...">
-							
 							<button type="submit"><i class="la la-search"></i></button>
 							<select form="searchBarForm" class="language" name="language_id" id="Language">
   								<option value="1">Java</option>
@@ -69,17 +67,25 @@
 				</div><!--header-data end-->
 			</div>
 		</header>	
-
-
 		<section class="forum-sec">
 			<div class="container">
 				<div class="forum-links">
-					<ul>
+					<ul id="nav">
 						<li class="active"><a href="#" title="">Latest</a></li>
 						<li><a href="#" title="">Unanswered</a></li>
 						<li><a href="#" title="">Treading</a></li>
 						<li><a href="#" title="">Popular This Week</a></li>
 						<li><a href="#" title="">Popular of Month</a></li>
+						
+						<li>
+							<a href="#" title="">Popular of Month</a>
+								<ul>
+									<li>
+									<li><a href="#" title="">Popular of Month</a></li>
+									<li><a href="#" title="">Popular of Month</a></li>
+									<li><a href="#" title="">Popular of Month</a></li>
+								</ul>
+						</li>
 					</ul>
 				</div><!--forum-links end-->
 				<div class="forum-links-btn">
@@ -87,7 +93,6 @@
 				</div>
 			</div>
 		</section>
-
 		<section class="forum-page">
 			<div class="container">
 				<div class="forum-questions-sec">
@@ -121,29 +126,7 @@
 							</c:choose>
 							</c:forEach>
 							<!-- Where the fun ends -->
-							
-							<!-- SAVED EXAMPLE -->
-							<!-- 	<div class="usr-question">
-									<div class="usr_img">
-										<img src="images/resources/m-img2.png" alt="">
-									</div>
-									<div class="usr_quest">
-										<h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h3>
-										<ul class="react-links">
-											<li><a href="#" title=""><i class="fas fa-heart"></i> Vote 150</a></li>
-											<li><a href="#" title=""><i class="fas fa-comment-alt"></i> Comments  15</a></li>
-											<li><a href="#" title=""><i class="fas fa-eye"></i> Views  50</a></li>
-										</ul>
-										<ul class="quest-tags">
-											<li><a href="#" title="">Work</a></li>
-											<li><a href="#" title="">Php</a></li>
-											<li><a href="#" title="">Design</a></li>
-										</ul>
-									</div>usr_quest end
-									<span class="quest-posted-time"><i class="fa fa-clock-o"></i>3 min ago</span>
-								</div>usr-question end
-								 -->
-							<!-- SAVED EXAMPLE -->
+							<div class="usr-question"></div>
 							</div><!--forum-questions end-->
 							<nav aria-label="Page navigation example" class="full-pagi">
 							<ul class="pagination">
@@ -158,70 +141,12 @@
 							</ul>
 							</nav>
 						</div>
-						<div class="col-lg-4">
-							<div class="widget widget-user">
-								<h3 class="title-wd">Top User of the Week</h3>
-								<ul>
-									<li>
-										<div class="usr-msg-details">
-											<div class="usr-ms-img">
-												<img src="images/resources/m-img1.png" alt="">
-											</div>
-											<div class="usr-mg-info">
-												<h3>Olivia Kinds</h3>
-												<p>Graphic Designer </p>
-											</div><!--usr-mg-info end-->
-										</div>
-										<span><img src="images/price1.png" alt="">1185</span>
-									</li>
-									<li>
-										<div class="usr-msg-details">
-											<div class="usr-ms-img">
-												<img src="images/resources/m-img2.png" alt="">
-											</div>
-											<div class="usr-mg-info">
-												<h3>John Doe</h3>
-												<p>PHP Developer</p>
-											</div><!--usr-mg-info end-->
-										</div>
-										<span><img src="images/price2.png" alt="">1165</span>
-									</li>
-									<li>
-										<div class="usr-msg-details">
-											<div class="usr-ms-img">
-												<img src="images/resources/m-img3.png" alt="">
-											</div>
-											<div class="usr-mg-info">
-												<h3>kevin</h3>
-												<p>Wordpress Developer </p>
-											</div><!--usr-mg-info end-->
-										</div>
-										<span><img src="images/price3.png" alt="">1120</span>
-									</li>
-									<li>
-										<div class="usr-msg-details">
-											<div class="usr-ms-img">
-												<img src="images/resources/m-img4.png" alt="">
-											</div>
-											<div class="usr-mg-info">
-												<h3>Bill Gates</h3>
-												<p>C & C++ Developer </p>
-											</div><!--usr-mg-info end-->
-										</div>
-										<span><img src="images/price4.png" alt="">1009</span>
-									</li>
-								</ul>
-							</div><!--widget-user end-->
-							<div class="widget widget-adver">
-								<img src="images/resources/adver-img.png" alt="">
-							</div><!--widget-adver end-->
-						</div>
+						<div class="col-lg-4"></div>
 					</div>
 				</div><!--forum-questions-sec end-->
 			</div>
 		</section><!--forum-page end-->
-
-		<footer>
+<!-- 		<footer>
 			<div class="footy-sec mn no-margin">
 				<div class="container">
 					<ul>
@@ -235,24 +160,16 @@
 						<li><a href="#" title="">Language</a></li>
 						<li><a href="#" title="">Copyright Policy</a></li>
 					</ul>
-					<p><img src="images/copy-icon2.png" alt="">Copyright 2019</p>
+					<p><img src="images/copy-icon2.png" alt="">Copyright 2021</p>
 					<img class="fl-rgt" src="images/logo2.png" alt="">
 				</div>
 			</div>
-		</footer>
-
-
-
-
-
-
-<script type="text/javascript" src="js/jquery.min.js"></script>
-<script type="text/javascript" src="js/popper.js"></script>
-<script type="text/javascript" src="js/bootstrap.min.js"></script>
-<script type="text/javascript" src="js/jquery.mCustomScrollbar.js"></script>
-<script type="text/javascript" src="js/slick.min.js"></script>
-<script type="text/javascript" src="js/script.js"></script>
-
-
-</body>
-</html>
+		</footer> -->
+		<script type="text/javascript" src="js/jquery.min.js"></script>
+		<script type="text/javascript" src="js/popper.js"></script>
+		<script type="text/javascript" src="js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="js/jquery.mCustomScrollbar.js"></script>
+		<script type="text/javascript" src="js/slick.min.js"></script>
+		<script type="text/javascript" src="js/script.js"></script>
+		</body>
+		</html>
