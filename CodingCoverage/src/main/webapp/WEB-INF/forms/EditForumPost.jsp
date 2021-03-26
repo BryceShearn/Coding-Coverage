@@ -19,16 +19,20 @@
 	<div class="userPostFormDiv">
 		<h2 class="active"> Create a Post </h2>
 		<a href="profilePageResults.do"><h2 class="nonactive"> Return Home </h2></a>
-		<form:form class="userPostFormForm" id="thisForm" action="createForumPost.do" method="POST" modelAttribute="post">
-			<form:input path="subject" type="text" class="text1" name="subject" placeholder="Subject" />
+		
+		<form:form class="userPostFormForm" id="thisForm" action="updatePost.do" method="POST" modelAttribute="post">
+			
+			<form:input path="subject" type="text" class="text1" name="subject" value="${post.subject }" />
 			<span class = "title-span">Title</span>
 			<form:errors path="subject"/>
 			<br>
+			
 			<br>
 			<span class = "body-span">Body</span>
-			<form:textarea path="content" type="text" class="text2" name="content" placeholder="Content" />
+			<form:textarea path="content" type="text" class="text2" name="content" value="${post.content }" />
 			<form:errors path="content" />
 			<br>
+			
 			<label class="radio" for="langId" >What language is this post about?</label><br>
 			<input type="radio" id="langId1" name="langId" value="1" checked/>
 			<label for="langId">Java</label>
@@ -38,13 +42,17 @@
 			<label for="langId">CSS</label>
 			<input type="radio" id="langId4" name="langId" value="4"/>
 			<label for="langId">SQL</label>
+			
+			<form:hidden path="id" value="${post.id }" />
 			<form:hidden path="isForumVisable" value="true" />
 			<form:hidden path="isBlog" value="false" />
 			<form:hidden path="isExpert" value="false" />
 		</form:form>
+		
 		<button type="submit"  form="thisForm" class="signInButton">
         Submit Post
       </button>
+      
 	<hr></hr>
 	</div>
     <!-- Optional JavaScript -->
