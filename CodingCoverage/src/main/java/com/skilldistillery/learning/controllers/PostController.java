@@ -50,7 +50,10 @@ public class PostController {
 		model.addAttribute("posts", postDAO.filterByLanguageAndKeyword(keyword, languageId));
 		return "forms/ViewExpertForum"; 
 	}
-	
+// **||*******************************************************************************************************||****
+// **||* RESULT PATH WAS EDITED IN ORDER TO BACKDOOR THE VIEW FORUM POST SANDBOX (Bryce S. 3/26/21 @ 12:17AM)*||****
+// **\/*******************************************************************************************************\/****
+
 	@RequestMapping(path="viewForumPost.do", params= "id")
 	public String viewForumPost(Model model, @RequestParam("id")Integer postId) {
 		model.addAttribute("post", postDAO.viewPost(postId));
