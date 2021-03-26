@@ -36,7 +36,7 @@ public class Post {
 	@Column(name="last_update")
 	private LocalDateTime lastUpdate;
 	
-	@OneToMany(mappedBy="post")
+	@OneToMany(orphanRemoval = true, mappedBy="post")
 	private List<Comment> comments;
 
 	@Column(name="is_blog")
@@ -52,7 +52,7 @@ public class Post {
 	@JoinColumn(name="language_id")
 	private Language language;
 	
-	@OneToMany(mappedBy="post")
+	@OneToMany(orphanRemoval = true, mappedBy="post")
 	private List<PostVote> postVote;
 	
 	@ManyToOne
