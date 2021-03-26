@@ -23,7 +23,7 @@ public class Post {
 	private int id;
 	
 	@NotBlank 
-	@Size(min=20, max=400, message="Subject must be between 20 to 400 characters")
+	@Size(min=4, max=50, message="Subject must be between 10 to 50 characters")
 	private String subject;
 	
 	@NotBlank
