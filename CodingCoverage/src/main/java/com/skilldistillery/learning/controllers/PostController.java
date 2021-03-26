@@ -54,7 +54,8 @@ public class PostController {
 	@RequestMapping(path="viewForumPost.do", params= "id")
 	public String viewForumPost(Model model, @RequestParam("id")Integer postId) {
 		model.addAttribute("post", postDAO.viewPost(postId));
-		return "results/ViewForumPost";
+//		return "results/ViewForumPost";
+		return "results/ViewForumPostSandbox";
 	}
 	
 	@RequestMapping(path="getForumPostForm.do")
