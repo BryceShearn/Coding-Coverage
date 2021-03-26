@@ -31,7 +31,7 @@
 <!--    Carousel Slider    -->
       <div class="carousel-inner" role="listbox">
         <div class="carousel-item active">
-          <img src="https://images.unsplash.com/photo-1588239034647-25783cbfcfc1?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" class="d-block w-100">
+          <img src="images/javaPicture.png" class="d-block w-100" width="300" height="700">
           <div class="carousel-caption">
             <h3>Slide 01</h3>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At placeat dolore obcaecati perspiciatis neque in, iusto, quia aut molestias minus ipsam modi dolorem odit eos.</p>
@@ -39,7 +39,7 @@
         </div>
         
         <div class="carousel-item">
-          <img src="https://picsum.photos/700/450" class="d-block w-100">
+          <img src="images/htmlPicture.png" class="d-block w-100" width="300" height="700">
           <div class="carousel-caption">
             <h3>Slide 02</h3>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia vel in placeat corrupti. Velit quidem eos, accusantium vitae nostrum reiciendis ratione libero? Aperiam, recusandae culpa.</p>
@@ -47,7 +47,7 @@
         </div>
         
         <div class="carousel-item">
-          <img src="//unsplash.it/g/700/450" class="d-block w-100">
+          <img src="images/cssPicture.png" class="d-block w-100" width="300" height="700">
           <div class="carousel-caption">
             <h3>Slide 03</h3>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam, ut beatae porro ullam quidem officia dignissimos facilis? Blanditiis nesciunt labore pariatur quaerat exercitationem quibusdam modi!</p>
@@ -55,7 +55,7 @@
         </div>
         
         <div class="carousel-item">
-          <img src="https://picsum.photos/700/450" class="d-block w-100">
+          <img src="images/sqlPicture.png" class="d-block w-100" width="300" height="700">
           <div class="carousel-caption">
             <h3>Slide 04</h3>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis soluta accusamus sequi eos consectetur! Animi minima modi ad at similique velit quibusdam veritatis sequi placeat?</p>
