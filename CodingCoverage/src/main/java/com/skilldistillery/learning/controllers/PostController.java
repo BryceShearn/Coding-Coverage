@@ -20,6 +20,11 @@ import com.skilldistillery.learning.entities.User;
 @Controller
 public class PostController {
 	
+// **||**************************************************************************************************************************************||**
+// **||* TEMPLATE TO ANNOTATE CHANGED RETURNS FOR BACKDOOR REDIRECTS ON MAJOR IMPLEMENTATION CHANGES (First Last Initial . 1/1/11 @ 11:11AM)*||**
+// **\/**************************************************************************************************************************************\/**
+	
+	
 	@Autowired
 	PostDAO postDAO;
 	
@@ -45,10 +50,15 @@ public class PostController {
 		return "forms/ViewExpertForum";
 	}
 	
+// **||****************************************************************************************************************||****
+// **||* RESULT PATH WAS EDITED IN ORDER TO BACKDOOR THE VIEW FORUM !SINGLE! POST SANDBOX (Bryce S. 3/26/21 @ 12:24AM)*||****
+// **\/****************************************************************************************************************\/****	
+	
 	@RequestMapping(path="searchFiltersExpertForum.do", params= {"keyword", "language_id"})
 	public String searchFiltersExpertForum(String keyword, @RequestParam("language_id")Integer languageId, Model model) {
 		model.addAttribute("posts", postDAO.filterByLanguageAndKeyword(keyword, languageId));
-		return "forms/ViewExpertForum"; 
+//      return "forms/ViewExpertForum";
+		return "results/ViewForumSinglePostSandbox"; 
 	}
 // **||*******************************************************************************************************||****
 // **||* RESULT PATH WAS EDITED IN ORDER TO BACKDOOR THE VIEW FORUM POST SANDBOX (Bryce S. 3/26/21 @ 12:17AM)*||****
