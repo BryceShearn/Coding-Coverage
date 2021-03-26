@@ -29,8 +29,8 @@
 			<form:textarea path="content" type="text" class="text2" name="content" placeholder="Content" />
 			<form:errors path="content" />
 			<br>
-			<label class="radio" for="langId">What language is this post about?</label><br>
-			<input type="radio" id="langId1" name="langId" value="1"/>
+			<label class="radio" for="langId" >What language is this post about?</label><br>
+			<input type="radio" id="langId1" name="langId" value="1" checked/>
 			<label for="langId">Java</label>
 			<input type="radio" id="langId2" name="langId" value="2"/>
 			<label for="langId">HTML</label>
@@ -42,7 +42,7 @@
 			<form:hidden path="isBlog" value="false" />
 			<form:hidden path="isExpert" value="false" />
 		</form:form>
-		<button type="button" form="thisForm" class="signInButton">
+		<button type="submit"  form="thisForm" class="signInButton">
         Submit Post
       </button>
 	<hr></hr>

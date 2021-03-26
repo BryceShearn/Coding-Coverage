@@ -114,15 +114,13 @@
                             <a class="menu-box-tab" href="getForumPostForm.do"><span class="icon entypo-paper-plane scnd-font-color"></span>Post to Community Forum<div class="menu-box-number"></div></a>                            
                         </li>
                         <li>
-                            <a class="menu-box-tab" href="#10"><span class="icon entypo-calendar scnd-font-color"></span>Post to Expert Forum (EXPERT)<div class="menu-box-number"></div></a>                            
+                            <a class="menu-box-tab" href="getExpertPostForm.do"><span class="icon entypo-calendar scnd-font-color"></span>Post to Expert Forum <div class="menu-box-number"></div></a>                            
                         </li>
                         <li>
-                            <a class="menu-box-tab" href="#12"><span class="icon entypo-cog scnd-font-color"></span>View External Resources</a>
+                            <a class="menu-box-tab" href="getPersonalPostForm.do"><span class="icon entypo-cog scnd-font-color"></span>Make a Personal Post</a>
                         </li>
                         <li>
-
                             <a class="menu-box-tab" href="viewSessionUserComments.do"><sapn class="icon entypo-chart-line scnd-font-color"></sapn>View My Comments</a>
-
 <!--                             <a class="menu-box-tab" href="ViewComment.do"><sapn class="icon entypo-chart-line scnd-font-color"></sapn>View My Comments</a>
  -->
                         </li>                        
