@@ -31,12 +31,12 @@
   <br>
   
   <c:choose>
-  <c:when test="${empty post}">
+  <c:when test="${empty posts}">
   Your search criteria did not return any results. Please Try Again.
   </c:when>
   <c:otherwise>
 
-  <c:forEach var="p" items="${post}">
+  <c:forEach var="p" items="${posts}">
   <c:choose>
   <c:when test="${p.isExpert}">
   ${p.user.username} <b><i>${p.user.role}</i></b>
