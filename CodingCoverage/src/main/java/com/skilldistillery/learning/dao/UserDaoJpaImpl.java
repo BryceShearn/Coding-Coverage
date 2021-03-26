@@ -45,6 +45,9 @@ public class UserDaoJpaImpl implements UserDAO {
 				if(post.getPostVote() != null) {
 					post.getPostVote().size();
 				}
+				if(post.getComments() != null) {
+					post.getComments().size();
+				}
 			}
 		}
 		

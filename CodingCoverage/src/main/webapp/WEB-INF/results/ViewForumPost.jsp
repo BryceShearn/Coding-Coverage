@@ -140,8 +140,9 @@
 					<c:when test="${sessionScope.user.id == post.user.id }">
 					<div class="thwUpDel">	
 						<div class="thwUp">		
-										<form action="do" id="thwUpdate">
+										<form action="updatePostForm.do" id="thwUpdate">
 											<button type="submit">Update</button>
+											<input type="hidden" value="${post.id }" name="postId"/>
 										</form>
 						</div>	
 						<div class="thwDel">	

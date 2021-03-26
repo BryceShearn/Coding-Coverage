@@ -20,7 +20,7 @@
 		<h2 class="active"> Create a Post </h2>
 		<a href="profilePageResults.do"><h2 class="nonactive"> Return Home </h2></a>
 		
-		<form:form class="userPostFormForm" id="thisForm" action="createForumPost.do" method="POST" modelAttribute="post">
+		<form:form class="userPostFormForm" id="thisForm" action="updatePost.do" method="POST" modelAttribute="post">
 			
 			<form:input path="subject" type="text" class="text1" name="subject" value="${post.subject }" />
 			<span class = "title-span">Title</span>

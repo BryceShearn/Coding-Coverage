@@ -1,5 +1,7 @@
 package com.skilldistillery.learning.controllers;
 
+import java.util.Iterator;
+
 import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
@@ -112,7 +114,7 @@ public class PostController {
 	public String getUpdatePostForm(Model model, int postId) {
 		
 		Post post = postDAO.findById(postId);
-		
+		model.addAttribute("post", post);
 		if (post.getIsForumVisable()) {
 			return "forms/EditForumPost";
 			
@@ -144,9 +146,20 @@ public class PostController {
 		// Merge new post
 		postDAO.updatePost(updatedPost);
 		// Refresh User 
-		session.setAttribute("user", userDao.findById(thisUser.getId()));
-		// Add Post obj to viewForumPost
-		redir.addFlashAttribute("post", updatedPost);
+		User user = userDao.findById(thisUser.getId());
+		session.setAttribute("user", user);
+		
+		// Get Post w/ comments w/o eagerly loading again. 
+		for (Post post : user.getPosts()) {
+			
+			if (post.getId() == updatedPost.getId()) {
+				
+				// Add Post obj to viewForumPost
+				redir.addFlashAttribute("post", post);
+				break;
+			}
+		}
+		
 		
 		return "redirect:updatePostRedir.do";
 	}
@@ -154,7 +167,7 @@ public class PostController {
 	@RequestMapping(path="updatePostRedir.do", method=RequestMethod.GET)
 	public String updateRedir() {
 		
-		return "results/viewForumPost";
+		return "results/ViewForumPost";
 	}
 	
 // END UPDATE POST SECTION
