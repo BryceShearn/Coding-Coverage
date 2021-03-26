@@ -20,7 +20,7 @@
             <header class="block">
                 <ul class="header-menu horizontal-list">
                     <li>
-                        <a class="header-menu-tab" href="#1"><span class="icon entypo-cog scnd-font-color"></span>Settings</a>
+                        <a class="header-menu-tab" href="logout.do"><span class="icon entypo-cog scnd-font-color"></span>Logout</a>
                     </li>
                     <li>
                         <a class="header-menu-tab" href="Resources.do"><span class="icon fontawesome-user scnd-font-color"></span>Resources</a>

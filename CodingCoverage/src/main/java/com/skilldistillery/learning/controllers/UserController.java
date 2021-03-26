@@ -22,6 +22,14 @@ public class UserController {
 	@Autowired
 	private UserRoadmapTaskDAO urtDao;
 	
+	@RequestMapping(path="logout.do")
+	public String logout(HttpSession session) {
+		
+		session.removeAttribute("user");
+		
+		return "home/LoginCreateAcc";
+	}
+	
 	@RequestMapping(path="completedTask.do", method= RequestMethod.POST)
 	public String completeTask(Model model, Integer taskId, HttpSession session) {
 		UserRoadmapTask urt = new UserRoadmapTask();
@@ -33,7 +41,6 @@ public class UserController {
 		
 		return "redirect:backToMaps.do";
 	}
-	
 	
 	@RequestMapping(path="backToMaps.do", method= RequestMethod.GET)
 	public String completeTask() {
