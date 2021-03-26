@@ -17,6 +17,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import com.skilldistillery.learning.dao.LanguageDAO;
 import com.skilldistillery.learning.dao.PostDAO;
 import com.skilldistillery.learning.dao.UserDAO;
+import com.skilldistillery.learning.entities.Comment;
 import com.skilldistillery.learning.entities.Language;
 import com.skilldistillery.learning.entities.Post;
 import com.skilldistillery.learning.entities.User;
@@ -103,8 +104,15 @@ public class PostController {
 		Language lang = langDao.findById(langId);
 		post.setLanguage(lang);
 		
-		
 		postDAO.createPost(post);
+		session.setAttribute("user", userDao.findById(thisUser.getId()));
+		
+		if(post.getIsExpert()) {
+			return "redirect:ViewExpertForum.do";
+		}
+		if(post.getIsBlog()) {
+			return "redirect:updatePostBlogRedir.do";
+		}
 		return "redirect:ViewForum.do";
 	}
 	
@@ -122,7 +130,7 @@ public class PostController {
 			return "forms/EditBlogPost";
 			
 		} else if(post.getIsExpert()) {
-			return "forms/EditBlogPost";
+			return "forms/EditExpertPost";
 			
 		}
 		// Should never be hit
@@ -152,22 +160,43 @@ public class PostController {
 		session.setAttribute("user", user);
 		
 		redir.addFlashAttribute("post", dbPost);
-	
 		
-		return "redirect:updatePostRedir.do";
+		//Redir to proper Forum
+		if (dbPost.getIsForumVisable()) {
+			return "redirect:ViewForum.do";
+			
+		} else if(dbPost.getIsBlog()) {
+			return "redirect:updatePostBlogRedir.do";
+			
+		} else if(dbPost.getIsExpert()) {
+			return "redirect:ViewExpertForum.do";
+		}
+		
+		return "redirect:updatePostBlogRedir.do";
 	}
 	
-	@RequestMapping(path="updatePostRedir.do", method=RequestMethod.GET)
-	public String updateRedir() {
+	// Personal Page Redir
+	@RequestMapping(path="updatePostBlogRedir.do", method=RequestMethod.GET)
+	public String updateBRedir() {
 		
-		return "results/ViewForumPost";
+		return "results/ProfilePage";
 	}
 	
 // END UPDATE POST SECTION
+// DELETE 
+	@RequestMapping(path = "deletePost.do" )
+	public String deleteComment(Model model, Integer postId, HttpSession session) {
+		
+		postDAO.deletePost(postId);
+		
+		//Refresh User
+		User thisUser = (User)session.getAttribute("user");
+		session.setAttribute("user", userDao.findById(thisUser.getId()));
+		
+		return "redirect:updatePostBlogRedir.do";
+	}
+
 }
-
-
-
 
 
 

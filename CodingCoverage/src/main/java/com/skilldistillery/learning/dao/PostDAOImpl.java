@@ -77,9 +77,10 @@ public class PostDAOImpl implements PostDAO {
 	}
 
 	@Override
-	public boolean deletePost(Post targetPost) {
+	public boolean deletePost(Integer postId) {
 		boolean deleted = false;
-
+		Post targetPost = em.find(Post.class, postId);
+		
 		if (targetPost != null) {
 			em.remove(targetPost);
 		}

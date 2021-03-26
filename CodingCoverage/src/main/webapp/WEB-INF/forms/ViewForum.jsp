@@ -77,6 +77,24 @@
 						<div class="col-lg-8">
 							<div class="forum-questions">
 							<!-- Where the fun begins -->
+							<!-- NO RESULTS FOUND -->
+							<c:choose>
+							<c:when test="${empty posts}">
+								<div class="usr-question">
+									<div class="usr_img">
+										<img src="images/resources/usrr-img1.png" alt="">
+									</div>
+									<div class="usr_quest">
+										<h3>No Results Found</h3>
+										<ul class="react-links">
+											<li><a href="#" title=""><i class="fas fa-heart"></i>Try New Search!</a></li>
+										</ul>
+									</div><!--usr_quest end-->
+								</div><!--usr-question end-->
+							</c:when>
+							<c:otherwise></c:otherwise>
+							</c:choose>
+							<!-- NO RESULTS FOUND -->
 							<c:forEach var="post" items="${posts }">
 							<c:choose>
 								<c:when test="${post.isForumVisable }">

@@ -146,8 +146,9 @@
 										</form>
 						</div>	
 						<div class="thwDel">	
-										<form action="do" id="thwDelete">
-											<button type="submit">Delete</button>
+										<form action="deletePost.do" id="thwDelete">
+											<input type="hidden" value="${post.id }" name="postId">
+											<button type="submit" onclick="return confirm('Are you sure? This CANNOT be undone.'); ">Delete</button>
 										</form>
 						</div>
 					</div>
