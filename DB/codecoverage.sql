@@ -383,7 +383,7 @@ USE `codingcoveragedb`;
 INSERT INTO `post` (`id`, `subject`, `content`, `date_created`, `last_update`, `user_id`, `is_blog`, `is_forum_visable`, `is_expert`, `language_id`) VALUES (1, 'DB design', 'DB design is an essential aspect of full stack applications', '2020-01-01T20:40:20', '2021-01-01T20:40:20', 2, 1, 0, 0, 1);
 INSERT INTO `post` (`id`, `subject`, `content`, `date_created`, `last_update`, `user_id`, `is_blog`, `is_forum_visable`, `is_expert`, `language_id`) VALUES (2, 'Java Variables', 'It is extremely important to know java variables', '2020-01-01T20:40:20', '2021-01-01T20:40:20', 2, 0, 1, 0, 1);
 INSERT INTO `post` (`id`, `subject`, `content`, `date_created`, `last_update`, `user_id`, `is_blog`, `is_forum_visable`, `is_expert`, `language_id`) VALUES (3, 'Expert test', 'experts know enought to know they know how to google what they don\'t know, no?', '2020-01-01T20:40:20', '2021-01-01T20:40:20', 2, 0, 0, 1, 1);
-INSERT INTO `post` (`id`, `subject`, `content`, `date_created`, `last_update`, `user_id`, `is_blog`, `is_forum_visable`, `is_expert`, `language_id`) VALUES (4, 'Personal / Forum Test', 'This should display once per page', '2020-01-01T20:40:20', '2021-01-01T20:40:20', 2, 1, 1, 1, 1);
+INSERT INTO `post` (`id`, `subject`, `content`, `date_created`, `last_update`, `user_id`, `is_blog`, `is_forum_visable`, `is_expert`, `language_id`) VALUES (4, 'Personal Test', 'This should display once per page', '2020-01-01T20:40:20', '2021-01-01T20:40:20', 2, 1, 0, 0, 1);
 
 COMMIT;
 
@@ -407,6 +407,14 @@ INSERT INTO `resource` (`id`, `link`, `description`, `date_added`, `difficulty`)
 INSERT INTO `resource` (`id`, `link`, `description`, `date_added`, `difficulty`) VALUES (12, 'https://www.geeksforgeeks.org/beginning-java-programming-with-hello-world-example/', 'Basic description of HelloWorld and the terminal commands to compile and run a java program.', '2021-03-22T20:40:20', 'easy');
 INSERT INTO `resource` (`id`, `link`, `description`, `date_added`, `difficulty`) VALUES (13, 'https://en.wikiversity.org/wiki/Java_Tutorial/Hello_World', 'Clear guide for writing, compiling, and running HelloWorld', '2021-03-22T20:40:20', 'easy');
 INSERT INTO `resource` (`id`, `link`, `description`, `date_added`, `difficulty`) VALUES (14, 'https://docs.oracle.com/javase/tutorial/getStarted/cupojava/unix.html', 'Step-by-step guide for making a new directory and running your HelloWorld program!', '2021-03-22T20:40:20', 'easy');
+INSERT INTO `resource` (`id`, `link`, `description`, `date_added`, `difficulty`) VALUES (15, 'https://www.w3schools.com/java/java_data_types.asp', 'Information on data types.', '2021-03-22T20:40:20', 'easy');
+INSERT INTO `resource` (`id`, `link`, `description`, `date_added`, `difficulty`) VALUES (16, 'https://www.javatpoint.com/java-variables', 'More info on data types.', '2021-03-22T20:40:20', 'easy');
+INSERT INTO `resource` (`id`, `link`, `description`, `date_added`, `difficulty`) VALUES (17, 'http://tutorials.jenkov.com/java/math-operators-and-math-class.html', 'Math with variables.', '2021-03-22T20:40:20', 'easy');
+INSERT INTO `resource` (`id`, `link`, `description`, `date_added`, `difficulty`) VALUES (18, 'http://www.functionx.com/java/Lesson17.htm', 'Explains interaction of numeric types', '2021-03-22T20:40:20', 'Advanced');
+INSERT INTO `resource` (`id`, `link`, `description`, `date_added`, `difficulty`) VALUES (19, 'https://www.w3schools.com/java/java_strings.asp', 'Basics of Strings', '2021-03-22T20:40:20', 'easy');
+INSERT INTO `resource` (`id`, `link`, `description`, `date_added`, `difficulty`) VALUES (20, 'https://www.w3schools.com/java/java_booleans.asp', 'Basics of Booleans', '2021-03-22T20:40:20', 'easy');
+INSERT INTO `resource` (`id`, `link`, `description`, `date_added`, `difficulty`) VALUES (21, 'https://www.w3schools.com/java/java_conditions.asp', 'Basics of If Statements', '2021-03-22T20:40:20', 'easy');
+INSERT INTO `resource` (`id`, `link`, `description`, `date_added`, `difficulty`) VALUES (22, 'https://www.w3schools.com/java/java_conditions.asp', 'How to add Else', '2021-03-22T20:40:20', 'Intermediate');
 
 COMMIT;
 
@@ -441,6 +449,8 @@ START TRANSACTION;
 USE `codingcoveragedb`;
 INSERT INTO `code_concept` (`id`, `name`, `roadmap_id`, `description`) VALUES (1, 'Java Setup and First Steps', 1, 'Description: Setup your coding environment and download necessary dependencies, i.e. make sure your tire has wheels before trying to drive.');
 INSERT INTO `code_concept` (`id`, `name`, `roadmap_id`, `description`) VALUES (2, 'Java Variables', 1, 'Become familiar with fundemental variables');
+INSERT INTO `code_concept` (`id`, `name`, `roadmap_id`, `description`) VALUES (3, 'Java if statements', 1, 'If interested in coding, learn about if statements!');
+INSERT INTO `code_concept` (`id`, `name`, `roadmap_id`, `description`) VALUES (4, 'Java Loops', 1, 'Learn about the power of loops!');
 
 COMMIT;
 
@@ -455,6 +465,10 @@ INSERT INTO `task` (`id`, `name`, `description`, `code_concept_id`) VALUES (2, '
 INSERT INTO `task` (`id`, `name`, `description`, `code_concept_id`) VALUES (3, 'Demystify The Terminal', 'Navigate, examine, and manipulate your file system with simple terminal commands. Describe what a directory is, make one, make a new terminal window and navigate to that directory.', 1);
 INSERT INTO `task` (`id`, `name`, `description`, `code_concept_id`) VALUES (4, 'Write HelloWorld', 'Create, compile, and run your first java program! So IDEs will allow you to run your programs within them, but we suggest you compile and run your first programs through the command line.', 1);
 INSERT INTO `task` (`id`, `name`, `description`, `code_concept_id`) VALUES (5, 'Hello Variables!', 'Define what a variable is and make a list of all the different variables you can find.', 2);
+INSERT INTO `task` (`id`, `name`, `description`, `code_concept_id`) VALUES (6, 'Using Number Variables', 'Declare and assign different numeric variable, try to add them together and print them out. Record what happens when mixing different numeric types.', 2);
+INSERT INTO `task` (`id`, `name`, `description`, `code_concept_id`) VALUES (7, 'Strings and Booleans', 'Declare and assing a String Variable, then print it. Also, declare and assign two booleans, what happens when you try and print them?', 2);
+INSERT INTO `task` (`id`, `name`, `description`, `code_concept_id`) VALUES (8, 'Write an If Statement', 'Research conditional statements and use them to buid if statements', 3);
+INSERT INTO `task` (`id`, `name`, `description`, `code_concept_id`) VALUES (9, 'Add an else If ', 'Grow your logic by adding else ifs', 3);
 
 COMMIT;
 
@@ -537,6 +551,14 @@ INSERT INTO `task_has_resource` (`task_id`, `resource_id`) VALUES (3, 11);
 INSERT INTO `task_has_resource` (`task_id`, `resource_id`) VALUES (4, 12);
 INSERT INTO `task_has_resource` (`task_id`, `resource_id`) VALUES (4, 13);
 INSERT INTO `task_has_resource` (`task_id`, `resource_id`) VALUES (4, 14);
+INSERT INTO `task_has_resource` (`task_id`, `resource_id`) VALUES (5, 15);
+INSERT INTO `task_has_resource` (`task_id`, `resource_id`) VALUES (5, 16);
+INSERT INTO `task_has_resource` (`task_id`, `resource_id`) VALUES (6, 17);
+INSERT INTO `task_has_resource` (`task_id`, `resource_id`) VALUES (6, 18);
+INSERT INTO `task_has_resource` (`task_id`, `resource_id`) VALUES (7, 19);
+INSERT INTO `task_has_resource` (`task_id`, `resource_id`) VALUES (7, 20);
+INSERT INTO `task_has_resource` (`task_id`, `resource_id`) VALUES (8, 21);
+INSERT INTO `task_has_resource` (`task_id`, `resource_id`) VALUES (9, 22);
 
 COMMIT;
 
@@ -550,3 +572,4 @@ INSERT INTO `resource_has_language` (`resource_id`, `language_id`) VALUES (1, 1)
 INSERT INTO `resource_has_language` (`resource_id`, `language_id`) VALUES (1, 2);
 
 COMMIT;
+
