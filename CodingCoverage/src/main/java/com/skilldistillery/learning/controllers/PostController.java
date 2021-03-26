@@ -134,32 +134,25 @@ public class PostController {
 		
 		// Set date created
 		Post dbPost = postDAO.findById(updatedPost.getId());
-		updatedPost.setDateCreated(dbPost.getDateCreated());
 		
 		// Set lang_id
 		Language lang = langDao.findById(langId);
-		updatedPost.setLanguage(lang);
+		dbPost.setLanguage(lang);
 		
-		// Set user_id
-		User thisUser = (User)session.getAttribute("user");
-		updatedPost.setUser(thisUser);
+		
+		dbPost.setSubject(updatedPost.getSubject());
+		dbPost.setContent(updatedPost.getContent());
+		
 		// Merge new post
-		postDAO.updatePost(updatedPost);
+		postDAO.updatePost(dbPost);
+		
 		// Refresh User 
+		User thisUser = (User)session.getAttribute("user");
 		User user = userDao.findById(thisUser.getId());
 		session.setAttribute("user", user);
 		
-		// Get Post w/ comments w/o eagerly loading again. 
-		for (Post post : user.getPosts()) {
-			
-			if (post.getId() == updatedPost.getId()) {
-				
-				// Add Post obj to viewForumPost
-				redir.addFlashAttribute("post", post);
-				break;
-			}
-		}
-		
+		redir.addFlashAttribute("post", dbPost);
+	
 		
 		return "redirect:updatePostRedir.do";
 	}
