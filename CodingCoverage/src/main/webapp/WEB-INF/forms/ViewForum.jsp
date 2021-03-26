@@ -5,11 +5,13 @@
 <!doctype html>
 <html lang="en">
 <head>
+		<!-- Meta Info -->
 	<meta charset="UTF-8">
 	<title>User Forum</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="description" content="" />
 	<meta name="keywords" content="" />
+		<!--  Internal Resources -->
 	<link rel="stylesheet" type="text/css" href="css/animate.css">
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="css/line-awesome.css">
@@ -22,6 +24,7 @@
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<link rel="stylesheet" type="text/css" href="css/responsive.css">
 	<link rel="shortcut icon" type="image/jpg" href="images/codingCoverage.png"/>
+	<link rel="stylesheet" type="text/css" href="css/navBar.css">
 	<!-- External Resources -->
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
 </head>
@@ -67,12 +70,22 @@
 		<section class="forum-sec">
 			<div class="container">
 				<div class="forum-links">
-					<ul>
+					<ul id="nav">
 						<li class="active"><a href="#" title="">Latest</a></li>
 						<li><a href="#" title="">Unanswered</a></li>
 						<li><a href="#" title="">Treading</a></li>
 						<li><a href="#" title="">Popular This Week</a></li>
 						<li><a href="#" title="">Popular of Month</a></li>
+						
+						<li>
+							<a href="#" title="">Popular of Month</a>
+								<ul>
+									<li>
+									<li><a href="#" title="">Popular of Month</a></li>
+									<li><a href="#" title="">Popular of Month</a></li>
+									<li><a href="#" title="">Popular of Month</a></li>
+								</ul>
+						</li>
 					</ul>
 				</div><!--forum-links end-->
 				<div class="forum-links-btn">
