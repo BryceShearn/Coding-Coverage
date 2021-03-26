@@ -36,7 +36,7 @@
                 <div class="profile-menu">
                     <p>${sessionScope.user.username } <a href="#26"><span class="entypo-down-open scnd-font-color"></span></a></p>
                     <div class="profile-picture small-profile-picture">
-                        <img width="40px" alt="Anne Hathaway picture" src="images/profilePicture.png">
+                        <img width="40px" alt="Default Profile Picture" src="images/DefaultProfilePictures/Avatar-34.png">
                     </div>
                 </div>
             </header>
@@ -49,7 +49,7 @@
                 <div class="profile block"> <!-- PROFILE PICTURE AND DESCRIPTION(MIDDLE-CONTAINER) -->
                     <a class="add-button" href="#28"><span class="icon entypo-plus scnd-font-color"></span></a>
                     	<div class="profile-picture big-profile-picture clear">
-                        	<img width="150px" alt="Filler profile picture" src="images/profilePicture.png" >
+                        	<img width="150px" alt="Default Profile Picture" src="images/DefaultProfilePictures/Avatar-34.png" >
                     	</div>
                     <h1 class="user-name">${sessionScope.user.firstName } </h1>
                     	<div class="profile-description">
