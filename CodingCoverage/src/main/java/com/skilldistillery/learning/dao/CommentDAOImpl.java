@@ -5,12 +5,15 @@ import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.servlet.http.HttpSession;
 import javax.transaction.Transactional;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.skilldistillery.learning.entities.Comment;
 import com.skilldistillery.learning.entities.CommentVote;
+import com.skilldistillery.learning.entities.Post;
 import com.skilldistillery.learning.entities.PostVote;
 import com.skilldistillery.learning.entities.User;
 
@@ -20,6 +23,11 @@ public class CommentDAOImpl implements CommentDAO {
 	
 	@PersistenceContext
 	private EntityManager em;
+	
+	@Autowired
+	PostDAO postDao;
+	@Autowired
+	UserDAO userDao;
 
 	@Override
 	public Comment findById(int commentId) {
@@ -51,7 +59,13 @@ public class CommentDAOImpl implements CommentDAO {
 	}
 
 	@Override
-	public Comment createComment(Comment newComment) {
+	public Comment createComment(Comment newComment, Integer postId) {
+		Post post = em.find(Post.class, postId);
+		newComment.setPost(post);
+		newComment.setDateCreated(LocalDateTime.now());
+		newComment.setDateUpdated(LocalDateTime.now());
+		
+		
 		
 		em.persist(newComment);
 		em.flush();

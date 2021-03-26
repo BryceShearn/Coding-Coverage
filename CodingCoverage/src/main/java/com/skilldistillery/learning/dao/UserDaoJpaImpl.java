@@ -24,14 +24,12 @@ public class UserDaoJpaImpl implements UserDAO {
 	public User findById(int userId) {
 
 		User foundUser = em.find(User.class, userId);
-		int i = foundUser.getComments().size();
-		System.out.println("************************" + i);
+		foundUser.getComments().size();
 		foundUser.getRoadmaps().size();
 		foundUser.getUserRoadmapTasks().size();
 		foundUser.getPosts().size();
 		for (Post post : foundUser.getPosts()) {
 			post.getPostVote().size();
-		System.out.println(i);
 		}
 		for (Comment post : foundUser.getComments()) {
 			post.getCommentVote().size();
