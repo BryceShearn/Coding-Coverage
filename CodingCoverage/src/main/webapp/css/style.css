@@ -244,6 +244,7 @@ nav ul li:hover > ul,
 .pagination li .page-link,
 .post_comment_sec form textarea,
 .post_comment_sec form button,
+.thwUpDel form button,
 .next-prev > a {
 	-webkit-border-radius: 4px;
 	-moz-border-radius: 4px;
@@ -5458,8 +5459,50 @@ a:hover {
 	margin-top: 20px;
 	cursor: pointer;
 }
+/* ****************Thomas Webel**************????????????????????????????? */
+.thwUpDel {
+	float: left;
+	width: 90%;
+}
+.thwUpDel form {
+	float: left;
+	width: 100%;
+}
+
+.thwUpDel form button {
+	color: #ffffff;
+	font-size: 14px;
+	background-color: #e44d3a;
+	padding: 10px 25px;
+	border: 0;
+	font-weight: 600;
+	margin-top: 20px;
+	cursor: pointer;
+}
+.thwUpDel .thwUp {
+	float: left;
+	width: 50%;
+	display: flex;
+  	justify-content: center;
+ 	align-items: center;
+}
+.thwUpDel .thwUp button{
+	float: right;
+	
+}
+.thwUpDel .thwDel {
+	float: right;
+	width: 50%;
+	display: flex;
+  	justify-content: center;
+ 	align-items: center;
+}
+.thwUpDel .thwDel button{
+	float: right;
+}
 
 
+/******************thwebel********************  */
 /* ======== next-prev ========*/
 
 .next-prev {

@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="shortcut icon" type="image/jpg" href="images/codingCoverage.png"/>
 	<link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
-    <title>Edit Forum Post</title>
+    <title>Edit Expert Post</title>
   	<link rel="stylesheet" href="css/CreatePost.css">
   </head>
 <body class="userPostFormBody">
@@ -44,9 +44,9 @@
 			<label for="langId">SQL</label>
 			
 			<form:hidden path="id" value="${post.id }" />
-			<form:hidden path="isForumVisable" value="true" />
+			<form:hidden path="isForumVisable" value="false" />
 			<form:hidden path="isBlog" value="false" />
-			<form:hidden path="isExpert" value="false" />
+			<form:hidden path="isExpert" value="true" />
 		</form:form>
 		
 		<button type="submit"  form="thisForm" class="signInButton">

@@ -1,5 +1,7 @@
 package com.skilldistillery.learning.controllers;
 
+import java.util.Iterator;
+
 import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
@@ -10,9 +12,11 @@ import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.skilldistillery.learning.dao.LanguageDAO;
 import com.skilldistillery.learning.dao.PostDAO;
+import com.skilldistillery.learning.dao.UserDAO;
 import com.skilldistillery.learning.entities.Language;
 import com.skilldistillery.learning.entities.Post;
 import com.skilldistillery.learning.entities.User;
@@ -26,10 +30,13 @@ public class PostController {
 	
 	
 	@Autowired
-	PostDAO postDAO;
+	private PostDAO postDAO;
 	
 	@Autowired
-	LanguageDAO langDao;
+	private LanguageDAO langDao;
+	
+	@Autowired
+	private UserDAO userDao;
 	
 //  redirect:ViewForum.do from createForumPost.do
 	@RequestMapping(path="ViewForum.do")
@@ -101,5 +108,77 @@ public class PostController {
 		return "redirect:ViewForum.do";
 	}
 	
+// UPDATE POST SECTION
 	
+	@RequestMapping(path="updatePostForm.do", method=RequestMethod.GET)
+	public String getUpdatePostForm(Model model, int postId) {
+		
+		Post post = postDAO.findById(postId);
+		model.addAttribute("post", post);
+		if (post.getIsForumVisable()) {
+			return "forms/EditForumPost";
+			
+		} else if(post.getIsBlog()) {
+			return "forms/EditBlogPost";
+			
+		} else if(post.getIsExpert()) {
+			return "forms/EditBlogPost";
+			
+		}
+		// Should never be hit
+		return "results/ProfilePage";
+	}
+	
+	@RequestMapping(path="updatePost.do", method=RequestMethod.POST)
+	public String updatePost(Model model, @Valid Post updatedPost, Errors errors, HttpSession session, Integer langId, RedirectAttributes redir) {
+		
+		// Set date created
+		Post dbPost = postDAO.findById(updatedPost.getId());
+		
+		// Set lang_id
+		Language lang = langDao.findById(langId);
+		dbPost.setLanguage(lang);
+		
+		
+		dbPost.setSubject(updatedPost.getSubject());
+		dbPost.setContent(updatedPost.getContent());
+		
+		// Merge new post
+		postDAO.updatePost(dbPost);
+		
+		// Refresh User 
+		User thisUser = (User)session.getAttribute("user");
+		User user = userDao.findById(thisUser.getId());
+		session.setAttribute("user", user);
+		
+		redir.addFlashAttribute("post", dbPost);
+	
+		
+		return "redirect:updatePostRedir.do";
+	}
+	
+	@RequestMapping(path="updatePostRedir.do", method=RequestMethod.GET)
+	public String updateRedir() {
+		
+		return "results/ViewForumPost";
+	}
+	
+// END UPDATE POST SECTION
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

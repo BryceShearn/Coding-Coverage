@@ -229,8 +229,26 @@
 		</div><!--overview-box end-->
 
 	</div><!--theme-layout end-->
-
-
+<%-- 
+<br>
+  ${post.dateCreated}    ${post.user.image} ${post.user.username} <b><i>${post.user.role}</i></b>
+  <br>
+  ${post.subject}
+  <br>
+  Includes ${post.language}
+  <br>
+  ${post.content}
+  <br>
+  ${post.postVote}
+  <br>
+  ${post.comments}
+  <br>
+  <form action="createComment.do" method="POST" id="commentForm"> 
+  <input type="text" placeholder="Write your thoughts..." name="content" />
+  <input type="hidden" value="${post.id}" name="postId">
+  <input type="submit" form="commentForm" />
+  </form>
+ --%>
 
 <script type="text/javascript" src="js/jquery.min.js"></script>
 <script type="text/javascript" src="js/popper.js"></script>
