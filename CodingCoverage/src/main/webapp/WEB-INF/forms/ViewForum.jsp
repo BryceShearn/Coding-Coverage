@@ -29,62 +29,39 @@
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
 </head>
 <body>
-<!-- <div class="wrapper"> -->
 		<header>
-			<div class="container">
-				<div class="header-data">
-					<div class="logo pd-btm">
-						<a href="index.html" title=""><img src="images/logo.png" alt=""></a>
-					</div><!--logo end-->
-					<div class="forum-bar">
-						<h2>Forum</h2>
-						<ul>
-							<li><a href="#" title="">Tags</a></li>
-							<li><a href="#" title="">Users</a></li>
-							<li><a href="#" title="" class="ask-question">Ask a question</a></li>
-						</ul>
-					</div><!--search-bar end-->
-					<!-- LOGIN / Reg button -->
-					<div class="login_register">
-						<ul>
-							<li><a href="profilePageResults.do" title="">Home</a></li>
-							<!-- <li><a href="sign-in.html" title="">Register</a></li> -->
-						</ul>
-					</div>
-					<!--login_register end-->
-					<div class="search-bar st2">
-						<form id="searchBarForm" action="searchFilters.do" method="GET">
-							<input type="text" name="keyword" placeholder="Search...">
-							<button type="submit"><i class="la la-search"></i></button>
-							<select form="searchBarForm" class="language" name="language_id" id="Language">
-  								<option value="1">Java</option>
- 								<option value="2">HTML</option>
-								<option value="3">CSS</option>
-							<!-- <option value="4">SQL</option> -->
- 							</select>
-						</form>
-					</div><!--search-bar end-->
-				</div><!--header-data end-->
-			</div>
-		</header>	
+		<br><br><br>	
+		</header>
 		<section class="forum-sec">
 			<div class="container">
-				<div class="forum-links">
+				<div class="menu">
 					<ul id="nav">
-						<li class="active"><a href="#" title="">Latest</a></li>
-						<li><a href="#" title="">Unanswered</a></li>
-						<li><a href="#" title="">Treading</a></li>
-						<li><a href="#" title="">Popular This Week</a></li>
-						<li><a href="#" title="">Popular of Month</a></li>
+						<li class="link"><a href="#" title="">Latest</a></li>
+						<li class="link"><a href="#" title="">Unanswered</a></li>
+						<li class="link"><a href="#" title="">Treading</a></li>
+						<li class="link"><a href="#" title="">Popular This Week</a></li>
+						<li class="link"><a href="#" title="">Popular of Month</a></li>
 						
+						<li class="link">
+							<form id="searchBarForm" action="searchFilters.do" method="GET">
+							<input type="text" name="keyword" placeholder="Search...">
+							<button type="submit"><i class="la la-search"></i></button>
+								<select form="searchBarForm" class="searchDrop" name="language_id" id="Language">
+  									<option value="0" selected>All Languages</option>
+  									<option value="1">Java</option>
+ 									<option value="2">HTML</option>
+									<option value="3">CSS</option>
+									<option value="4">SQL</option>
+ 								</select>
+							</form>
+						</li>
 						<li>
-							<a href="#" title="">Popular of Month</a>
+							<div class="login_register">
 								<ul>
-									<li>
-									<li><a href="#" title="">Popular of Month</a></li>
-									<li><a href="#" title="">Popular of Month</a></li>
-									<li><a href="#" title="">Popular of Month</a></li>
+									<li><a href="profilePageResults.do" title="">Home</a></li>
+									<!-- <li><a href="sign-in.html" title="">Register</a></li> -->
 								</ul>
+							</div>
 						</li>
 					</ul>
 				</div><!--forum-links end-->

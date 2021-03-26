@@ -1,64 +1,107 @@
-@charset "UTF-8";
-
-#nav {
-	list-style: none;
-	font-weight: bold;
-	margin-bottom: 1px;
-	float: left;
-	width: 100%;
+.menu {
+  --menu-height: 40px;
+  box-sizing: border-box;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+}
+.menu ul {
+  list-style: none;
+  padding: 16px;
+  margin: 0;
+}
+.menu ul li, .menu ul li a, .menu ul li select, .menu ul li option {
+  opacity: 0.8;
+  color: #ffffff;
+  cursor: pointer;
+  transition: 200ms;
+  text-decoration: none;
+  white-space: nowrap;
+  font-weight: 700;
 }
 
-#nav li {
-	float: left;
-	margin-right: 10px;
-	position: relative;
+.link select{
+	background :000;
+}
+.menu ul li:hover, .menu ul li a:hover {
+  opacity: 1;
+}
+.menu ul li a select, .menu ul li a a select{
+  display: flex;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+.menu ul li {
+  padding-right: 36px;
+}
+.menu ul li select::before {
+  content: "";
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid #FFA500;
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.menu ul .link::before {
+  padding-right: 0;
+  display: none;
+}
+.menu > ul {
+  display: flex;
+  height: var(--menu-height);
+  align-items: center;
+  background-color: #000000;
+}
+.menu > ul li select{
+  position: relative;
+  margin: 0 8px;
+}
+.menu > ul li ul select{
+  visibility: hidden;
+  opacity: 0;
+  padding: 0;
+  min-width: 160px;
+  background-color: #333;
+  position: absolute;
+  top: calc(var(--menu-height) + 5px);
+  left: 50%;
+  transform: translateX(-50%);
+  transition: 200ms;
+  transition-delay: 200ms;
+}
+.menu > ul li ul li select{
+  margin: 0;
+  padding: 8px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  height: 30px;
+  padding-right: 40px;
+}
+.menu > ul li ul li select::before {
+  width: 0;
+  height: 0;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  border-left: 5px solid #FFA500;
+}
+.menu > ul li ul li ul select {
+  top: -2%;
+  left: 100%;
+  transform: translate(0);
+}
+.menu > ul li ul li select:hover {
+  background-color: #000000;
+}
+.menu > ul li select:hover > ul {
+  opacity: 1;
+  visibility: visible;
+  transition-delay: 0ms;
 }
 
-#nav a {
-	display: block;
-	padding: 1px;
-	color: #fff;
-	background: #333;
-	text-decoration: none;
-}
-
-#nav a:hover {
-	color: #fff;
-	background: #6b0c36;
-	text-decoration: underline;
-}
-
-#nav ul {
-	background: #fff;
-	background: rgba(255, 255, 255, 0);
-	list-style: none;
-	position: absolute;
-	left: -9999px;
-}
-
-#nav ul li {
-	padding-top: 1px;
-	
-	float: none;
-}
-
-#nav ul a {
-	white-space: nowrap;
-}
-
-#nav li:hover ul {
-	left: 0;
-}
-
-#nav li:hover a {
-	background: #6b0c36;
-	text-decoration: underline;
-}
-
-#nav li:hover ul a {
-	text-decoration: none;
-}
-
-#nav li:hover ul li a:hover {
-	background: #333;
-}
