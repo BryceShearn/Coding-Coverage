@@ -49,15 +49,11 @@ public class PostController {
 		return "forms/ViewForum";
 	}
 	
-	// **||****************************************************************************************************************||****
-	// **||* RESULT PATH WAS EDITED IN ORDER TO BACKDOOR THE VIEW FORUM !SINGLE! POST SANDBOX (Bryce S. 3/26/21 @ 12:24AM)*||****
-	// **\/****************************************************************************************************************\/****
-	
 	@RequestMapping(path="ViewExpertForum.do")
 	public String viewExpertForum(Model model) {
 		model.addAttribute("posts", postDAO.findAll());
-//		return "forms/ViewExpertForum";
-		return "results/ViewForumSinglePostSandbox";
+		return "forms/ViewExpertForum";
+//		return "results/ViewForumSinglePostSandbox";
 	}	
 	
 	@RequestMapping(path="searchFiltersExpertForum.do", params= {"keyword", "language_id"})
@@ -66,15 +62,12 @@ public class PostController {
 		return "forms/ViewExpertForum";
 
 	}
-// **||*******************************************************************************************************||****
-// **||* RESULT PATH WAS EDITED IN ORDER TO BACKDOOR THE VIEW FORUM POST SANDBOX (Bryce S. 3/26/21 @ 12:17AM)*||****
-// **\/*******************************************************************************************************\/****
 
 	@RequestMapping(path="viewForumPost.do", params= "id")
 	public String viewForumPost(Model model, @RequestParam("id")Integer postId) {
 		model.addAttribute("post", postDAO.viewPost(postId));
-//		return "results/ViewForumPost";
-		return "results/ViewForumPostSandbox";
+		return "results/ViewForumPost";
+//		return "results/ViewForumPostSandbox";
 	}
 	
 	@RequestMapping(path="getForumPostForm.do")

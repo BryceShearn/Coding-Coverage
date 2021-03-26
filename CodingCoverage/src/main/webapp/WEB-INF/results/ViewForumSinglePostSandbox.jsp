@@ -22,6 +22,7 @@
     	<link rel="stylesheet" type="text/css" href="css/slick-theme.css">
     	<link rel="stylesheet" type="text/css" href="css/style.css">
     	<link rel="stylesheet" type="text/css" href="css/responsive.css">
+    	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
 	</head>
 	<body>
 	<div class="wrapper">
@@ -89,9 +90,11 @@
 											<li><a href="#" title=""><i class="fa fa-share-alt"></i> Share</a></li>
 										</ul>
 										<ul class="quest-tags">
-											<li><a href="#" title="">Work</a></li>
-											<li><a href="#" title="">Php</a></li>
-											<li><a href="#" title="">Design</a></li>
+											<li><a href="#" title="">JAVA</a></li>
+											<li><a href="#" title="">HTML</a></li>
+											<li><a href="#" title="">CSS</a></li>
+											<!-- <li><a href="#" title="">SQL</a></li> -->
+											<!-- <li><a href="#" title="">JS</a></li> -->
 										</ul>
 										<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse at libero elit. Mauris ultrices sed lorem nec efficitur. Donec sit amet facilisis lorem, quis facilisis tellus. Nullam mollis dignissim nisi sit amet tempor. Nullam sollicitudin neque a felis commodo gravida at sed nunc. In justo nunc, sagittis sed venenatis at, dictum vel erat. Curabitur at quam ipsum. Quisque eget nibh aliquet, imperdiet diam pharetra, dapibus lacus. Sed tincidunt sapien in dui imperdiet eleifend. Ut ut sagittis purus, non tristique elit. Quisque tincidunt metus eget ligula sodales luctus. Donec convallis ex at dui convallis malesuada. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Ut pretium euismod mollis. Pellentesque convallis gravida ante eu pretium. Integer rutrum mi nec purus tincidunt, nec rhoncus mauris porttitor. Donec id tellus at leo gravida egestas. Suspendisse consequat mi vel euismod efficitur. Donec sed elementum libero.</p>
 										<p> Etiam rutrum ut urna eu tempus. Curabitur suscipit quis lorem vel dictum. Aliquam erat volutpat. Pellentesque volutpat viverra pulvinar. Mauris ac sapien ac metus tincidunt volutpat eu eu purus. Suspendisse pharetra quis quam id auctor. Pellentesque feugiat venenatis urna, vitae suscipit enim volutpat vitae. Nunc egestas tortor est, at sodales ligula auctor efficitur.</p>
@@ -145,7 +148,7 @@
 								<h3>03 Comments</h3>
 								<div class="user-poster">
 									<div class="usr-post-img">
-										<img src="images/resources/bg-img2.png" alt="">
+										<img src="images/DefaultProfilePictures/Avatar-34.png" alt="">
 									</div>
 									<div class="post_comment_sec">
 										<form>
