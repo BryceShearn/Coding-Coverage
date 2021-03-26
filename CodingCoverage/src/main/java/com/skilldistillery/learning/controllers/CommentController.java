@@ -45,8 +45,13 @@ public class CommentController {
 		
 		commentDao.createComment(comment, postId);
 		session.setAttribute("user", userDao.findById(user.getId()));
-		redir.addFlashAttribute(postId);
-		return "redirect:viewForumPost.do";
+		redir.addFlashAttribute("post", postDao.findById(postId));
+		return "redirect:commentRedir.do"; 
+	}
+	
+	@RequestMapping(path="commentRedir.do")
+	public String commentRedir() {
+		return "results/ViewForumPost";
 	}
 	
 	@RequestMapping(path= "showIndividualComment.do", params= "id")

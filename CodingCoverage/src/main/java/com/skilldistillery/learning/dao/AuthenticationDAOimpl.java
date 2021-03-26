@@ -38,22 +38,39 @@ public class AuthenticationDAOimpl implements AuthenticationDAO {
 		
 		String getUser = "SELECT u FROM User u WHERE u.username = :username";
 		User foundUser =  null;
+		
 		try {
 			foundUser = em.createQuery(getUser, User.class).setParameter("username", uncheckedUser.getUsername()).getSingleResult();	
 		}catch (NoResultException e) {
 			return null;
 		}
-		int i = foundUser.getComments().size();
-		System.out.println("************************" + i);
-		foundUser.getRoadmaps().size();
-		foundUser.getUserRoadmapTasks().size();
-		foundUser.getPosts().size();
-		for (Post post : foundUser.getPosts()) {
-			post.getPostVote().size();
-		System.out.println(i);
+		
+		if(foundUser.getComments()!= null) {
+			foundUser.getComments().size();
 		}
-		for (Comment post : foundUser.getComments()) {
-			post.getCommentVote().size();
+		
+		if(foundUser.getRoadmaps()!= null) {
+			foundUser.getRoadmaps().size();
+		}
+		
+		if(foundUser.getUserRoadmapTasks()!= null) {
+			foundUser.getUserRoadmapTasks().size();
+		}
+		
+		if(foundUser.getPosts()!= null) {
+			for (Post post : foundUser.getPosts()) {
+				if(post.getPostVote() != null) {
+					post.getPostVote().size();
+				}
+			}
+		}
+		
+		if(foundUser.getComments()!= null) {
+			for (Comment comment : foundUser.getComments()) {
+				if(comment.getCommentVote() != null) {
+					comment.getCommentVote().size();
+				}
+			}
 		}
 		// load Rm -> CC -> T -> Re Lists 
 		for (Roadmap map : foundUser.getRoadmaps()) {
@@ -63,8 +80,6 @@ public class AuthenticationDAOimpl implements AuthenticationDAO {
 				}
 			}
 		}
-	
-		
 		
 		return foundUser;
 	}
