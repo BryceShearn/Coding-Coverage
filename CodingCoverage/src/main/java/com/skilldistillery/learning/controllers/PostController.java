@@ -63,6 +63,18 @@ public class PostController {
 		
 		return "forms/CreateForumPost";
 	}
+	// Expert Forum Post
+	@RequestMapping(path="getExpertPostForm.do")
+	public String getExpertPostForm(Model model, Post post) {
+		
+		return "forms/CreateExpertForumPost";
+	}
+	// Personal Post
+	@RequestMapping(path="getPersonalPostForm.do")
+	public String getPersonalPostForm(Model model, Post post) {
+		
+		return "forms/CreateBlogPost";
+	}
 	// Create Forum Post
 	@RequestMapping(path="createForumPost.do", method=RequestMethod.POST)
 	public String createForumPost(Model model, @Valid Post post, Errors errors, HttpSession session, Integer langId) {

@@ -1,5 +1,6 @@
 package com.skilldistillery.learning.controllers;
 
+import java.lang.ProcessBuilder.Redirect;
 import java.time.LocalDateTime;
 
 import javax.servlet.http.HttpSession;
@@ -12,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.context.annotation.SessionScope;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.skilldistillery.learning.dao.AuthenticationDAO;
 import com.skilldistillery.learning.dao.CommentDAO;
@@ -22,6 +24,7 @@ import com.skilldistillery.learning.entities.Post;
 import com.skilldistillery.learning.entities.User;
 
 @Controller
+
 public class CommentController {
 
 	@Autowired
@@ -34,13 +37,21 @@ public class CommentController {
 	private AuthenticationDAO authDao;
 	
 	
-	@RequestMapping(path= "createComment.do", method= RequestMethod.POST)
-	public String createComment(Model model, Comment comment) {
+	@RequestMapping(path= "createComment.do", method=RequestMethod.POST)
+	public String createComment(Model model, Comment comment, Integer postId, HttpSession session, RedirectAttributes redir) {
+		User user = (User)session.getAttribute("user");
+		comment.setUser(user);
 		
-		comment.setDateCreated(LocalDateTime.now());
-		comment.setDateUpdated(LocalDateTime.now());
-		commentDao.createComment(comment);
-		return "forms/ViewingForum";
+		
+		commentDao.createComment(comment, postId);
+		session.setAttribute("user", userDao.findById(user.getId()));
+		redir.addFlashAttribute("post", postDao.findById(postId));
+		return "redirect:commentRedir.do"; 
+	}
+	
+	@RequestMapping(path="commentRedir.do")
+	public String commentRedir() {
+		return "results/ViewForumPost";
 	}
 	
 	@RequestMapping(path= "showIndividualComment.do", params= "id")

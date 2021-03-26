@@ -59,18 +59,41 @@
             <div class="scrolling-box block">
             	<h2 class="titular">YOUR POSTS</h2>
                 	<section id="1">PERSONAL POSTS</section>
+                		<!-- Personal Posts -->
             			<ul class= "scrolling-box-menu">
             				<c:forEach var="post" items="${sessionScope.user.posts }">
+            					<c:choose>
+            					<c:when test="${post.isBlog }">
             					<li>
-                            		<a class="menu-box-tab" href="########">
+                            		<a class="menu-box-tab" href="viewForumPost.do?id=${post.id }">
                             			<span class="icon fontawesome-envelope scnd-font-color"></span>
                             				${post.subject }
                             			<div class="menu-box-number"></div>
                             		</a>                            
                         		</li>
+                        		</c:when>
+                        		<c:otherwise></c:otherwise>
+                        		</c:choose>
             				</c:forEach>
             			</ul>
-            			
+            			<!-- Forum Posts -->
+            			<section id="2">FORUM POSTS</section>
+            			<ul class= "scrolling-box-menu">
+            				<c:forEach var="post" items="${sessionScope.user.posts }">
+            					<c:choose>
+            					<c:when test="${post.isForumVisable }">
+            					<li>
+                            		<a class="menu-box-tab" href="viewForumPost.do?id=${post.id }">
+                            			<span class="icon fontawesome-envelope scnd-font-color"></span>
+                            				${post.subject }
+                            			<div class="menu-box-number"></div>
+                            		</a>                            
+                        		</li>
+                        		</c:when>
+                        		<c:otherwise></c:otherwise>
+                        		</c:choose>
+            				</c:forEach>
+            			</ul>
             			<!-- TBD EXPERT ONLY -->
   						<%-- <ul class= "scrolling-box-menu">
             				<c:forEach var="post" items="${sessionScope.user.posts }">
@@ -114,15 +137,13 @@
                             <a class="menu-box-tab" href="getForumPostForm.do"><span class="icon entypo-paper-plane scnd-font-color"></span>Post to Community Forum<div class="menu-box-number"></div></a>                            
                         </li>
                         <li>
-                            <a class="menu-box-tab" href="#10"><span class="icon entypo-calendar scnd-font-color"></span>Post to Expert Forum (EXPERT)<div class="menu-box-number"></div></a>                            
+                            <a class="menu-box-tab" href="getExpertPostForm.do"><span class="icon entypo-calendar scnd-font-color"></span>Post to Expert Forum <div class="menu-box-number"></div></a>                            
                         </li>
                         <li>
-                            <a class="menu-box-tab" href="#12"><span class="icon entypo-cog scnd-font-color"></span>View External Resources</a>
+                            <a class="menu-box-tab" href="getPersonalPostForm.do"><span class="icon entypo-cog scnd-font-color"></span>Make a Personal Post</a>
                         </li>
                         <li>
-
                             <a class="menu-box-tab" href="viewSessionUserComments.do"><sapn class="icon entypo-chart-line scnd-font-color"></sapn>View My Comments</a>
-
 <!--                             <a class="menu-box-tab" href="ViewComment.do"><sapn class="icon entypo-chart-line scnd-font-color"></sapn>View My Comments</a>
  -->
                         </li>                        

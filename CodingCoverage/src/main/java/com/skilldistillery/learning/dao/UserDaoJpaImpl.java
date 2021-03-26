@@ -3,13 +3,17 @@ package com.skilldistillery.learning.dao;
 import java.util.List;
 
 import javax.persistence.EntityManager;
+import javax.persistence.NoResultException;
 import javax.persistence.PersistenceContext;
 import javax.transaction.Transactional;
 
 import org.springframework.stereotype.Service;
 
+import com.skilldistillery.learning.entities.CodeConcept;
 import com.skilldistillery.learning.entities.Comment;
 import com.skilldistillery.learning.entities.Post;
+import com.skilldistillery.learning.entities.Roadmap;
+import com.skilldistillery.learning.entities.Task;
 import com.skilldistillery.learning.entities.User;
 
 @Service
@@ -19,25 +23,49 @@ public class UserDaoJpaImpl implements UserDAO {
 	@PersistenceContext
 	private EntityManager em;
 
-	// Get
 	@Override
 	public User findById(int userId) {
 
 		User foundUser = em.find(User.class, userId);
-		int i = foundUser.getComments().size();
-		System.out.println("************************" + i);
-		foundUser.getRoadmaps().size();
-		foundUser.getUserRoadmapTasks().size();
-		foundUser.getPosts().size();
-		for (Post post : foundUser.getPosts()) {
-			post.getPostVote().size();
-		System.out.println(i);
+		
+		if(foundUser.getComments()!= null) {
+			foundUser.getComments().size();
 		}
-		for (Comment post : foundUser.getComments()) {
-			post.getCommentVote().size();
+		
+		if(foundUser.getRoadmaps()!= null) {
+			foundUser.getRoadmaps().size();
+		}
+		
+		if(foundUser.getUserRoadmapTasks()!= null) {
+			foundUser.getUserRoadmapTasks().size();
+		}
+		
+		if(foundUser.getPosts()!= null) {
+			for (Post post : foundUser.getPosts()) {
+				if(post.getPostVote() != null) {
+					post.getPostVote().size();
+				}
+			}
+		}
+		
+		if(foundUser.getComments()!= null) {
+			for (Comment comment : foundUser.getComments()) {
+				if(comment.getCommentVote() != null) {
+					comment.getCommentVote().size();
+				}
+			}
+		}
+		// load Rm -> CC -> T -> Re Lists 
+		for (Roadmap map : foundUser.getRoadmaps()) {
+			for (CodeConcept concept : map.getCodeConcepts()) {
+				for (Task task : concept.getTask()) {
+					task.getResources().size();
+				}
+			}
 		}
 		return foundUser;
 	}
+
 
 	@Override
 	public List<User> findAll() {

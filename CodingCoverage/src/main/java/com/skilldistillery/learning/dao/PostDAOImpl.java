@@ -9,9 +9,9 @@ import javax.transaction.Transactional;
 
 import org.springframework.stereotype.Service;
 
+import com.skilldistillery.learning.entities.Comment;
 import com.skilldistillery.learning.entities.Language;
 import com.skilldistillery.learning.entities.Post;
-import com.skilldistillery.learning.entities.Resource;
 import com.skilldistillery.learning.entities.User;
 
 @Service
@@ -23,7 +23,15 @@ public class PostDAOImpl implements PostDAO {
 
 	@Override
 	public Post findById(int postId) {
-		return em.find(Post.class, postId);
+		Post post = em.find(Post.class, postId);
+		if (post.getComments() != null) {
+			for (Comment comment : post.getComments()) {
+				if (comment.getCommentVote() != null) {
+					comment.getCommentVote().size();
+				}
+			}
+		}
+		return post;
 	}
 
 	@Override
@@ -100,6 +108,15 @@ public class PostDAOImpl implements PostDAO {
 
 	@Override
 	public Post viewPost(int postId) {
-		return em.find(Post.class, postId);
+		Post post = em.find(Post.class, postId);
+		if (post.getComments() != null) {
+			for (Comment comment : post.getComments()) {
+				if (comment.getCommentVote() != null) {
+					comment.getCommentVote().size();
+				}
+			}
+		}
+		return post;
+	
 	}
 }
