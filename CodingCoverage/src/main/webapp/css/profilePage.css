@@ -1,21 +1,18 @@
-/************************************ FONTS ************************************/
 @import url(https://fonts.googleapis.com/css?family=Ubuntu:400,700);
-
 @import
 	url(https://weloveiconfonts.com/api/?family=entypo|fontawesome|zocial);
-/* entypo */
+	/* entypo */
 [class*="entypo-"]:before {
 	font-family: 'entypo', sans-serif;
 }
-/* fontawesome */
+	/* fontawesome */
 [class*="fontawesome-"]:before {
 	font-family: 'FontAwesome', sans-serif;
 }
-/* zocial */
+	/* zocial */
 [class*="zocial-"]:before {
 	font-family: 'zocial', sans-serif;
 }
-
 @font-face {
 	font-family: 'icomoon';
 	src: url('https://jlalovi-cv.herokuapp.com/font/icomoon.eot');
@@ -30,16 +27,14 @@
 	font-weight: normal;
 	font-style: normal;
 }
-
 [class^="icon-"], [class*=" icon-"] {
 	font-family: 'icomoon';
-	speak: none;
 	font-style: normal;
 	font-weight: normal;
 	font-variant: normal;
 	text-transform: none;
 	line-height: 1;
-	/* Better Font Rendering =========== */
+	/* Improved Font Rendering  */
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 }
@@ -55,7 +50,7 @@
 .icon-cloudy2:before {
 	content: "\e611";
 }
-/************************************* END FONTS *************************************/
+
 * {
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
@@ -280,6 +275,7 @@ header {
 
 .header-menu li {
 	position: relative;
+	transform: translateZ(0);
 	-webkit-transform: translateZ(0);
 	/** To avoid a flash when hover messages **/
 }
@@ -938,7 +934,6 @@ background-color: #000;
 .scrolling-box-tab:hover .scrolling-box-number {
 	background: #e64c65;
 }
-/* TO HERE IF THIS SUCKS! #Webel */
 /* ************************************************ */
 
 .middle-container .social {
@@ -1024,120 +1019,4 @@ background-color: #000;
 
 .middle-container .social .icon.googleplus {
 	background: #cc324b;
-}
-/********************************************* RIGHT CONTAINER ****************************************/
-
-.join-newsletter {
-	height: 230px;
-}
-
-.join-newsletter .titular {
-	padding-top: 10px;
-}
-
-.subscribe.button {
-	background: #11a8ab;
-	margin-top: 10px;
-}
-
-.subscribe.button:hover {
-	background: #0F9295;
-}
-
-.account {
-	height: 390px;
-}
-
-.account .titular {
-	padding: 10px 0;
-}
-
-.sign-in.button {
-	background: #e64c65;
-	margin: 10px auto;
-}
-
-.sign-in.button:hover {
-	background: #cc324b;
-}
-
-.account p {
-	text-align: center;
-}
-
-.fb-sign-in {
-	margin-top: 28px;
-	display: block;
-	line-height: 50px;
-	background: #3468af;
-	border-bottom-left-radius: 5px;
-	border-bottom-right-radius: 5px;
-	-webkit-transition: background .3s;
-	transition: background .3s;
-}
-
-.fb-sign-in:hover {
-	background: #1a4e95;
-	text-decoration: none;
-}
-
-.fb-sign-in .icon {
-	line-height: 20px;
-	font-size: 12px;
-	padding-right: 3px;
-}
-
-.fb-border {
-	display: inline-block;
-	width: 23px;
-	line-height: 20px;
-	border: 2px solid #fff;
-	border-radius: 100%;
-	margin-right: 10px;
-}
-
-.loading {
-	height: 200px;
-	padding-top: 35px;
-}
-
-.loading p {
-	display: inline-block;
-	padding-left: 30px;
-	margin: 5px 0 20px;
-}
-
-.loading .icon {
-	padding-right: 15px;
-}
-
-.loading .percentage {
-	float: right;
-	padding: 6px 35px 0 0;
-}
-
-.loading .progress-bar {
-	width: 250px;
-	height: 20px;
-	background: #50597b;
-	border-radius: 5px;
-	margin: 0 auto;
-}
-
-.progress-bar.downloading {
-	background: -webkit-linear-gradient(left, #11a8ab 81%, #50597b 81%);
-	/* Chrome10+,Safari5.1+ */
-	background: -ms-linear-gradient(left, #11a8ab 81%, #50597b 81%);
-	/* IE10+ */
-	background: linear-gradient(to right, #11a8ab 81%, #50597b 81%);
-	/* W3C */
-}
-
-.progress-bar.uploading {
-	background: -webkit-linear-gradient(left, #4fc4f6 43%, #50597b 43%);
-	/* Chrome10+,Safari5.1+ */
-	background: -ms-linear-gradient(left, #4fc4f6 43%, #50597b 43%);
-	/* IE10+ */
-	background: linear-gradient(to right, #4fc4f6 43%, #50597b 43%);
-	/* W3C */
 }

@@ -41,59 +41,61 @@
                 </div>
             </header>
 			<header class="block">
-            	<ul class="header-menu horizontal-list">
-                	<p> This is the block for the carousel </p>
+            	<ul class="header-menu horizontal-list"></ul>
+                <p> This is the block for the carousel </p>
             </header>
             <!-- LEFT-CONTAINER -->
             <div class="left-container container">
-                <div class="profile block"> <!-- PROFILE PICTURE AND DESCRIPTION(MIDDLE-CONTAINER) -->
+                <!-- begin of profile picture and description block -->
+                <div class="profile block"> 
                     <a class="add-button" href="#28"><span class="icon entypo-plus scnd-font-color"></span></a>
                     	<div class="profile-picture big-profile-picture clear">
                         	<img width="150px" alt="Default Profile Picture" src="images/DefaultProfilePictures/Avatar-34.png" >
                     	</div>
-                    <h1 class="user-name">${sessionScope.user.firstName } </h1>
-                    	<div class="profile-description">
-                        	<p class="scnd-font-color">${sessionScope.user.bio }</p>
-                    	</div>
-              	</div>
-            <div class="scrolling-box block">
-            	<h2 class="titular">YOUR POSTS</h2>
-                	<section id="1">PERSONAL POSTS</section>
+                    	<h1 class="user-name">${sessionScope.user.firstName } </h1>
+                    		<div class="profile-description">
+                        		<p class="scnd-font-color">${sessionScope.user.bio }</p>
+                    		</div>
+              	</div> <!-- END OF PROFILE PICTURE AND DESCRIPTION BLOCK -->
+            	<!-- begin of post block -->
+            	<div class="scrolling-box block">
+            		<h2 class="titular">YOUR POSTS</h2>
+                		<section id="1">PERSONAL POSTS</section>
                 		<!-- Personal Posts -->
-            			<ul class= "scrolling-box-menu">
-            				<c:forEach var="post" items="${sessionScope.user.posts }">
-            					<c:choose>
-            					<c:when test="${post.isBlog }">
-            					<li>
-                            		<a class="menu-box-tab" href="viewForumPost.do?id=${post.id }">
-                            			<span class="icon fontawesome-envelope scnd-font-color"></span>
-                            				${post.subject }
-                            			<div class="menu-box-number"></div>
-                            		</a>                            
-                        		</li>
-                        		</c:when>
-                        		<c:otherwise></c:otherwise>
-                        		</c:choose>
-            				</c:forEach>
-            			</ul>
-            			<!-- Forum Posts -->
+            				<ul class= "scrolling-box-menu">
+            					<c:forEach var="post" items="${sessionScope.user.posts }">
+            						<c:choose>
+            							<c:when test="${post.isBlog }">
+            								<li>
+                            					<a class="menu-box-tab" href="viewForumPost.do?id=${post.id }">
+                            						<span class="icon fontawesome-envelope scnd-font-color"></span>
+                            						${post.subject }
+                            					</a>                            
+                        					</li>
+                        				</c:when>
+                        				<c:otherwise></c:otherwise>
+                        			</c:choose>
+            					</c:forEach>
+            				</ul>
+            				<!-- Forum Posts -->
             			<section id="2">FORUM POSTS</section>
-            			<ul class= "scrolling-box-menu">
-            				<c:forEach var="post" items="${sessionScope.user.posts }">
-            					<c:choose>
-            					<c:when test="${post.isForumVisable }">
-            					<li>
-                            		<a class="menu-box-tab" href="viewForumPost.do?id=${post.id }">
-                            			<span class="icon fontawesome-envelope scnd-font-color"></span>
-                            				${post.subject }
-                            			<div class="menu-box-number"></div>
-                            		</a>                            
-                        		</li>
-                        		</c:when>
-                        		<c:otherwise></c:otherwise>
-                        		</c:choose>
-            				</c:forEach>
-            			</ul>
+            				<ul class= "scrolling-box-menu">
+            					<c:forEach var="post" items="${sessionScope.user.posts }">
+            						<c:choose>
+            							<c:when test="${post.isForumVisable }">
+            								<li>
+                            					<a class="menu-box-tab" href="viewForumPost.do?id=${post.id }">
+                           							<span class="icon fontawesome-envelope scnd-font-color"></span>
+                           							${post.subject }
+                           						</a>                            
+                       						</li>
+                       					</c:when>
+                       					<c:otherwise></c:otherwise>
+                       				</c:choose>
+            					</c:forEach>
+            				</ul>
+           		</div>
+            </div>		
             			<!-- TBD EXPERT ONLY -->
   						<%-- <ul class= "scrolling-box-menu">
             				<c:forEach var="post" items="${sessionScope.user.posts }">
@@ -123,58 +125,69 @@
 					</c:when>
             		</c:choose> --%>
             		<!-- TBD EXPERT -->
-              	</div>
-            </div>
             <!-- MIDDLE-CONTAINER -->
             <div class="middle-container container">
-                <div class="menu-box block"> <!-- MENU BOX (LEFT-CONTAINER) -->
-          <h2 class="titular">MENU BOX</h2>
-                    <ul class="menu-box-menu">
-                        <li>
-                            <a class="menu-box-tab" href="roadmap.do"><span class="icon fontawesome-envelope scnd-font-color"></span>View RoadMaps<div class="menu-box-number"></div></a>                            
-                        </li>
-                        <li>
-                            <a class="menu-box-tab" href="getForumPostForm.do"><span class="icon entypo-paper-plane scnd-font-color"></span>Post to Community Forum<div class="menu-box-number"></div></a>                            
-                        </li>
-                        <li>
-                            <a class="menu-box-tab" href="getExpertPostForm.do"><span class="icon entypo-calendar scnd-font-color"></span>Post to Expert Forum <div class="menu-box-number"></div></a>                            
-                        </li>
-                        <li>
-                            <a class="menu-box-tab" href="getPersonalPostForm.do"><span class="icon entypo-cog scnd-font-color"></span>Make a Personal Post</a>
-                        </li>
-                        <li>
-                            <a class="menu-box-tab" href="viewSessionUserComments.do"><sapn class="icon entypo-chart-line scnd-font-color"></sapn>View My Comments</a>
-<!--                             <a class="menu-box-tab" href="ViewComment.do"><sapn class="icon entypo-chart-line scnd-font-color"></sapn>View My Comments</a>
- -->
-                        </li>                        
-                    </ul>
-                </div>
-            <ul class="social block"> <!-- SOCIAL (MIDDLE-CONTAINER) -->
-            	<li>
-            		<a href="#50">
-            			<div class="facebook icon">
-            				<span class="zocial-facebook"></span>
-            			</div>
-            		<h2 class="facebook titular">SHARE TO FACEBOOK</h2>
-                </a>
-            	</li>
-                <li>
-	                <a href="#51">
-                		<div class="twitter icon">
-                			<span class="zocial-twitter"></span>
-                		</div>
-                	<h2 class="twitter titular">SHARE TO TWITTER</h2>
-                </a>
-                </li>
-                <li>
-               		<a href="#52">
-                		<div class="googleplus icon">
-               				<span class="zocial-googleplus"></span>
-               			</div>
-               		<h2 class="googleplus titular">SHARE TO GOOGLE+</h2>
-                </a>
-               	</li>
-            </ul>
+                <!-- begin menu block -->
+                <div class="menu-box block">
+          			<h2 class="titular">MENU BOX</h2>
+                    	<ul class="menu-box-menu">
+                        	<li>
+                           	 	<a class="menu-box-tab" href="roadmap.do">
+                           	 		<span class="icon fontawesome-envelope scnd-font-color"></span>
+                           	 		View RoadMaps
+                           	 	</a>                            
+                       	   	</li>
+                        	<li>
+                            	<a class="menu-box-tab" href="getForumPostForm.do">
+                            		<span class="icon entypo-paper-plane scnd-font-color"></span>
+                            		Post to Community Forum
+                            	</a>                            
+                        	</li>
+                        	<li>
+                            	<a class="menu-box-tab" href="getExpertPostForm.do">
+                            		<span class="icon entypo-calendar scnd-font-color"></span>
+                            		Post to Expert Forum 
+                            	</a>                            
+                        	</li>
+                        	<li>
+                            	<a class="menu-box-tab" href="getPersonalPostForm.do">
+                            		<span class="icon entypo-cog scnd-font-color"></span>
+                            		Make a Personal Post</a>
+                        	</li>
+                        	<li>
+                            	<a class="menu-box-tab" href="viewSessionUserComments.do">
+                            		<span class="icon entypo-cog scnd-font-color"></span>
+                            		View My Comments
+                            	</a>
+                        	</li>                        
+                    	</ul>
+               	</div>
+               	<ul class="social block"> <!-- SOCIAL (MIDDLE-CONTAINER) -->
+			   		<li>
+            			<a href="#50">
+            				<div class="facebook icon">
+            					<span class="zocial-facebook"></span>
+            				</div>
+            				<h2 class="facebook titular">SHARE TO FACEBOOK</h2>
+                		</a>
+            		</li>
+                	<li>
+	                	<a href="#51">
+                			<div class="twitter icon">
+                				<span class="zocial-twitter"></span>
+                			</div>
+                			<h2 class="twitter titular">SHARE TO TWITTER</h2>
+                		</a>
+                	</li>
+                	<li>
+               			<a href="#52">
+                			<div class="googleplus icon">
+               					<span class="zocial-googleplus"></span>
+               				</div>
+               				<h2 class="googleplus titular">SHARE TO GOOGLE+</h2>
+                		</a>
+               		</li>
+            	</ul>
             </div>
             <!-- RIGHT-CONTAINER -->
             <div class="right-container container">
