@@ -6147,28 +6147,7 @@ ul#myTab {
 	padding-top: 30px;
 }
 
-#saved-jobs ul{
-	margin-bottom: 20px;
-}
-#saved-jobs ul li a{
-	color: #000000;
-	font-size: 16px; 
-	font-weight: 500;
-}
-#saved-jobs  li a:hover{
-	color: #e44d3a;
-}
-.wordpressdevlp h2 {
-    font-size: 18px;
-    font-weight: 600;
-    margin-bottom: 15px;
-}
-#saved-jobs .nav-tabs .nav-item.show .nav-link, #saved-jobs .nav-tabs .nav-link.active {
-    background-color: inherit;
-    color: #e44d3a !important;
-	padding-bottom: 9px;
-	border-bottom: 2px solid #e44d3a !important;
-}
+
 #my-bids .nav-tabs .nav-item.show .nav-link, #my-bids .nav-tabs .nav-link.active {
     background-color: inherit;
     color: #e44d3a !important;
