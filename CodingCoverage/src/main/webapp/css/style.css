@@ -6146,28 +6146,7 @@ ul#myTab {
 .noreply{
 	padding-top: 30px;
 }
-#my-bids .nav-tabs {
-    margin-bottom: 20px;
-    margin-top: 7px;
-    padding-bottom: 0;
-}
-#my-bids ul{
-	margin-bottom: 15px;
-	margin-top: 7px;
-	padding-bottom: 0;
-}
-.savedjob-info p{
-	color: #666666;
-	margin-top: 5px;
-}
-#my-bids ul li a{
-	color: #000000;
-	font-size: 16px; 
-	font-weight: 500;
-}
-#my-bids  li a:hover{
-	color: #e44d3a;
-}
+
 #saved-jobs ul{
 	margin-bottom: 20px;
 }
