@@ -121,7 +121,7 @@
 							</c:choose>
 							</c:forEach>
 							<!-- Where the fun ends -->
-							<div class="usr-question"></div>
+							<!-- <div class="usr-question"></div>   COMMENTED OUT UNTIL FURTHER IMPLEMENTATIONS DUE TO SOLID BORDER ACROSS MAIN QUESTION BLOCK-->
 							</div><!--forum-questions end-->
 							<nav aria-label="Page navigation example" class="full-pagi">
 							<ul class="pagination">
