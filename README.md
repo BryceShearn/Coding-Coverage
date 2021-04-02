@@ -83,6 +83,7 @@ A logged in <b>Admin</b> user can:
 * Add or delete roadmap tasks
 * Grant approval or denial to roadmap tasks suggested or created by the expert users
 * Monitor weekly polling for suggested additional roadmap tasks
+<br><br>
 ===================================================================================
 
 ### Technologies used:
