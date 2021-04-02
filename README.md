@@ -49,7 +49,7 @@ A logged in <b>Standard</b> user can:
 * View the expert forum's posts / they are excluded from posting in the expert forum
 <br>
 <b> IMPLEMENTATIONS COMING SOON </b>
-<br>
+<br><br>
 * Choose your own language roadmap and track your progress
 * Live graph tracking of learning metrics
 * Personalize your profile
@@ -62,7 +62,7 @@ A logged in <b>Expert</b> user can:
 * Make expert level posts and contributions to the Expert Forum
 <br>
 <b> IMPLEMENTATIONS COMING SOON </b>
-<br>
+<br><br>
 * Propose contributions of roadmap tasks or new learning paths to the admins for approval or denial
 <br><br>
 =====================================================================================================
@@ -72,7 +72,7 @@ A logged in <b>Admin</b> user can:
 * Remove the posts of anyone, delete the comments of anyone
 <br>
 <b> IMPLEMENTATIONS COMING SOON </b>
-<br>
+<br><br>
 * Add or delete user's manually
 * Add or remove learning languages as their paths become structured
 * Add or delete roadmap tasks
