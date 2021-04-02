@@ -5,21 +5,21 @@
 ## JPA Full Stack Project
 
 Built By:<br>
-======================================================================================*                                                                           
-* [Tylor Shearn](https://github.com/TylorShearn)                                      |
-* <b>Primary Role:SCRUM Master</b>                                                    |
-*   *Primary Focus:in creation and implementation of Controllers, DAOs                |
-*     *Assisted Role: Aided in Database Structuring                                   |
-======================================================================================|     
-* [Thomas Webel](https://github.com/Thwebel)                                          |
-* <b>Primary Role: Database Analyst</b>                                               |
-*   *Primary Focus: planning, implementing, and maintaining the DataBase              |
-*     *Assisted++ Role: Creation and implementation of Controllers and DAOs           |
-======================================================================================|
-* [Bryce Shearn](https://github.com/BryceShearn)                                      |
-* <b>Primary Role: Lead Front End Developer</b>                                       |
-*   *Primary Focus: planning, structuring, developing, and designing the client side  |
-*     *Assisted Role: Creation & design of Controllers, DAOs and Database Structuring |
+======================================================================================
+* [Tylor Shearn](https://github.com/TylorShearn)
+* <b>Primary Role:SCRUM Master</b>
+*   *Primary Focus:in creation and implementation of Controllers, DAOs
+*     *Assisted Role: Aided in Database Structuring
+======================================================================================
+* [Thomas Webel](https://github.com/Thwebel)
+* <b>Primary Role: Database Analyst</b>
+*   *Primary Focus: planning, implementing, and maintaining the DataBase
+*     *Assisted++ Role: Creation and implementation of Controllers and DAOs
+======================================================================================
+* [Bryce Shearn](https://github.com/BryceShearn)
+* <b>Primary Role: Lead Front End Developer</b>
+*   *Primary Focus: planning, structuring, developing, and designing the client side
+*     *Assisted Role: Creation & design of Controllers, DAOs and Database Structuring
 ======================================================================================*
 
 This was a week-long sprint use Agile Methodologies to exceed the minimum viable product we set forth
@@ -37,46 +37,46 @@ First, the user enters the index page. The user can choose to:
 * Login if already a user
 
 Access and Abilities
-=======================================================================================================*
-A logged in <b>Standard</b> user can:                                                                  |
-                                                                                                       |
-* View their account dashboard                                                                         |
-* view from dashboard all of their own posts to either the Community Forum or Personal Progress Posts. |
-* Make Community Forum Contributions via posts.                                                        |
-* Make Personal Progress Posts                                                                         |
-* Comment on other's posts either in the Community or Expert Forum                                     |
-* View all External Resources                                                                          |
-* View the expert forum's posts / they are excluded from posting in the expert forum                   |
-                                                                                                       |
-<b> IMPLEMENTATIONS COMING SOON </b>                                                                   |
-                                                                                                       |
-* Choose your own language roadmap and track your progress                                             |
-* Live graph tracking of learning metrics                                                              |
-* Personalize your profile                                                                             |
-* Offer suggestion of new roadmap tasks based on a weekly polling                                      |
-=======================================================================================================|
-A logged in <b>Expert</b> user can:                                                                    |
-                                                                                                       |
-* Have all access and rights of the Standard user                                                      |
-* Make expert level posts and contributions to the Expert Forum                                        |
-                                                                                                       |
-<b> IMPLEMENTATIONS COMING SOON </b>                                                                   |
-                                                                                                       |
-* Propose contributions of roadmap tasks or new learning paths to the admins for approval or denial    |
-=======================================================================================================*
-A logged in <b>Admin</b> user can:                                                                     |
-                                                                                                       |
-* Have all access and rights of the Standard and Expert users                                          |
-* Remove the posts of anyone, delete the comments of anyone                                            |
-                                                                                                       |
-<b> IMPLEMENTATIONS COMING SOON </b>                                                                   |
-                                                                                                       |
-* Add or delete user's manually                                                                        |
-* Add or remove learning languages as their paths become structured                                    |
-* Add or delete roadmap tasks                                                                          |
-* Grant approval or denial to roadmap tasks suggested or created by the expert users                   |
-* Monitor weekly polling for suggested additional roadmap tasks                                        |
-=======================================================================================================*
+=======================================================================================================
+A logged in <b>Standard</b> user can:
+<br>
+* View their account dashboard
+* view from dashboard all of their own posts to either the Community Forum or Personal Progress Posts
+* Make Community Forum Contributions via posts
+* Make Personal Progress Posts
+* Comment on other's posts either in the Community or Expert Forum
+* View all External Resources
+* View the expert forum's posts / they are excluded from posting in the expert forum
+<br>
+<b> IMPLEMENTATIONS COMING SOON </b>
+<br>
+* Choose your own language roadmap and track your progress
+* Live graph tracking of learning metrics
+* Personalize your profile
+* Offer suggestion of new roadmap tasks based on a weekly polling
+=======================================================================================================
+A logged in <b>Expert</b> user can:
+<br>
+* Have all access and rights of the Standard user
+* Make expert level posts and contributions to the Expert Forum
+<br>
+<b> IMPLEMENTATIONS COMING SOON </b>
+<br>
+* Propose contributions of roadmap tasks or new learning paths to the admins for approval or denial
+=======================================================================================================
+A logged in <b>Admin</b> user can:
+<br>
+* Have all access and rights of the Standard and Expert users
+* Remove the posts of anyone, delete the comments of anyone
+<br>
+<b> IMPLEMENTATIONS COMING SOON </b>
+<br>
+* Add or delete user's manually
+* Add or remove learning languages as their paths become structured
+* Add or delete roadmap tasks
+* Grant approval or denial to roadmap tasks suggested or created by the expert users
+* Monitor weekly polling for suggested additional roadmap tasks
+=======================================================================================================
 ### Technologies used:
 
 Java, Java Persistence API, Spring MVC & STS, Gradle, SQL, MySQL Workbench, HTML, CSS, Bootstrap, Apache, Tomcat, AWS, Atom, Git, GitHub, and Trello.
