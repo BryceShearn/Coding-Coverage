@@ -20,7 +20,7 @@ Built By:<br>
 * <b>Primary Role: Lead Front End Developer</b>
 *   *Primary Focus: planning, structuring, developing, and designing the client side
 *     *Assisted Role: Creation & design of Controllers, DAOs and Database Structuring
-======================================================================================*
+======================================================================================
 
 This was a week-long sprint use Agile Methodologies to exceed the minimum viable product we set forth
 
