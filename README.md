@@ -4,7 +4,7 @@
 
 ## JPA Full Stack Project
 
-Built By:
+Built By:<br>
 ======================================================================================*                                                                           
 * [Tylor Shearn](https://github.com/TylorShearn)                                      |
 * <b>Primary Role:SCRUM Master</b>                                                    |
