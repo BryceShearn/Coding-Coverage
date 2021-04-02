@@ -37,7 +37,7 @@ First, the user enters the index page. The user can choose to:
 * Login if already a user
 
 Access and Abilities
-=======================================================================================================
+=====================================================================================================
 A logged in <b>Standard</b> user can:
 <br>
 * View their account dashboard
@@ -54,7 +54,7 @@ A logged in <b>Standard</b> user can:
 * Live graph tracking of learning metrics
 * Personalize your profile
 * Offer suggestion of new roadmap tasks based on a weekly polling
-=======================================================================================================
+=====================================================================================================
 A logged in <b>Expert</b> user can:
 <br>
 * Have all access and rights of the Standard user
@@ -63,7 +63,7 @@ A logged in <b>Expert</b> user can:
 <b> IMPLEMENTATIONS COMING SOON </b>
 <br>
 * Propose contributions of roadmap tasks or new learning paths to the admins for approval or denial
-=======================================================================================================
+=====================================================================================================
 A logged in <b>Admin</b> user can:
 <br>
 * Have all access and rights of the Standard and Expert users
@@ -76,7 +76,7 @@ A logged in <b>Admin</b> user can:
 * Add or delete roadmap tasks
 * Grant approval or denial to roadmap tasks suggested or created by the expert users
 * Monitor weekly polling for suggested additional roadmap tasks
-=======================================================================================================
+=====================================================================================================
 ### Technologies used:
 
 Java, Java Persistence API, Spring MVC & STS, Gradle, SQL, MySQL Workbench, HTML, CSS, Bootstrap, Apache, Tomcat, AWS, Atom, Git, GitHub, and Trello.
