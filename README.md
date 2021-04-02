@@ -5,22 +5,22 @@
 ## JPA Full Stack Project
 
 Built By:<br>
-======================================================================================
+===================================================================================
 * [Tylor Shearn](https://github.com/TylorShearn)
 * <b>Primary Role:SCRUM Master</b>
 *   *Primary Focus:in creation and implementation of Controllers, DAOs
 *     *Assisted Role: Aided in Database Structuring
-======================================================================================
+===================================================================================
 * [Thomas Webel](https://github.com/Thwebel)
 * <b>Primary Role: Database Analyst</b>
 *   *Primary Focus: planning, implementing, and maintaining the DataBase
 *     *Assisted++ Role: Creation and implementation of Controllers and DAOs
-======================================================================================
+===================================================================================
 * [Bryce Shearn](https://github.com/BryceShearn)
 * <b>Primary Role: Lead Front End Developer</b>
 *   *Primary Focus: planning, structuring, developing, and designing the client side
 *     *Assisted Role: Creation & design of Controllers, DAOs and Database Structuring
-======================================================================================
+===================================================================================
 
 This was a week-long sprint use Agile Methodologies to exceed the minimum viable product we set forth
 
@@ -83,7 +83,7 @@ A logged in <b>Admin</b> user can:
 * Add or delete roadmap tasks
 * Grant approval or denial to roadmap tasks suggested or created by the expert users
 * Monitor weekly polling for suggested additional roadmap tasks
-=====================================================================================================
+===================================================================================
 
 ### Technologies used:
 
