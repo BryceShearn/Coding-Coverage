@@ -26,7 +26,7 @@ This was a week-long sprint use Agile Methodologies to exceed the minimum viable
 
 ### Overview:
 
-*<b>Why?</b> Coding Coverage was conceptualized created and brought to life by a team of three with a mission to improve the process of reaching the end state of becoming a Software Developer aimed towards self-taught programmers in order to provide guidance, roadmaps, community resources, community engagement for motivation, and the opportunity for expert volunteers to offer insight or help to others in order to benefit the future of Software Development!
+<b>Why?</b> Coding Coverage was conceptualized created and brought to life by a team of three with a mission to improve the process of reaching the end state of becoming a Software Developer aimed towards self-taught programmers in order to provide guidance, roadmaps, community resources, community engagement for motivation, and the opportunity for expert volunteers to offer insight or help to others in order to benefit the future of Software Development!
 
 This program is designed to be a full stack website application that creates, reads, updates and deletes users progress as well as community contribution data in the form of comments from a database we built using MySQL Workbench and connecting with using Java Database Connectivity.
 
