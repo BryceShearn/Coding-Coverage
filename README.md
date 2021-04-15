@@ -108,7 +108,10 @@ Here's a blank template to get started:
 
 
 
-
+<br />
+<br />
+<br />
+<br />
 <!-- GETTING STARTED -->
 ## Getting Started
 
