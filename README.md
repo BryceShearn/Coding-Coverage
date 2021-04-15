@@ -54,7 +54,7 @@
     <li>
       <a href="#about-the-project">About The Project</a>
       <ul>
-        <li><a href="#built-with">Built With</a></li>
+        <li><a href="#meet-the-creators">Built With</a></li>
       </ul>
     </li>
     <li>
@@ -85,9 +85,8 @@ Here's a blank template to get started:
 `BryceShearn`, `Coding-Coverage`, `twitter_handle`, `email`, `project_title`, `project_description`
 
 
-### Built With
-
-Built By:<br>
+### Meet The Creators
+<br>
 ===================================================================================
 * [Thomas Webel](https://github.com/Thwebel)
 * <b>Primary Role: Database Analyst</b>
