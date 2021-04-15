@@ -17,7 +17,7 @@
   <h3 align="center">Coding Coverage</h3>
 
   <p align="center">
-    project_description
+    Coding Coverage is a Web Application designed to provide training tools, community support, and guidance for current and future developers.
     <br />
     <a href="https://github.com/BryceShearn/Coding-Coverage"><strong>Explore the docs »</strong></a>
     <br />
