@@ -1,122 +1,176 @@
-## Coding Coverage
+[![Contributors][contributors-shield]][contributors-url]
+[![Forks][forks-shield]][forks-url]
+[![Stargazers][stars-shield]][stars-url]
+[![Issues][issues-shield]][issues-url]
+[![MIT License][license-shield]][license-url]
+[![LinkedIn][linkedin-shield]][linkedin-url]
 
-# Coding Coverage Architecture
 
-## JPA Full Stack Project
 
-Built By:<br>
-===================================================================================
-* [Thomas Webel](https://github.com/Thwebel)
-* <b>Primary Role: Database Analyst</b>
-*   *Primary Focus: planning, implementing, and maintaining the DataBase
-*     *Assisted++ Role: Creation and implementation of Controllers and DAOs
-===================================================================================
-* [Tylor Shearn](https://github.com/TylorShearn)
-* <b>Primary Role:SCRUM Master</b>
-*   *Primary Focus:in creation and implementation of Controllers, DAOs
-*     *Assisted Role: Aided in Database Structuring
-===================================================================================
-* [Bryce Shearn](https://github.com/BryceShearn)
-* <b>Primary Role: Lead Front End Developer</b>
-*   *Primary Focus: planning, structuring, developing, and designing the client side
-*     *Assisted Role: Creation & design of Controllers, DAOs and Database Structuring
-===================================================================================
+<!-- PROJECT LOGO -->
+<br />
+<p align="center">
+  <a href="https://github.com/github_username/repo_name">
+    <img src="images/logo.png" alt="Logo" width="80" height="80">
+  </a>
 
-This was a week-long sprint use Agile Methodologies to exceed the minimum viable product we set forth
+  <h3 align="center">project_title</h3>
 
-### Overview:
+  <p align="center">
+    project_description
+    <br />
+    <a href="https://github.com/github_username/repo_name"><strong>Explore the docs »</strong></a>
+    <br />
+    <br />
+    <a href="https://github.com/github_username/repo_name">View Demo</a>
+    ·
+    <a href="https://github.com/github_username/repo_name/issues">Report Bug</a>
+    ·
+    <a href="https://github.com/github_username/repo_name/issues">Request Feature</a>
+  </p>
+</p>
 
-<b>Why?</b> Coding Coverage was conceptualized created and brought to life by a team of three with a mission to improve the process of reaching the end state of becoming a Software Developer aimed towards self-taught programmers in order to provide guidance, roadmaps, community resources, community engagement for motivation, and the opportunity for expert volunteers to offer insight or help to others in order to benefit the future of Software Development!
 
-This program is designed to be a full stack website application that creates, reads, updates and deletes users progress as well as community contribution data in the form of comments from a database we built using MySQL Workbench and connecting with using Java Database Connectivity.
 
-### How to run:
+<!-- TABLE OF CONTENTS -->
+<details open="open">
+  <summary><h2 style="display: inline-block">Table of Contents</h2></summary>
+  <ol>
+    <li>
+      <a href="#about-the-project">About The Project</a>
+      <ul>
+        <li><a href="#built-with">Built With</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#getting-started">Getting Started</a>
+      <ul>
+        <li><a href="#prerequisites">Prerequisites</a></li>
+        <li><a href="#installation">Installation</a></li>
+      </ul>
+    </li>
+    <li><a href="#usage">Usage</a></li>
+    <li><a href="#roadmap">Roadmap</a></li>
+    <li><a href="#contributing">Contributing</a></li>
+    <li><a href="#license">License</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="#acknowledgements">Acknowledgements</a></li>
+  </ol>
+</details>
 
-First, the user enters the index page. The user can choose to:
-* Register as a user
-* Login if already a user
 
-Access and Abilities
-=====================================================================================================
 
-Standard User
-=====================================================================================================
-A logged in <b>Standard</b> user can:
-<br>
-* View their account dashboard
-* view from dashboard all of their own posts to either the Community Forum or Personal Progress Posts
-* Make Community Forum Contributions via posts
-* Make Personal Progress Posts
-* Comment on other's posts either in the Community or Expert Forum
-* View all External Resources
-* View the expert forum's posts / they are excluded from posting in the expert forum
-<br>
-<b> IMPLEMENTATIONS COMING SOON </b>
-<br><br>
-* Choose your own language roadmap and track your progress
-* Live graph tracking of learning metrics
-* Personalize your profile
-* Offer suggestion of new roadmap tasks based on a weekly polling
+<!-- ABOUT THE PROJECT -->
+## About The Project
 
-Expert User
-=====================================================================================================
-A logged in <b>Expert</b> user can:
-<br>
-* Have all access and rights of the Standard user
-* Make expert level posts and contributions to the Expert Forum
-<br>
-<b> IMPLEMENTATIONS COMING SOON </b>
-<br><br>
-* Propose contributions of roadmap tasks or new learning paths to the admins for approval or denial
+[![Product Name Screen Shot][product-screenshot]](https://example.com)
 
-Admin User
-=====================================================================================================
-A logged in <b>Admin</b> user can:
-<br>
-* Have all access and rights of the Standard and Expert users
-* Remove the posts of anyone, delete the comments of anyone
-<br>
-<b> IMPLEMENTATIONS COMING SOON </b>
-<br><br>
-* Add or delete user's manually
-* Add or remove learning languages as their paths become structured
-* Add or delete roadmap tasks
-* Grant approval or denial to roadmap tasks suggested or created by the expert users
-* Monitor weekly polling for suggested additional roadmap tasks
-<br><br>
-===================================================================================
+Here's a blank template to get started:
+**To avoid retyping too much info. Do a search and replace with your text editor for the following:**
+`github_username`, `repo_name`, `twitter_handle`, `email`, `project_title`, `project_description`
 
-### Technologies used:
 
-Java, Java Persistence API, Spring MVC & STS, Gradle, SQL, MySQL Workbench, HTML, CSS, Bootstrap, Apache, Tomcat, AWS, Atom, Git, GitHub, and Trello.
+### Built With
 
-### Topics implemented:
+* []()
+* []()
+* []()
 
-Dynamic Web Applications using Spring MVC.
 
-Tomcat 8 on AWS EC2 Instance.
 
-JSP Standard Tag Library to generate HTML.
+<!-- GETTING STARTED -->
+## Getting Started
 
-Javascript, CSS, and Bootstrap for the User Interface for usability, attractive design, and to make it web and mobile-friendly.
+To get a local copy up and running follow these simple steps.
 
-Object-Relational Mapping (ORM).
+### Prerequisites
 
-Relational Database: SQL Database creation using MySQL Workbench.
+This is an example of how to list things you need to use the software and how to install them.
+* npm
+  ```sh
+  npm install npm@latest -g
+  ```
 
-Java Libraries: SQL, List, and handling exceptions.
+### Installation
 
-Object-Oriented Programming in Java: Abstraction, Polymorphism, Inheritance, and Encapsulation.
+1. Clone the repo
+   ```sh
+   git clone https://github.com/github_username/repo_name.git
+   ```
+2. Install NPM packages
+   ```sh
+   npm install
+   ```
 
-Test Driven Development using JUNIT Juniper.
 
-### Lessons learned:
 
-This project helped us better grasp the capabilities of Dynamic Web Applications by allowing us to better learn how to:
-* Build a multi-table database using MySQL Workbench.
-* Be an Agile development team
-* Use branching on Git/GitHub
-* Understand Spring Application Contexts.
-* Use the Java Persistence API to generate HTML.
-* Build a Dynamic Web Applications using Spring MVC.
-* Improved Javascript understanding and abilities, CCS and Bootstrap to have a better understanding and improved abiltiies of Front End Development.
+<!-- USAGE EXAMPLES -->
+## Usage
+
+Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
+
+_For more examples, please refer to the [Documentation](https://example.com)_
+
+
+
+<!-- ROADMAP -->
+## Roadmap
+
+See the [open issues](https://github.com/github_username/repo_name/issues) for a list of proposed features (and known issues).
+
+
+
+<!-- CONTRIBUTING -->
+## Contributing
+
+Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+
+
+<!-- LICENSE -->
+## License
+
+Distributed under the MIT License. See `LICENSE` for more information.
+
+
+
+<!-- CONTACT -->
+## Contact
+
+Your Name - [@twitter_handle](https://twitter.com/twitter_handle) - email
+
+Project Link: [https://github.com/github_username/repo_name](https://github.com/github_username/repo_name)
+
+
+
+<!-- ACKNOWLEDGEMENTS -->
+## Acknowledgements
+
+* []()
+* []()
+* []()
+
+
+
+
+
+<!-- MARKDOWN LINKS & IMAGES -->
+<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
+[contributors-shield]: https://img.shields.io/github/contributors/github_username/repo.svg?style=for-the-badge
+[contributors-url]: https://github.com/github_username/repo/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/github_username/repo.svg?style=for-the-badge
+[forks-url]: https://github.com/github_username/repo/network/members
+[stars-shield]: https://img.shields.io/github/stars/github_username/repo.svg?style=for-the-badge
+[stars-url]: https://github.com/github_username/repo/stargazers
+[issues-shield]: https://img.shields.io/github/issues/github_username/repo.svg?style=for-the-badge
+[issues-url]: https://github.com/github_username/repo/issues
+[license-shield]: https://img.shields.io/github/license/github_username/repo.svg?style=for-the-badge
+[license-url]: https://github.com/github_username/repo/blob/master/LICENSE.txt
+[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
+[linkedin-url]: https://linkedin.com/in/github_username
