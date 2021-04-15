@@ -11,7 +11,7 @@
 <br />
 <p align="center">
   <a href="https://github.com/BryceShearn/Coding-Coverage">
-    <img src="http://3.140.95.0:8080/CodingCoverage/images/codingCoverage.png" alt="Logo" width="120" height="120">
+    <img src="http://3.140.95.0:8080/CodingCoverage/images/codingCoverage.png" alt="Logo" width="200" height="200">
   </a>
 
   <h3 align="center">Coding Coverage</h3>
