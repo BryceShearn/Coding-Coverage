@@ -11,10 +11,10 @@
 <br />
 <p align="center">
   <a href="https://github.com/BryceShearn/Coding-Coverage">
-    <img src="http://3.140.95.0:8080/CodingCoverage/images/codingCoverage.png" alt="Logo" width="80" height="80">
+    <img src="http://3.140.95.0:8080/CodingCoverage/images/codingCoverage.png" alt="Logo" width="120" height="120">
   </a>
 
-  <h3 align="center">project_title</h3>
+  <h3 align="center">Coding Coverage</h3>
 
   <p align="center">
     project_description
