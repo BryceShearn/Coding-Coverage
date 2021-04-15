@@ -1,43 +1,43 @@
 [![Contributors][contributors-shield]][contributors-url]
-			[![Forks][forks-shield]][forks-url]
-			[![Stargazers][stars-shield]][stars-url]
-			[![Issues][issues-shield]][issues-url]
-			[![MIT License][license-shield]][license-url]
-			[![LinkedIn][linkedin-shield]][linkedin-url]
+[![Forks][forks-shield]][forks-url]
+[![Stargazers][stars-shield]][stars-url]
+[![Issues][issues-shield]][issues-url]
+[![MIT License][license-shield]][license-url]
+[![LinkedIn][linkedin-shield]][linkedin-url]
 
 
 
-			<!-- PROJECT LOGO -->
-			<br />
-			<p align="center">
-			  <a href="https://github.com/BryceShearn/Coding-Coverage">
-			    <img src="images/logo.png" alt="Logo" width="80" height="80">
-			  </a>
+<!-- PROJECT LOGO -->
+<br />
+<p align="center">
+  <a href="https://github.com/BryceShearn/Coding-Coverage">
+    <img src="images/logo.png" alt="Logo" width="80" height="80">
+  </a>
 
-			  <h3 align="center">project_title</h3>
+  <h3 align="center">project_title</h3>
 
-			  <p align="center">
-			    project_description
-			    <br />
-			    <a href="https://github.com/BryceShearn/Coding-Coverage"><strong>Explore the docs »</strong></a>
-			    <br />
-			    <br />
-			    <a href="https://github.com/BryceShearn/Coding-Coverage">View Demo</a>
-			    ·
-			    <a href="https://github.com/BryceShearn/Coding-Coverage/issues">Report Bug</a>
-			    ·
-			    <a href="https://github.com/BryceShearn/Coding-Coverage/issues">Request Feature</a>
-			  </p>
-			</p>
+  <p align="center">
+    project_description
+    <br />
+    <a href="https://github.com/BryceShearn/Coding-Coverage"><strong>Explore the docs »</strong></a>
+    <br />
+    <br />
+    <a href="https://github.com/BryceShearn/Coding-Coverage">View Demo</a>
+    ·
+    <a href="https://github.com/BryceShearn/Coding-Coverage/issues">Report Bug</a>
+    ·
+    <a href="https://github.com/BryceShearn/Coding-Coverage/issues">Request Feature</a>
+  </p>
+</p>
 
 
 
-			<!-- TABLE OF CONTENTS -->
-			<details open="open">
-			  <summary><h2 style="display: inline-block">Table of Contents</h2></summary>
-			  <ol>
-			    <li>
-			      <a href="#about-the-project">About The Project</a>
+<!-- TABLE OF CONTENTS -->
+<details open="open">
+  <summary><h2 style="display: inline-block">Table of Contents</h2></summary>
+  <ol>
+    <li>
+      <a href="#about-the-project">About The Project</a>
 			      <ul>
 			        <li><a href="#built-with">Built With</a></li>
 			      </ul>
