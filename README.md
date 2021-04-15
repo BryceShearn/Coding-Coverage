@@ -1,4 +1,4 @@
-<i></i>      　　  　　[![Contributors][contributors-shield]][contributors-url]
+[![Contributors][contributors-shield]][contributors-url]
 [![Forks][forks-shield]][forks-url]
 [![Stargazers][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
@@ -80,13 +80,11 @@
 
 [![Product Name Screen Shot][product-screenshot]](https://example.com)
 
-Here's a blank template to get started:
-**To avoid retyping too much info. Do a search and replace with your text editor for the following:**
-`BryceShearn`, `Coding-Coverage`, `twitter_handle`, `email`, `project_title`, `project_description`
 <br />
 <br />
 <br />
 <br />
+<!-- MEET THE CREATORS -->
 ## Meet The Creators:
 <i></i>
 ===================================================================================
