@@ -17,8 +17,16 @@
   <h3 align="center">Coding Coverage</h3>
 
   <p align="center">
-    <kbd>Coding Coverage is a Web Application designed to provide<br /> training tools, community support, and guidance <br /> for current and aspiring developers.
-  </kbd>    <br />
+    <kbd>
+      Coding Coverage is a Web Application designed to provide
+      <br />
+      <br />
+      training tools, community support, and guidance 
+      <br />
+      <br />
+      for current and aspiring developers.
+    </kbd>    
+      <br />
     <a href="https://github.com/BryceShearn/Coding-Coverage"><strong>Explore the docs »</strong></a>
     <br />
     <br />
