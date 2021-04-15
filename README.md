@@ -85,8 +85,8 @@ Here's a blank template to get started:
 `BryceShearn`, `Coding-Coverage`, `twitter_handle`, `email`, `project_title`, `project_description`
 
 
-### Meet The Creators
-<br>
+### Meet The Creators:
+<i></i><br>
 ===================================================================================
 * [Thomas Webel](https://github.com/Thwebel)
 * <b>Primary Role: Database Analyst</b>
@@ -103,6 +103,7 @@ Here's a blank template to get started:
 *   *Primary Focus: planning, structuring, developing, and designing the client side
 *     *Assisted Role: Creation & design of Controllers, DAOs and Database Structuring
 ===================================================================================
+
 
 
 
