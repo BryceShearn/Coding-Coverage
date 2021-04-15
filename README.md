@@ -16,7 +16,7 @@
 
   <h3 align="center">Coding Coverage</h3>
 
-  <p align="center">
+  <h3 align="center">
     <kbd>
       Coding Coverage is a Web Application designed to provide
       <br />
@@ -35,7 +35,7 @@
     <a href="https://github.com/BryceShearn/Coding-Coverage/issues">Report Bug</a>
     ·
     <a href="https://github.com/BryceShearn/Coding-Coverage/issues">Request Feature</a>
-  </p>
+  </h3>
 </p>
 
 
