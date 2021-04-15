@@ -54,7 +54,7 @@
     <li>
       <a href="#about-the-project">About The Project</a>
       <ul>
-        <li><a href="#meet-the-creators">Built With</a></li>
+        <li><a href="#meet-the-creators">Meet The Creators</a></li>
       </ul>
     </li>
     <li>
