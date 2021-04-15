@@ -86,7 +86,7 @@ Here's a blank template to get started:
 
 
 ### Meet The Creators:
-<i></i><br>
+<i></i>
 ===================================================================================
 * [Thomas Webel](https://github.com/Thwebel)
 * <b>Primary Role: Database Analyst</b>
