@@ -33,6 +33,7 @@
       <br />
     </kbd>
   <br />
+  <br />
     <a href="https://github.com/BryceShearn/Coding-Coverage"><strong>Explore the docs »</strong></a>
     <br />
     <br />
