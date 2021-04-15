@@ -85,8 +85,9 @@ Here's a blank template to get started:
 `BryceShearn`, `Coding-Coverage`, `twitter_handle`, `email`, `project_title`, `project_description`
 <br />
 <br />
-
-### Meet The Creators:
+<br />
+<br />
+## Meet The Creators:
 <i></i>
 ===================================================================================
 * [Thomas Webel](https://github.com/Thwebel)
