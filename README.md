@@ -18,6 +18,7 @@
 
   <p align="center">
     <kbd>
+      <br />
       Coding Coverage is a Web Application designed to provide
       <br />
       <br />
