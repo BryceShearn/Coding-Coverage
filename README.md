@@ -22,7 +22,7 @@
     <a href="https://github.com/BryceShearn/Coding-Coverage"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/BryceShearn/Coding-Coverage">View Demo</a>
+    <a href="https://tinyurl.com/CodingCoverage">View Website</a>
     ·
     <a href="https://github.com/BryceShearn/Coding-Coverage/issues">Report Bug</a>
     ·
