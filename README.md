@@ -142,8 +142,10 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 <!-- CONTACT -->
 ## Contact
+[Thomas Webel](https://github.com/Thwebel)
+[Tylor Shearn](https://github.com/TylorShearn)
+[Bryce Shearn](https://github.com/BryceShearn)
 
-Your Name - [@twitter_handle](https://twitter.com/twitter_handle) - email
 
 Project Link: [https://github.com/BryceShearn/Coding-Coverage](https://github.com/BryceShearn/Coding-Coverage)
 
