@@ -27,7 +27,7 @@
       <br />
       <br />
       <br />
-      for current and aspiring developers   
+      for current and aspiring developers.   
       <br />
       <br />
       <br />
