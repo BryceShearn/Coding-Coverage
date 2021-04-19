@@ -142,8 +142,11 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 <!-- CONTACT -->
 ## Contact
+<br />
 [Thomas Webel](https://github.com/Thwebel)
+<br />
 [Tylor Shearn](https://github.com/TylorShearn)
+<br />
 [Bryce Shearn](https://github.com/BryceShearn)
 
 
